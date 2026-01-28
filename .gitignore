@@ -1,13 +1,25 @@
 # ===============================
-# Dependencies
+# Backend (Python)
+# ===============================
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environments / secrets
+venv/
+.env/
+
+# ===============================
+# Frontend (Node)
 # ===============================
 node_modules/
 
-
 # ===============================
-# Generated / Output data
+# Generated swing output (DO NOT COMMIT)
 # ===============================
 output/
+frontend/public/data/close/
+frontend/public/data/index.json
 
 # ===============================
 # Logs
@@ -19,3 +31,9 @@ output/
 # ===============================
 .DS_Store
 Thumbs.db
+
+# ===============================
+# Cached OHLCV data (DO NOT COMMIT)
+# ===============================
+utils/data_store/
+*.parquet
