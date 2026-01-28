@@ -332,7 +332,7 @@ export default function SwingTerminalLight() {
                         <div key={d} className="text-[10px] font-black text-slate-400 uppercase tracking-tight py-2">{d}</div>
                       ))}
                     </div>
-                    <div className="grid grid-cols-7 gap-1">
+                    <div className="grid grid-cols-10 gap-1">
                       {Array.from({ length: calendarData.firstDayOfMonth }).map((_, i) => (
                         <div key={`empty-${i}`} className="aspect-square" />
                       ))}
@@ -372,31 +372,59 @@ export default function SwingTerminalLight() {
           
           <div className="p-8 space-y-6 overflow-y-auto flex-1">
             {/* KPI CARDS */}
-            <div className="grid grid-cols-4 gap-5">
-              {[
-                { label: 'Active Signals', val: kpis.signals, icon: Zap, color: 'blue' },
-                { label: 'Avg Conviction', val: `${kpis.avgScore}%`, icon: Gauge, color: 'emerald' },
-                { label: 'Market Breadth', val: `${kpis.breadth}%`, icon: PieChart, color: 'indigo' },
-                { label: 'Score Floor', val: `${minConviction}%`, icon: ShieldCheck, color: 'rose' }
-              ].map((stat, i) => (
-                <div key={i} className={`bg-${stat.color}-280 border-2 border-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all cursor-default hover:scale-95 group`}>
-                  <div className="flex justify-between items-start mb-4">
-                    <div>
-                      <span className="text-[10px] font-black text-slate-600 uppercase tracking-wider block mb-1">{stat.label}</span>
-                      <div className={`text-3xl font-black text-${stat.color}-600 tracking-tight`}>{stat.val}</div>
-                    </div>
-                    <div className={`bg-${stat.color}-600 p-3 rounded-xl shadow-lg group-hover:scale-110 transition-transform`}>
-                      <stat.icon size={20} strokeWidth={3} className="text-white" />
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+              <div className="grid grid-cols-4 gap-5">
+                 {[
+               { 
+                label: 'Active Signals', 
+                val: kpis.signals, 
+                icon: Zap, 
+                bgColor: 'bg-blue-50', 
+                iconBg: 'bg-blue-600', 
+                textColor: 'text-blue-600' 
+              },
+              { 
+                 label: 'Avg Conviction', 
+                 val: `${kpis.avgScore}%`, 
+                 icon: Gauge, 
+                 bgColor: 'bg-emerald-50', 
+                 iconBg: 'bg-emerald-600', 
+                 textColor: 'text-emerald-600' 
+        },
+            { 
+                label: 'Market Breadth', 
+                val: `${kpis.breadth}%`, 
+                icon: PieChart, 
+                bgColor: 'bg-indigo-50', 
+                iconBg: 'bg-indigo-600', 
+                textColor: 'text-indigo-600' 
+             },
+           { 
+                label: 'Score Floor', 
+                val: `${minConviction}%`, 
+                icon: ShieldCheck, 
+                bgColor: 'bg-rose-50', 
+                iconBg: 'bg-rose-600', 
+                 textColor: 'text-rose-600' 
+         }
+  ].map((stat, i) => (
+    <div key={i} className={`${stat.bgColor} border-2 border-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all cursor-default hover:scale-105 group`}>
+      <div className="flex justify-between items-start mb-4">
+        <div>
+          <span className="text-[10px] font-black text-slate-600 uppercase tracking-wider block mb-1">{stat.label}</span>
+          <div className={`text-3xl font-black ${stat.textColor} tracking-tight`}>{stat.val}</div>
+        </div>
+        <div className={`${stat.iconBg} p-3 rounded-xl shadow-lg group-hover:scale-110 transition-transform`}>
+          <stat.icon size={20} strokeWidth={3} className="text-white" />
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
 
             {/* SEARCH & FILTERS */}
             <div className="bg-white/95 backdrop-blur-xl border-2 border-slate-200 rounded-2xl p-6 shadow-lg space-y-5">
               <div className="flex items-center gap-4">
-                <div className="flex-1 flex items-center gap-3 bg-gradient-to-r from-slate-50 to-slate-100 border-2 border-slate-200 rounded-xl px-5 py-3.5 transition-all focus-within:border-blue-500 focus-within:shadow-lg focus-within:shadow-blue-100">
+                <div className="flex-1 flex items-center gap-3 bg-gradient-to-r from-slate-50 to-slate-100 border-2 border-slate-200 rounded-xl px-5 py-3.5 transition-all focus-within:border-blue-700 focus-within:shadow-lg focus-within:shadow-blue-100">
                   <Search size={18} strokeWidth={3} className="text-slate-400" />
                   <input 
                     placeholder="Search by ticker symbol..." 
