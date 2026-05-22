@@ -12,7 +12,7 @@ import logging
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger(__name__)
 
-INDEX_PATH = Path("frontend/public/data/index.json")
+INDEX_PATH = Path("frontend/public/data/close/index.json")
 CLOSE_DIR = Path("frontend/public/data/close")
 
 def count_rows(path: Path) -> int:

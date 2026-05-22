@@ -1,0 +1,5382 @@
+[
+    {
+        "ticker":"ICICIBANK",
+        "Score":9,
+        "tags":"LCAP | N50 | N100 | BANKX | DUO30 | LEADER | HROE | HROCE | COMPD | QLTY | INDST | FINFORM"
+    },
+    {
+        "ticker":"ZYDUSLIFE",
+        "Score":8,
+        "tags":"LCAP | PHARMA | GROWTH | EXPORT | USREV | RNDX"
+    },
+    {
+        "ticker":"KPITTECH",
+        "Score":9,
+        "tags":"LCAP | TECH | EVX | GLOBEX | EXPORT | GROWTH | RNDX | AUTOX"
+    },
+    {
+        "ticker":"CDSL",
+        "Score":8,
+        "tags":"LCAP | DUO30 | ASSETL | NETWRK | MONO | HROE | FCFPOS | INDST | FINFORM"
+    },
+    {
+        "ticker":"GRAVITA",
+        "Score":8,
+        "tags":"MCAP | METAL | GRENX | GROWTH | EXPORT"
+    },
+    {
+        "ticker":"GROBTEA",
+        "Score":5,
+        "tags":"MICAP | FMCG | EXPORT"
+    },
+    {
+        "ticker":"SUDARSCHEM",
+        "Score":7,
+        "tags":"MCAP | CHEMX | NICHE | EXPORT"
+    },
+    {
+        "ticker":"SOBHA",
+        "Score":6,
+        "tags":"MCAP | REAL | DOMEST | URBNX"
+    },
+    {
+        "ticker":"NESTLEIND",
+        "Score":7,
+        "tags":"LCAP | N50 | N100 | FMCG | BRANDX | LEADER | COMPD | QLTY | HROE | DOMEST | GLOBEX"
+    },
+    {
+        "ticker":"WABAG",
+        "Score":8,
+        "tags":"MCAP | INFRA | NICHE | EXPORT | GROWTH | GRENX"
+    },
+    {
+        "ticker":"YASHO",
+        "Score":7,
+        "tags":"SCAP | CHEMX | NICHE | EXPORT"
+    },
+    {
+        "ticker":"DALBHARAT",
+        "Score":7,
+        "tags":"LCAP | INFRA | LEADER | GROWTH | DOMEST | INDST"
+    },
+    {
+        "ticker":"THERMAX",
+        "Score":8,
+        "tags":"LCAP | INFRA | CAPEX | GROWTH | GLOBEX | INDST"
+    },
+    {
+        "ticker":"TATACONSUM",
+        "Score":8,
+        "tags":"LCAP | N50 | N100 | FMCG | BRANDX | GROWTH | DOMEST | INDST"
+    },
+    {
+        "ticker":"CAMS",
+        "Score":8,
+        "tags":"MCAP | DUO30 | ASSETL | NETWRK | HROE | INDST | FINFORM"
+    },
+    {
+        "ticker":"GANECOS",
+        "Score":7,
+        "tags":"SCAP | CHEMX | NICHE | EXPORT"
+    },
+    {
+        "ticker":"AMBIKCO",
+        "Score":6,
+        "tags":"SCAP | CONSUM | EXPORT"
+    },
+    {
+        "ticker":"JINDALPHOT",
+        "Score":5,
+        "tags":"SCAP | METAL | NICHE | EXPORT"
+    },
+    {
+        "ticker":"IPCALAB",
+        "Score":7,
+        "tags":"LCAP | PHARMA | EXPORT"
+    },
+    {
+        "ticker":"GRINFRA",
+        "Score":7,
+        "tags":"MCAP | INFRA | GOVCAP | NATINF | GROWTH"
+    },
+    {
+        "ticker":"SUNPHARMA",
+        "Score":8,
+        "tags":"LCAP | N50 | N100 | PHARMA | LEADER | GLOBEX | EXPORT | USREV | HROE | COMPD | QLTY"
+    },
+    {
+        "ticker":"GMMPFAUDLR",
+        "Score":7,
+        "tags":"SCAP | INFRA | NICHE | EXPORT"
+    },
+    {
+        "ticker":"ALKYLAMINE",
+        "Score":7,
+        "tags":"MCAP | CHEMX | NICHE | EXPORT"
+    },
+    {
+        "ticker":"ADANIPORTS",
+        "Score":8,
+        "tags":"LCAP | N50 | N100 | INFRA | LOGIS | LEADER | NATINF | GOVCAP | DOMEST"
+    },
+    {
+        "ticker":"ERIS",
+        "Score":8,
+        "tags":"MCAP | PHARMA | DOMEST | GROWTH"
+    },
+    {
+        "ticker":"KIRLOSBROS",
+        "Score":7,
+        "tags":"MCAP | INFRA | EXPORT | GROWTH"
+    },
+    {
+        "ticker":"ISGEC",
+        "Score":7,
+        "tags":"MCAP | INFRA | EXPORT | GROWTH"
+    },
+    {
+        "ticker":"SBIN",
+        "Score":8,
+        "tags":"LCAP | N50 | N100 | BANKX | PSU | LEADER | DOMEST | GOVCAP | INDST | STRAT"
+    },
+    {
+        "ticker":"INDHOTEL",
+        "Score":8,
+        "tags":"LCAP | N100 | CONSUM | LEADER | PREM | COMPD | DOMEST | INDST"
+    },
+    {
+        "ticker":"BIKAJI",
+        "Score":8,
+        "tags":"MCAP | FMCG | GROWTH | DOMEST | RURALX | INDST"
+    },
+    {
+        "ticker":"MAITHANALL",
+        "Score":6,
+        "tags":"SCAP | METAL | NICHE | POWER"
+    },
+    {
+        "ticker":"MAXHEALTH",
+        "Score":9,
+        "tags":"LCAP | PHARMA | GROWTH | DOMEST | SCALEUP | INDST"
+    },
+    {
+        "ticker":"MFSL",
+        "Score":8,
+        "tags":"LCAP | N100 | INSUR | GROWTH | INDST"
+    },
+    {
+        "ticker":"RELIANCE",
+        "Score":8,
+        "tags":"LCAP | N50 | N100 | ENERGY | PLTFRM | ECOSYS | LEADER | COMPD | DOMEST | INDST | STRAT"
+    },
+    {
+        "ticker":"ICICIGI",
+        "Score":8,
+        "tags":"LCAP | N100 | INSUR | GROWTH | LEADER | INDST | FINFORM"
+    },
+    {
+        "ticker":"GRPLTD",
+        "Score":6,
+        "tags":"SCAP | CONSUM | DOMEST"
+    },
+    {
+        "ticker":"HAVELLS",
+        "Score":7,
+        "tags":"LCAP | N100 | CONSUM | LEADER | BRANDX | GROWTH | DOMEST"
+    },
+    {
+        "ticker":"MASTEK",
+        "Score":6,
+        "tags":"MCAP | TECH | EXPORT | USREV | EUREV"
+    },
+    {
+        "ticker":"JUBLPHARMA",
+        "Score":6,
+        "tags":"MCAP | PHARMA | EXPORT | NICHE"
+    },
+    {
+        "ticker":"RPGLIFE",
+        "Score":6,
+        "tags":"SCAP | PHARMA | EXPORT"
+    },
+    {
+        "ticker":"VIJAYA",
+        "Score":7,
+        "tags":"MCAP | BANKX | INDST"
+    },
+    {
+        "ticker":"CYIENT",
+        "Score":7,
+        "tags":"MCAP | TECH | GLOBEX | EXPORT | GROWTH"
+    },
+    {
+        "ticker":"IMFA",
+        "Score":6,
+        "tags":"MCAP | METAL | CYCL | COMMOD"
+    },
+    {
+        "ticker":"RAINBOW",
+        "Score":8,
+        "tags":"MCAP | PHARMA | GROWTH | DOMEST | NICHE | INDST"
+    },
+    {
+        "ticker":"ZENTEC",
+        "Score":8,
+        "tags":"MCAP | DEFX | TECH | NICHE"
+    },
+    {
+        "ticker":"HOMEFIRST",
+        "Score":8,
+        "tags":"MCAP | NBFC | GROWTH | INDST | URBNX"
+    },
+    {
+        "ticker":"BHARTIARTL",
+        "Score":9,
+        "tags":"LCAP | N50 | N100 | TELE | DUO30 | LEADER | COMPD | DOMEST | GLOBEX | INDST"
+    },
+    {
+        "ticker":"NUVAMA",
+        "Score":8,
+        "tags":"LCAP | NBFC | ASSETL | INDST"
+    },
+    {
+        "ticker":"JINDALSTEL",
+        "Score":9,
+        "tags":"LCAP | N100 | METAL | CYCL | COMMOD"
+    },
+    {
+        "ticker":"GABRIEL",
+        "Score":7,
+        "tags":"MCAP | AUTO | NICHE"
+    },
+    {
+        "ticker":"APOLSINHOT",
+        "Score":6,
+        "tags":"MICAP | CONSUM | DOMEST"
+    },
+    {
+        "ticker":"GHCL",
+        "Score":7,
+        "tags":"SCAP | CHEMX"
+    },
+    {
+        "ticker":"EXCELINDUS",
+        "Score":7,
+        "tags":"SCAP | CHEMX | NICHE"
+    },
+    {
+        "ticker":"CARBORUNIV",
+        "Score":7,
+        "tags":"LCAP | INFRA | NICHE | EXPORT"
+    },
+    {
+        "ticker":"JUSTDIAL",
+        "Score":6,
+        "tags":"SCAP | TECH | PLTFRM | DOMEST | AGGR"
+    },
+    {
+        "ticker":"ZENSARTECH",
+        "Score":6,
+        "tags":"MCAP"
+    },
+    {
+        "ticker":"MOLDTKPAC",
+        "Score":7,
+        "tags":"SCAP | CONSUM | NICHE | EXPORT"
+    },
+    {
+        "ticker":"ROUTE",
+        "Score":5,
+        "tags":"SCAP | TECH | GROWTH | DOMEST"
+    },
+    {
+        "ticker":"DENORA",
+        "Score":6,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"FORTIS",
+        "Score":7,
+        "tags":"LCAP | PHARMA | DOMEST | INDST"
+    },
+    {
+        "ticker":"SALZERELEC",
+        "Score":6,
+        "tags":"SCAP | INFRA | NICHE"
+    },
+    {
+        "ticker":"GLOBUSSPR",
+        "Score":6,
+        "tags":"SCAP | CONSUM | EXPORT"
+    },
+    {
+        "ticker":"AXISBANK",
+        "Score":7,
+        "tags":"LCAP | N50 | N100 | BANKX | HROE | LEADER | INDST | FINFORM"
+    },
+    {
+        "ticker":"AUROPHARMA",
+        "Score":7,
+        "tags":"LCAP | N100 | PHARMA | EXPORT | USREV"
+    },
+    {
+        "ticker":"POLICYBZR",
+        "Score":8,
+        "tags":"LCAP | INSUR | FINX | PLTFRM | GROWTH | DIGFIN | INDST"
+    },
+    {
+        "ticker":"TIIL",
+        "Score":7,
+        "tags":"MCAP | CONSUM | NICHE"
+    },
+    {
+        "ticker":"ACCELYA",
+        "Score":6,
+        "tags":"SCAP | TECH | SAAS | AVIAT | EXPORT"
+    },
+    {
+        "ticker":"METROBRAND",
+        "Score":7,
+        "tags":"LCAP | RETAIL | GROWTH | DOMEST"
+    },
+    {
+        "ticker":"FINCABLES",
+        "Score":7,
+        "tags":"MCAP | INFRA | GROWTH"
+    },
+    {
+        "ticker":"WHIRLPOOL",
+        "Score":5,
+        "tags":"MCAP | CONSUM | GLOBEX | DOMEST"
+    },
+    {
+        "ticker":"ASAHIINDIA",
+        "Score":8,
+        "tags":"LCAP | AUTO | CHEMX | NICHE | GLOBEX"
+    },
+    {
+        "ticker":"POLYPLEX",
+        "Score":6,
+        "tags":"SCAP | CHEMX | NICHE | EXPORT"
+    },
+    {
+        "ticker":"APLLTD",
+        "Score":8,
+        "tags":"MCAP | PHARMA | EXPORT | GROWTH"
+    },
+    {
+        "ticker":"AHLUCONT",
+        "Score":7,
+        "tags":"MCAP | INFRA | NICHE | EXPORT"
+    },
+    {
+        "ticker":"NELCO",
+        "Score":7,
+        "tags":"SCAP | DEFX | TECH | NICHE"
+    },
+    {
+        "ticker":"63MOONS",
+        "Score":6,
+        "tags":"MCAP | TECH | FINX | INDST"
+    },
+    {
+        "ticker":"MARICO",
+        "Score":9,
+        "tags":"LCAP | N100 | FMCG | BRANDX | COMPD | HROE | DOMEST | GLOBEX"
+    },
+    {
+        "ticker":"ALICON",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"SHYAMMETL",
+        "Score":7,
+        "tags":"LCAP | METAL | GROWTH"
+    },
+    {
+        "ticker":"EMAMILTD",
+        "Score":6,
+        "tags":"MCAP | FMCG | BRANDX | DOMEST"
+    },
+    {
+        "ticker":"COSMOFIRST",
+        "Score":6,
+        "tags":"SCAP | CHEMX | NICHE | EXPORT"
+    },
+    {
+        "ticker":"TTKPRESTIG",
+        "Score":6,
+        "tags":"MCAP | CONSUM | DOMEST | CONSUP"
+    },
+    {
+        "ticker":"ASTEC",
+        "Score":6,
+        "tags":"SCAP | CHEMX | NICHE | DOMEST"
+    },
+    {
+        "ticker":"TATAINVEST",
+        "Score":6,
+        "tags":"LCAP | NBFC | VALUE | DIVX"
+    },
+    {
+        "ticker":"WELCORP",
+        "Score":8,
+        "tags":"LCAP | INFRA | EXPORT | NICHE"
+    },
+    {
+        "ticker":"DELHIVERY",
+        "Score":7,
+        "tags":"LCAP | LOGIS | PLTFRM | GROWTH | DOMEST | INDST"
+    },
+    {
+        "ticker":"CHOICEIN",
+        "Score":6,
+        "tags":"MCAP | NBFC | DOMEST"
+    },
+    {
+        "ticker":"JUBLINGREA",
+        "Score":6,
+        "tags":"MCAP | REAL | DOMEST"
+    },
+    {
+        "ticker":"SVLL",
+        "Score":6,
+        "tags":"SCAP | CONSUM | DOMEST"
+    },
+    {
+        "ticker":"ARVSMART",
+        "Score":7,
+        "tags":"SCAP | TECH | GROWTH"
+    },
+    {
+        "ticker":"NH",
+        "Score":8,
+        "tags":"LCAP | PHARMA | GROWTH | DOMEST | SCALEUP | INDST"
+    },
+    {
+        "ticker":"ASIANPAINT",
+        "Score":6,
+        "tags":"LCAP | N50 | N100 | CONSUM | BRANDX | LEADER | DUO30 | COMPD | HROE | DOMEST"
+    },
+    {
+        "ticker":"GODREJPROP",
+        "Score":8,
+        "tags":"LCAP | N100 | REAL | LEADER | GROWTH | DOMEST | URBNX"
+    },
+    {
+        "ticker":"GKWLIMITED",
+        "Score":5,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"CONCORDBIO",
+        "Score":7,
+        "tags":"MCAP | PHARMA | BIOX | EXPORT | GROWTH"
+    },
+    {
+        "ticker":"POLYCAB",
+        "Score":8,
+        "tags":"LCAP | INFRA | LEADER | GROWTH | DOMEST | INDST"
+    },
+    {
+        "ticker":"ADANIGREEN",
+        "Score":8,
+        "tags":"LCAP | N100 | POWER | SOLX | GRENX | CLNENG | GROWTH | ENTRANS"
+    },
+    {
+        "ticker":"ZOTA",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"JSWSTEEL",
+        "Score":7,
+        "tags":"LCAP | N50 | N100 | METAL | CYCL | COMMOD | LEADER | CAPEX"
+    },
+    {
+        "ticker":"RATNAMANI",
+        "Score":7,
+        "tags":"MCAP | INFRA | NICHE | EXPORT"
+    },
+    {
+        "ticker":"LUPIN",
+        "Score":7,
+        "tags":"LCAP | N100 | PHARMA | GLOBEX | EXPORT | USREV | REVIVAL"
+    },
+    {
+        "ticker":"HCLTECH",
+        "Score":7,
+        "tags":"LCAP | N50 | N100 | TECH | LEADER | GLOBEX | EXPORT | USREV | HROE | COMPD"
+    },
+    {
+        "ticker":"UTIAMC",
+        "Score":7,
+        "tags":"MCAP | NBFC | ASSETL | INDST | FINFORM"
+    },
+    {
+        "ticker":"GALAXYSURF",
+        "Score":8,
+        "tags":"MCAP | CHEMX | NICHE | EXPORT"
+    },
+    {
+        "ticker":"GOODLUCK",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"TTKHLTCARE",
+        "Score":6,
+        "tags":"SCAP | FMCG | DOMEST"
+    },
+    {
+        "ticker":"TECHM",
+        "Score":7,
+        "tags":"LCAP | N50 | N100 | TECH | GLOBEX | EXPORT | USREV | REVIVAL"
+    },
+    {
+        "ticker":"SAFARI",
+        "Score":8,
+        "tags":"MCAP | CONSUM | GROWTH | DOMEST | BRANDX"
+    },
+    {
+        "ticker":"ADANIENT",
+        "Score":8,
+        "tags":"LCAP"
+    },
+    {
+        "ticker":"BAJAJFINSV",
+        "Score":8,
+        "tags":"LCAP | N50 | N100 | NBFC | ECOSYS | LEADER | COMPD | INDST | FINFORM"
+    },
+    {
+        "ticker":"HDFCAMC",
+        "Score":8,
+        "tags":"LCAP | N100 | NBFC | ASSETL | LEADER | HROE | FCFPOS | COMPD | INDST | FINFORM"
+    },
+    {
+        "ticker":"SIEMENS",
+        "Score":8,
+        "tags":"LCAP | N100 | INFRA | CAPEX | GROWTH | GLOBEX | INDST"
+    },
+    {
+        "ticker":"PIDILITIND",
+        "Score":7,
+        "tags":"LCAP | N100 | CHEMX | BRANDX | LEADER | MONO | HROE | COMPD | QLTY | DOMEST"
+    },
+    {
+        "ticker":"SBILIFE",
+        "Score":8,
+        "tags":"LCAP | N50 | N100 | INSUR | GROWTH | LEADER | INDST | FINFORM"
+    },
+    {
+        "ticker":"HINDUNILVR",
+        "Score":6,
+        "tags":"LCAP | N50 | N100 | FMCG | BRANDX | LEADER | COMPD | DOMEST | CONSUP"
+    },
+    {
+        "ticker":"KOTAKBANK",
+        "Score":7,
+        "tags":"LCAP | N50 | N100 | BANKX | HROE | HROCE | QLTY | COMPD | LEADER | INDST"
+    },
+    {
+        "ticker":"CIPLA",
+        "Score":7,
+        "tags":"LCAP | N50 | N100 | PHARMA | GLOBEX | EXPORT | USREV"
+    },
+    {
+        "ticker":"VINATIORGA",
+        "Score":7,
+        "tags":"MCAP | CHEMX | NICHE | EXPORT | GROWTH"
+    },
+    {
+        "ticker":"FLUOROCHEM",
+        "Score":8,
+        "tags":"LCAP | CHEMX | NICHE | EXPORT | GROWTH"
+    },
+    {
+        "ticker":"POLYMED",
+        "Score":7,
+        "tags":"MCAP | PHARMA | MEDTX | EXPORT | GROWTH"
+    },
+    {
+        "ticker":"TATACOMM",
+        "Score":7,
+        "tags":"LCAP | TELE | GLOBEX | GROWTH | CLOUDX"
+    },
+    {
+        "ticker":"DCMSHRIRAM",
+        "Score":6,
+        "tags":"MCAP | CHEMX | CYCL"
+    },
+    {
+        "ticker":"COLPAL",
+        "Score":7,
+        "tags":"LCAP | FMCG | BRANDX | COMPD | HROE | DOMEST | GLOBEX"
+    },
+    {
+        "ticker":"CUMMINSIND",
+        "Score":7,
+        "tags":"LCAP | INFRA | EXPORT | GROWTH | GLOBEX"
+    },
+    {
+        "ticker":"ASTRAL",
+        "Score":7,
+        "tags":"LCAP | INFRA | LEADER | COMPD | GROWTH | DOMEST"
+    },
+    {
+        "ticker":"DODLA",
+        "Score":6,
+        "tags":"MCAP | FMCG | DOMEST | REGLEAD"
+    },
+    {
+        "ticker":"TEGA",
+        "Score":7,
+        "tags":"MCAP"
+    },
+    {
+        "ticker":"PRESTIGE",
+        "Score":8,
+        "tags":"LCAP | REAL | GROWTH | DOMEST | URBNX"
+    },
+    {
+        "ticker":"AXISCADES",
+        "Score":6,
+        "tags":"MCAP | TECH | DEFX | EXPORT"
+    },
+    {
+        "ticker":"SKFINDIA",
+        "Score":7,
+        "tags":"MCAP | AUTO | GLOBEX | NICHE"
+    },
+    {
+        "ticker":"GULFOILLUB",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"INTELLECT",
+        "Score":7,
+        "tags":"MCAP | TECH | SAAS | FINX | GROWTH | EXPORT"
+    },
+    {
+        "ticker":"TORNTPOWER",
+        "Score":7,
+        "tags":"LCAP | POWER | REGLEAD | COMPD"
+    },
+    {
+        "ticker":"HESTERBIO",
+        "Score":6,
+        "tags":"SCAP | PHARMA | BIOX | EXPORT | NICHE"
+    },
+    {
+        "ticker":"BHARATRAS",
+        "Score":6,
+        "tags":"SCAP | FMCG | DOMEST"
+    },
+    {
+        "ticker":"LODHA",
+        "Score":8,
+        "tags":"LCAP | REAL | GROWTH | DOMEST | URBNX"
+    },
+    {
+        "ticker":"VENUSPIPES",
+        "Score":7,
+        "tags":"SCAP | INFRA | GROWTH"
+    },
+    {
+        "ticker":"DHUNINV",
+        "Score":5,
+        "tags":"SCAP | NBFC | VALUE"
+    },
+    {
+        "ticker":"BATAINDIA",
+        "Score":6,
+        "tags":"MCAP | RETAIL | BRANDX | DOMEST"
+    },
+    {
+        "ticker":"HDFCBANK",
+        "Score":8,
+        "tags":"LCAP | N50 | N100 | BANKX | DUO30 | LEADER | HROE | HROCE | COMPD | QLTY | INDST | FINFORM"
+    },
+    {
+        "ticker":"ORCHPHARMA",
+        "Score":6,
+        "tags":"SCAP | PHARMA | EXPORT | NICHE"
+    },
+    {
+        "ticker":"ASTRAMICRO",
+        "Score":7,
+        "tags":"MCAP | DEFX | NICHE | GROWTH"
+    },
+    {
+        "ticker":"SOLARA",
+        "Score":5,
+        "tags":"SCAP | PHARMA | EXPORT | REVIVAL"
+    },
+    {
+        "ticker":"HATSUN",
+        "Score":7,
+        "tags":"LCAP | FMCG | DOMEST | REGLEAD"
+    },
+    {
+        "ticker":"ASALCBR",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"TVSELECT",
+        "Score":6,
+        "tags":"SCAP | AUTO | DOMEST"
+    },
+    {
+        "ticker":"MANGLMCEM",
+        "Score":6,
+        "tags":"SCAP | INFRA | DOMEST"
+    },
+    {
+        "ticker":"AARTIPHARM",
+        "Score":7,
+        "tags":"MCAP | PHARMA | EXPORT"
+    },
+    {
+        "ticker":"AUBANK",
+        "Score":8,
+        "tags":"LCAP | BANKX | GROWTH | INDST | SCALEUP"
+    },
+    {
+        "ticker":"SYNGENE",
+        "Score":7,
+        "tags":"MCAP | PHARMA | BIOX | EXPORT | GROWTH | RNDX | CONTRX"
+    },
+    {
+        "ticker":"LICHSGFIN",
+        "Score":6,
+        "tags":"LCAP | NBFC | INDST"
+    },
+    {
+        "ticker":"SUPRIYA",
+        "Score":7,
+        "tags":"MCAP | PHARMA | EXPORT | GROWTH"
+    },
+    {
+        "ticker":"SCHNEIDER",
+        "Score":7,
+        "tags":"LCAP | INFRA | CAPEX | GLOBEX"
+    },
+    {
+        "ticker":"MATRIMONY",
+        "Score":5,
+        "tags":"SCAP | TECH | PLTFRM | DOMEST"
+    },
+    {
+        "ticker":"RIIL",
+        "Score":5,
+        "tags":"SCAP | INFRA | DOMEST"
+    },
+    {
+        "ticker":"ASTERDM",
+        "Score":7,
+        "tags":"LCAP | PHARMA | GROWTH | DOMEST | INDST"
+    },
+    {
+        "ticker":"MEDPLUS",
+        "Score":7,
+        "tags":"MCAP | RETAIL | GROWTH | DOMEST"
+    },
+    {
+        "ticker":"CONTROLPR",
+        "Score":6,
+        "tags":"SCAP | TECH | NICHE"
+    },
+    {
+        "ticker":"DLF",
+        "Score":8,
+        "tags":"LCAP | N100 | REAL | LEADER | PREM | DOMEST | INDST | URBNX"
+    },
+    {
+        "ticker":"GOCOLORS",
+        "Score":7,
+        "tags":"SCAP | RETAIL | GROWTH | DOMEST"
+    },
+    {
+        "ticker":"MAYURUNIQ",
+        "Score":6,
+        "tags":"SCAP | CONSUM | EXPORT | DOMEST"
+    },
+    {
+        "ticker":"BRIGADE",
+        "Score":7,
+        "tags":"MCAP | REAL | DOMEST | URBNX"
+    },
+    {
+        "ticker":"PIXTRANS",
+        "Score":6,
+        "tags":"SCAP | INFRA | NICHE"
+    },
+    {
+        "ticker":"MTARTECH",
+        "Score":7,
+        "tags":"LCAP | DEFX | NICHE | GROWTH | MAKEIN"
+    },
+    {
+        "ticker":"SIGNATURE",
+        "Score":7,
+        "tags":"MCAP | NBFC | GROWTH | INDST"
+    },
+    {
+        "ticker":"BALAMINES",
+        "Score":6,
+        "tags":"MCAP | CHEMX | NICHE | EXPORT"
+    },
+    {
+        "ticker":"NAUKRI",
+        "Score":8,
+        "tags":"LCAP | TECH | PLTFRM | NETWRK | ASSETL | LEADER | HROE | DOMEST"
+    },
+    {
+        "ticker":"GODREJCP",
+        "Score":7,
+        "tags":"LCAP | N100 | FMCG | BRANDX | DOMEST | GLOBEX"
+    },
+    {
+        "ticker":"PUNJABCHEM",
+        "Score":6,
+        "tags":"SCAP | CHEMX"
+    },
+    {
+        "ticker":"RAMCOCEM",
+        "Score":7,
+        "tags":"LCAP | INFRA | REGLEAD | DOMEST"
+    },
+    {
+        "ticker":"COCHINSHIP",
+        "Score":8,
+        "tags":"LCAP | DEFX | PSU | STRAT | GOVCAP | GOVORD | MAKEIN"
+    },
+    {
+        "ticker":"360ONE",
+        "Score":8,
+        "tags":"LCAP | NBFC | ASSETL | GROWTH | INDST | FINFORM"
+    },
+    {
+        "ticker":"KIRLPNU",
+        "Score":6,
+        "tags":"MCAP"
+    },
+    {
+        "ticker":"AURIONPRO",
+        "Score":7,
+        "tags":"SCAP | TECH | FINX | GROWTH"
+    },
+    {
+        "ticker":"TIINDIA",
+        "Score":7,
+        "tags":"LCAP"
+    },
+    {
+        "ticker":"MPHASIS",
+        "Score":7,
+        "tags":"LCAP | N100 | TECH | USREV | EXPORT | GROWTH"
+    },
+    {
+        "ticker":"DEEPAKNTR",
+        "Score":7,
+        "tags":"LCAP | CHEMX | GROWTH | EXPORT | CHN1"
+    },
+    {
+        "ticker":"OLECTRA",
+        "Score":8,
+        "tags":"MCAP | AUTO | EVX | GROWTH"
+    },
+    {
+        "ticker":"MANKIND",
+        "Score":8,
+        "tags":"LCAP"
+    },
+    {
+        "ticker":"POWERMECH",
+        "Score":7,
+        "tags":"MCAP | INFRA | GROWTH"
+    },
+    {
+        "ticker":"OBEROIRLTY",
+        "Score":8,
+        "tags":"LCAP | REAL | PREM | DOMEST | URBNX"
+    },
+    {
+        "ticker":"GLAXO",
+        "Score":7,
+        "tags":"LCAP | PHARMA | GLOBEX | USREV"
+    },
+    {
+        "ticker":"UBL",
+        "Score":7,
+        "tags":"LCAP | FMCG | BRANDX | DOMEST | DUO30"
+    },
+    {
+        "ticker":"STYRENIX",
+        "Score":6,
+        "tags":"SCAP | CHEMX"
+    },
+    {
+        "ticker":"NESCO",
+        "Score":6,
+        "tags":"MCAP | REAL | CONSUM | DOMEST"
+    },
+    {
+        "ticker":"LTTS",
+        "Score":7,
+        "tags":"LCAP | TECH | GLOBEX | EXPORT | GROWTH | RNDX"
+    },
+    {
+        "ticker":"PERSISTENT",
+        "Score":8,
+        "tags":"LCAP | N100 | TECH | GLOBEX | EXPORT | HYPERG | GROWTH"
+    },
+    {
+        "ticker":"HONDAPOWER",
+        "Score":5,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"ETHOSLTD",
+        "Score":7,
+        "tags":"MCAP | RETAIL | PREM | DOMEST | CONSUP"
+    },
+    {
+        "ticker":"STYLAMIND",
+        "Score":5,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"KPIL",
+        "Score":7,
+        "tags":"LCAP | INFRA | GROWTH | GOVCAP"
+    },
+    {
+        "ticker":"MAZDOCK",
+        "Score":8,
+        "tags":"LCAP | DEFX | PSU | STRAT | GOVCAP | GOVORD | MAKEIN | MONO"
+    },
+    {
+        "ticker":"SHAILY",
+        "Score":6,
+        "tags":"MCAP"
+    },
+    {
+        "ticker":"IMPAL",
+        "Score":5,
+        "tags":"SCAP | AUTO | DOMEST"
+    },
+    {
+        "ticker":"DPABHUSHAN",
+        "Score":6,
+        "tags":"SCAP | RETAIL | DOMEST"
+    },
+    {
+        "ticker":"UNOMINDA",
+        "Score":7,
+        "tags":"LCAP | AUTO | GROWTH | DOMEST"
+    },
+    {
+        "ticker":"GESHIP",
+        "Score":7,
+        "tags":"LCAP | LOGIS | PSU | EXPORT"
+    },
+    {
+        "ticker":"BBTC",
+        "Score":6,
+        "tags":"MCAP | CONSUM | REAL | DOMEST"
+    },
+    {
+        "ticker":"DHANUKA",
+        "Score":7,
+        "tags":"MCAP | CHEMX | DOMEST | AGRTX"
+    },
+    {
+        "ticker":"GRINDWELL",
+        "Score":7,
+        "tags":"LCAP | INFRA | NICHE | GLOBEX"
+    },
+    {
+        "ticker":"KALYANKJIL",
+        "Score":8,
+        "tags":"LCAP | RETAIL | GROWTH | DOMEST"
+    },
+    {
+        "ticker":"BAJFINANCE",
+        "Score":8,
+        "tags":"LCAP | N50 | N100 | NBFC | GROWTH | HYPERG | COMPD | HROE | LEADER | INDST | FINFORM"
+    },
+    {
+        "ticker":"KSCL",
+        "Score":6,
+        "tags":"SCAP | CHEMX | AGRTX | DOMEST"
+    },
+    {
+        "ticker":"XPROINDIA",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"GANDHITUBE",
+        "Score":6,
+        "tags":"SCAP | INFRA | NICHE"
+    },
+    {
+        "ticker":"AMRUTANJAN",
+        "Score":6,
+        "tags":"SCAP | FMCG | DOMEST"
+    },
+    {
+        "ticker":"SHANTIGEAR",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"AJMERA",
+        "Score":6,
+        "tags":"SCAP | REAL | DOMEST"
+    },
+    {
+        "ticker":"SBICARD",
+        "Score":7,
+        "tags":"LCAP | N100 | NBFC | GROWTH | INDST | FINFORM"
+    },
+    {
+        "ticker":"EIHOTEL",
+        "Score":7,
+        "tags":"SCAP | CONSUM | PREM | DOMEST"
+    },
+    {
+        "ticker":"SUPRAJIT",
+        "Score":7,
+        "tags":"MCAP | AUTO | GLOBEX | EXPORT"
+    },
+    {
+        "ticker":"LICI",
+        "Score":7,
+        "tags":"LCAP | INSUR | PSU | LEADER | STRAT | INDST"
+    },
+    {
+        "ticker":"SHARDACROP",
+        "Score":6,
+        "tags":"MCAP | CHEMX | DOMEST"
+    },
+    {
+        "ticker":"BUTTERFLY",
+        "Score":5,
+        "tags":"SCAP | CONSUM | DOMEST"
+    },
+    {
+        "ticker":"WHEELS",
+        "Score":6,
+        "tags":"SCAP | AUTO | DOMEST"
+    },
+    {
+        "ticker":"KPRMILL",
+        "Score":7,
+        "tags":"LCAP | CONSUM | EXPORT | GROWTH"
+    },
+    {
+        "ticker":"KIMS",
+        "Score":7,
+        "tags":"LCAP | PHARMA | GROWTH | DOMEST | REGLEAD | INDST"
+    },
+    {
+        "ticker":"SUNDRMFAST",
+        "Score":7,
+        "tags":"MCAP | AUTO | EXPORT | GLOBEX"
+    },
+    {
+        "ticker":"NUCLEUS",
+        "Score":6,
+        "tags":"SCAP | TECH | SAAS | FINX | GROWTH"
+    },
+    {
+        "ticker":"SRHHYPOLTD",
+        "Score":5,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"CYIENTDLM",
+        "Score":7,
+        "tags":"SCAP | DEFX | TECH | GROWTH"
+    },
+    {
+        "ticker":"DREDGECORP",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"DATAMATICS",
+        "Score":6,
+        "tags":"SCAP | TECH | EXPORT | GROWTH"
+    },
+    {
+        "ticker":"GOACARBON",
+        "Score":5,
+        "tags":"MICAP | CHEMX | NICHE"
+    },
+    {
+        "ticker":"IZMO",
+        "Score":5,
+        "tags":"SCAP | TECH"
+    },
+    {
+        "ticker":"INSECTICID",
+        "Score":6,
+        "tags":"SCAP | CHEMX | DOMEST"
+    },
+    {
+        "ticker":"ARVIND",
+        "Score":6,
+        "tags":"MCAP | CONSUM | EXPORT"
+    },
+    {
+        "ticker":"NIPPOBATRY",
+        "Score":5,
+        "tags":"MICAP | CONSUM | BATTX"
+    },
+    {
+        "ticker":"JSL",
+        "Score":7,
+        "tags":"LCAP | METAL | CYCL | COMMOD"
+    },
+    {
+        "ticker":"AVALON",
+        "Score":7,
+        "tags":"MCAP | TECH | EXPORT | GROWTH"
+    },
+    {
+        "ticker":"INDIANB",
+        "Score":7,
+        "tags":"LCAP | BANKX | PSU | INDST"
+    },
+    {
+        "ticker":"WELENT",
+        "Score":6,
+        "tags":"MCAP | TECH | GROWTH"
+    },
+    {
+        "ticker":"CENTURYPLY",
+        "Score":7,
+        "tags":"MCAP | CONSUM | GROWTH | DOMEST"
+    },
+    {
+        "ticker":"KAUSHALYA",
+        "Score":5,
+        "tags":"SCAP | INFRA"
+    },
+    {
+        "ticker":"DIVGIITTS",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"MAGADSUGAR",
+        "Score":6,
+        "tags":"SCAP | FMCG | CYCL"
+    },
+    {
+        "ticker":"WINDLAS",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"CANFINHOME",
+        "Score":7,
+        "tags":"MCAP | NBFC | GROWTH | INDST | URBNX"
+    },
+    {
+        "ticker":"SUNDRMBRAK",
+        "Score":6,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"APOLLOTYRE",
+        "Score":7,
+        "tags":"LCAP | AUTO | DOMEST"
+    },
+    {
+        "ticker":"CARYSIL",
+        "Score":8,
+        "tags":"SCAP | CONSUM | EXPORT | GROWTH"
+    },
+    {
+        "ticker":"SYMPHONY",
+        "Score":6,
+        "tags":"MCAP | CONSUM | GROWTH | EXPORT | DOMEST"
+    },
+    {
+        "ticker":"VINDHYATEL",
+        "Score":6,
+        "tags":"SCAP | TELE | INFRA"
+    },
+    {
+        "ticker":"KIRLOSENG",
+        "Score":7,
+        "tags":"LCAP"
+    },
+    {
+        "ticker":"MEDANTA",
+        "Score":7,
+        "tags":"LCAP | PHARMA | GROWTH | DOMEST | INDST"
+    },
+    {
+        "ticker":"INDIGOPNTS",
+        "Score":7,
+        "tags":"SCAP | CONSUM | DOMEST"
+    },
+    {
+        "ticker":"LUXIND",
+        "Score":6,
+        "tags":"SCAP | CONSUM | DOMEST | RURALX"
+    },
+    {
+        "ticker":"V2RETAIL",
+        "Score":6,
+        "tags":"MCAP | RETAIL | DOMEST | RURALX"
+    },
+    {
+        "ticker":"RANEHOLDIN",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"TEAMLEASE",
+        "Score":6,
+        "tags":"SCAP | SERVX | DOMEST"
+    },
+    {
+        "ticker":"BALKRISIND",
+        "Score":7,
+        "tags":"LCAP"
+    },
+    {
+        "ticker":"INDIAMART",
+        "Score":7,
+        "tags":"MCAP | TECH | PLTFRM | NETWRK | MARKET | GROWTH | DOMEST"
+    },
+    {
+        "ticker":"TATAELXSI",
+        "Score":7,
+        "tags":"LCAP | TECH | EVX | GLOBEX | EXPORT | GROWTH | RNDX"
+    },
+    {
+        "ticker":"PAYTM",
+        "Score":5,
+        "tags":"LCAP | FINX | PLTFRM | DIGFIN | TURN | DOMEST"
+    },
+    {
+        "ticker":"NAVINFLUOR",
+        "Score":7,
+        "tags":"LCAP | CHEMX | NICHE | EXPORT | GROWTH"
+    },
+    {
+        "ticker":"TIMKEN",
+        "Score":7,
+        "tags":"LCAP | AUTO | GLOBEX | NICHE"
+    },
+    {
+        "ticker":"GRASIM",
+        "Score":7,
+        "tags":"LCAP"
+    },
+    {
+        "ticker":"PGIL",
+        "Score":7,
+        "tags":"MCAP"
+    },
+    {
+        "ticker":"FIEMIND",
+        "Score":6,
+        "tags":"MCAP"
+    },
+    {
+        "ticker":"SCHAEFFLER",
+        "Score":7,
+        "tags":"LCAP | AUTO | GLOBEX | NICHE"
+    },
+    {
+        "ticker":"PRUDENT",
+        "Score":7,
+        "tags":"MCAP | NBFC | ASSETL | GROWTH | INDST | FINFORM"
+    },
+    {
+        "ticker":"NBIFIN",
+        "Score":5,
+        "tags":"SCAP | NBFC | INDST"
+    },
+    {
+        "ticker":"DATAPATTNS",
+        "Score":8,
+        "tags":"LCAP | DEFX | TECH | STRAT | GROWTH | NICHE | GOVORD | MAKEIN"
+    },
+    {
+        "ticker":"LAURUSLABS",
+        "Score":7,
+        "tags":"LCAP | PHARMA | BIOX | EXPORT | GROWTH"
+    },
+    {
+        "ticker":"PHOENIXLTD",
+        "Score":8,
+        "tags":"LCAP | REAL | PLTFRM | GROWTH | RETAIL | DOMEST"
+    },
+    {
+        "ticker":"METROPOLIS",
+        "Score":7,
+        "tags":"MCAP | PHARMA | GROWTH | DOMEST | INDST"
+    },
+    {
+        "ticker":"VENKEYS",
+        "Score":6,
+        "tags":"SCAP | FMCG | DOMEST"
+    },
+    {
+        "ticker":"KAJARIACER",
+        "Score":7,
+        "tags":"MCAP | CONSUM | LEADER | DOMEST | INDST"
+    },
+    {
+        "ticker":"COROMANDEL",
+        "Score":7,
+        "tags":"LCAP | CHEMX | FMCG | DOMEST | INDST"
+    },
+    {
+        "ticker":"BSE",
+        "Score":8,
+        "tags":"LCAP | DUO30 | ASSETL | NETWRK | MONO | HROE | FCFPOS | INDST | FINFORM"
+    },
+    {
+        "ticker":"LLOYDSME",
+        "Score":6,
+        "tags":"LCAP | INFRA | GROWTH"
+    },
+    {
+        "ticker":"MALLCOM",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"PRIVISCL",
+        "Score":6,
+        "tags":"MCAP"
+    },
+    {
+        "ticker":"GRSE",
+        "Score":8,
+        "tags":"LCAP | DEFX | PSU | STRAT | GOVCAP | GOVORD | MAKEIN"
+    },
+    {
+        "ticker":"CHEVIOT",
+        "Score":5,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"DRREDDY",
+        "Score":8,
+        "tags":"LCAP | N50 | N100 | PHARMA | GLOBEX | EXPORT | USREV | HROE | COMPD"
+    },
+    {
+        "ticker":"KDDL",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"ANURAS",
+        "Score":7,
+        "tags":"MCAP | INFRA | GROWTH"
+    },
+    {
+        "ticker":"CREDITACC",
+        "Score":6,
+        "tags":"LCAP | NBFC | RURALX | INDST"
+    },
+    {
+        "ticker":"ARMANFIN",
+        "Score":6,
+        "tags":"SCAP | NBFC | RURALX | GROWTH | INDST"
+    },
+    {
+        "ticker":"EXPLEOSOL",
+        "Score":6,
+        "tags":"SCAP | TECH | EXPORT"
+    },
+    {
+        "ticker":"PVRINOX",
+        "Score":6,
+        "tags":"MCAP | MEDIA | CONSUM | DOMEST | DUO30"
+    },
+    {
+        "ticker":"INDOTECH",
+        "Score":6,
+        "tags":"SCAP | INFRA | NICHE | EXPORT"
+    },
+    {
+        "ticker":"THEJO",
+        "Score":6,
+        "tags":"SCAP | INFRA | NICHE | EXPORT"
+    },
+    {
+        "ticker":"AAVAS",
+        "Score":7,
+        "tags":"MCAP | NBFC | GROWTH | INDST | RURALX"
+    },
+    {
+        "ticker":"JPOLYINVST",
+        "Score":5,
+        "tags":"SCAP | NBFC | VALUE"
+    },
+    {
+        "ticker":"NGLFINE",
+        "Score":6,
+        "tags":"SCAP | CHEMX"
+    },
+    {
+        "ticker":"LGBBROSLTD",
+        "Score":6,
+        "tags":"SCAP | AUTO | NICHE"
+    },
+    {
+        "ticker":"IGPL",
+        "Score":6,
+        "tags":"SCAP | LOGIS | NICHE"
+    },
+    {
+        "ticker":"GODREJAGRO",
+        "Score":6,
+        "tags":"MCAP | CHEMX | DOMEST | AGRTX"
+    },
+    {
+        "ticker":"BAJAJELEC",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"TATACHEM",
+        "Score":6,
+        "tags":"MCAP | CHEMX | CYCL"
+    },
+    {
+        "ticker":"VBL",
+        "Score":8,
+        "tags":"LCAP"
+    },
+    {
+        "ticker":"VRLLOG",
+        "Score":6,
+        "tags":"SCAP | LOGIS | DOMEST"
+    },
+    {
+        "ticker":"ELGIEQUIP",
+        "Score":7,
+        "tags":"MCAP | INFRA | EXPORT | GROWTH"
+    },
+    {
+        "ticker":"SAREGAMA",
+        "Score":7,
+        "tags":"MCAP | MEDIA | GROWTH | DOMEST | NETWRK"
+    },
+    {
+        "ticker":"MOTILALOFS",
+        "Score":8,
+        "tags":"LCAP | NBFC | ASSETL | GROWTH | INDST | FINFORM"
+    },
+    {
+        "ticker":"DSSL",
+        "Score":6,
+        "tags":"SCAP | INFRA | NICHE"
+    },
+    {
+        "ticker":"SUNTV",
+        "Score":6,
+        "tags":"LCAP | MEDIA | LEADER | REGLEAD | DOMEST | DIVX"
+    },
+    {
+        "ticker":"RPSGVENT",
+        "Score":6,
+        "tags":"SCAP | INFRA | GROWTH"
+    },
+    {
+        "ticker":"MAHSEAMLES",
+        "Score":6,
+        "tags":"MCAP | INFRA | NICHE | EXPORT"
+    },
+    {
+        "ticker":"INDRAMEDCO",
+        "Score":6,
+        "tags":"SCAP | PHARMA | DOMEST"
+    },
+    {
+        "ticker":"ALBERTDAVD",
+        "Score":5,
+        "tags":"MICAP | PHARMA"
+    },
+    {
+        "ticker":"HDFCLIFE",
+        "Score":8,
+        "tags":"LCAP | N50 | N100 | INSUR | GROWTH | LEADER | INDST | FINFORM"
+    },
+    {
+        "ticker":"NEWGEN",
+        "Score":7,
+        "tags":"MCAP | TECH | SAAS | SUBREV | GROWTH | INDST"
+    },
+    {
+        "ticker":"ICICIPRULI",
+        "Score":7,
+        "tags":"LCAP | N100 | INSUR | GROWTH | INDST | FINFORM"
+    },
+    {
+        "ticker":"PNBHOUSING",
+        "Score":6,
+        "tags":"LCAP | NBFC | INDST"
+    },
+    {
+        "ticker":"KRSNAA",
+        "Score":6,
+        "tags":"SCAP | PHARMA | DOMEST"
+    },
+    {
+        "ticker":"POKARNA",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"WONDERLA",
+        "Score":6,
+        "tags":"SCAP | CONSUM | DOMEST"
+    },
+    {
+        "ticker":"VMART",
+        "Score":6,
+        "tags":"MCAP | RETAIL | DOMEST | RURALX"
+    },
+    {
+        "ticker":"BFINVEST",
+        "Score":7,
+        "tags":"SCAP | NBFC | INDST"
+    },
+    {
+        "ticker":"CONCOR",
+        "Score":6,
+        "tags":"LCAP | LOGIS | PSU | MONO | DOMEST | INFRA"
+    },
+    {
+        "ticker":"SOMATEX",
+        "Score":5,
+        "tags":"MICAP | CONSUM"
+    },
+    {
+        "ticker":"SREEL",
+        "Score":5,
+        "tags":"MICAP | METAL"
+    },
+    {
+        "ticker":"SOMANYCERA",
+        "Score":6,
+        "tags":"SCAP | CONSUM | DOMEST"
+    },
+    {
+        "ticker":"HNDFDS",
+        "Score":7,
+        "tags":"MCAP | CONSUM | DOMEST"
+    },
+    {
+        "ticker":"SARDAEN",
+        "Score":6,
+        "tags":"MCAP | METAL | CYCL | POWER"
+    },
+    {
+        "ticker":"SPAL",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"VARROC",
+        "Score":6,
+        "tags":"MCAP | AUTO | GLOBEX | EXPORT"
+    },
+    {
+        "ticker":"TAJGVK",
+        "Score":6,
+        "tags":"SCAP | CONSUM | PREM | DOMEST"
+    },
+    {
+        "ticker":"TOKYOPLAST",
+        "Score":5,
+        "tags":"SCAP | CONSUM"
+    },
+    {
+        "ticker":"RELAXO",
+        "Score":6,
+        "tags":"MCAP | RETAIL | BRANDX | DOMEST | RURALX"
+    },
+    {
+        "ticker":"ITI",
+        "Score":6,
+        "tags":"LCAP | TECH | PSU | GOVORD | MAKEIN"
+    },
+    {
+        "ticker":"CHEMCON",
+        "Score":6,
+        "tags":"SCAP | CHEMX | NICHE | EXPORT"
+    },
+    {
+        "ticker":"JAYAGROGN",
+        "Score":5,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"ADVENZYMES",
+        "Score":7,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"BANCOINDIA",
+        "Score":6,
+        "tags":"MCAP"
+    },
+    {
+        "ticker":"NEOGEN",
+        "Score":7,
+        "tags":"SCAP | CHEMX | EXPORT | GROWTH"
+    },
+    {
+        "ticker":"SANDESH",
+        "Score":5,
+        "tags":"SCAP | MEDIA | DOMEST"
+    },
+    {
+        "ticker":"BLUESTARCO",
+        "Score":7,
+        "tags":"LCAP"
+    },
+    {
+        "ticker":"INDIAGLYCO",
+        "Score":6,
+        "tags":"MCAP | FMCG | CYCL"
+    },
+    {
+        "ticker":"ADANIENSOL",
+        "Score":7,
+        "tags":"LCAP | POWER | SOLX | GRENX | CLNENG | GROWTH | ENTRANS"
+    },
+    {
+        "ticker":"DIXON",
+        "Score":8,
+        "tags":"LCAP | TECH | CONTRX | MAKEIN | PLI | CHN1 | GROWTH | EXPAND | INDST"
+    },
+    {
+        "ticker":"KFINTECH",
+        "Score":7,
+        "tags":"MCAP | DUO30 | ASSETL | NETWRK | INDST | FINFORM"
+    },
+    {
+        "ticker":"BHARATFORG",
+        "Score":7,
+        "tags":"LCAP | AUTO | GLOBEX | EXPORT"
+    },
+    {
+        "ticker":"HIRECT",
+        "Score":6,
+        "tags":"SCAP | INFRA | NICHE"
+    },
+    {
+        "ticker":"WELINV",
+        "Score":6,
+        "tags":"SCAP | NBFC | VALUE"
+    },
+    {
+        "ticker":"EPIGRAL",
+        "Score":7,
+        "tags":"MCAP | CHEMX | NICHE | EXPORT | GROWTH"
+    },
+    {
+        "ticker":"DEEPAKFERT",
+        "Score":7,
+        "tags":"MCAP | CHEMX | GROWTH"
+    },
+    {
+        "ticker":"WOCKPHARMA",
+        "Score":6,
+        "tags":"LCAP | PHARMA | EXPORT | REVIVAL"
+    },
+    {
+        "ticker":"BIRLACORPN",
+        "Score":6,
+        "tags":"MCAP | INFRA | DOMEST"
+    },
+    {
+        "ticker":"CAPLIPOINT",
+        "Score":7,
+        "tags":"MCAP | PHARMA | EXPORT | GROWTH | CONTRX"
+    },
+    {
+        "ticker":"NDGL",
+        "Score":5,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"NEULANDLAB",
+        "Score":7,
+        "tags":"LCAP | PHARMA | EXPORT | GROWTH | NICHE"
+    },
+    {
+        "ticker":"EIMCOELECO",
+        "Score":6,
+        "tags":"SCAP | INFRA | NICHE"
+    },
+    {
+        "ticker":"ANGELONE",
+        "Score":8,
+        "tags":"LCAP | NBFC | FINX | PLTFRM | GROWTH | DIGFIN | INDST"
+    },
+    {
+        "ticker":"GODREJIND",
+        "Score":6,
+        "tags":"LCAP"
+    },
+    {
+        "ticker":"LALPATHLAB",
+        "Score":7,
+        "tags":"LCAP | PHARMA | GROWTH | DOMEST | INDST"
+    },
+    {
+        "ticker":"GLENMARK",
+        "Score":6,
+        "tags":"LCAP | PHARMA | EXPORT | GLOBEX"
+    },
+    {
+        "ticker":"BEML",
+        "Score":7,
+        "tags":"MCAP | DEFX | PSU | GOVORD"
+    },
+    {
+        "ticker":"EIDPARRY",
+        "Score":6,
+        "tags":"MCAP"
+    },
+    {
+        "ticker":"COFORGE",
+        "Score":7,
+        "tags":"LCAP | TECH | GLOBEX | EXPORT | GROWTH"
+    },
+    {
+        "ticker":"JBCHEPHARM",
+        "Score":7,
+        "tags":"LCAP | PHARMA | EXPORT | GROWTH"
+    },
+    {
+        "ticker":"AFFLE",
+        "Score":7,
+        "tags":"LCAP | TECH | GROWTH | AIX | GLOBEX | DOMEST"
+    },
+    {
+        "ticker":"KOLTEPATIL",
+        "Score":7,
+        "tags":"SCAP | REAL | DOMEST"
+    },
+    {
+        "ticker":"HGINFRA",
+        "Score":7,
+        "tags":"SCAP | INFRA | GOVCAP | GROWTH"
+    },
+    {
+        "ticker":"GNFC",
+        "Score":6,
+        "tags":"MCAP | CHEMX | PSU"
+    },
+    {
+        "ticker":"FACT",
+        "Score":6,
+        "tags":"LCAP | CHEMX | PSU"
+    },
+    {
+        "ticker":"CGCL",
+        "Score":7,
+        "tags":"MCAP | NBFC | GROWTH | INDST"
+    },
+    {
+        "ticker":"SHARDAMOTR",
+        "Score":6,
+        "tags":"MCAP | AUTO | EXPORT"
+    },
+    {
+        "ticker":"MACPOWER",
+        "Score":6,
+        "tags":"SCAP | INFRA | NICHE"
+    },
+    {
+        "ticker":"UNIVCABLES",
+        "Score":6,
+        "tags":"SCAP | INFRA"
+    },
+    {
+        "ticker":"AVADHSUGAR",
+        "Score":6,
+        "tags":"SCAP | FMCG | CYCL"
+    },
+    {
+        "ticker":"ICEMAKE",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"HEUBACHIND",
+        "Score":6,
+        "tags":"SCAP | CHEMX | NICHE | EXPORT"
+    },
+    {
+        "ticker":"NAM-INDIA",
+        "Score":7,
+        "tags":"LCAP | NBFC | ASSETL | INDST | FINFORM"
+    },
+    {
+        "ticker":"SUMICHEM",
+        "Score":7,
+        "tags":"LCAP | CHEMX | EXPORT | GROWTH"
+    },
+    {
+        "ticker":"REPRO",
+        "Score":5,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"MONTECARLO",
+        "Score":6,
+        "tags":"SCAP | INFRA | GOVCAP"
+    },
+    {
+        "ticker":"BPCL",
+        "Score":6,
+        "tags":"LCAP | N50 | N100 | ENERGY | PSU | STRAT | ENSEC"
+    },
+    {
+        "ticker":"STARHEALTH",
+        "Score":7,
+        "tags":"LCAP | INSUR | GROWTH | INDST | FINFORM"
+    },
+    {
+        "ticker":"PNCINFRA",
+        "Score":7,
+        "tags":"MCAP | INFRA | GOVCAP | GROWTH"
+    },
+    {
+        "ticker":"FIVESTAR",
+        "Score":7,
+        "tags":"MCAP | NBFC | GROWTH | INDST | RURALX"
+    },
+    {
+        "ticker":"ATULAUTO",
+        "Score":6,
+        "tags":"SCAP | AUTO | RURALX | DOMEST"
+    },
+    {
+        "ticker":"EMSLIMITED",
+        "Score":6,
+        "tags":"SCAP | TECH | CONTRX | MAKEIN | GROWTH"
+    },
+    {
+        "ticker":"NDRAUTO",
+        "Score":5,
+        "tags":"SCAP | AUTO"
+    },
+    {
+        "ticker":"VINYLINDIA",
+        "Score":5,
+        "tags":"SCAP | CHEMX"
+    },
+    {
+        "ticker":"SYRMA",
+        "Score":7,
+        "tags":"MCAP | TECH | CONTRX | MAKEIN | PLI | GROWTH"
+    },
+    {
+        "ticker":"PITTIENG",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"VGUARD",
+        "Score":7,
+        "tags":"MCAP"
+    },
+    {
+        "ticker":"SULA",
+        "Score":6,
+        "tags":"SCAP | CONSUM | DOMEST"
+    },
+    {
+        "ticker":"SWSOLAR",
+        "Score":6,
+        "tags":"SCAP | POWER | SOLX | GRENX | CLNENG"
+    },
+    {
+        "ticker":"PNB",
+        "Score":6,
+        "tags":"LCAP | N100 | BANKX | PSU | INDST"
+    },
+    {
+        "ticker":"VIMTALABS",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"SAGCEM",
+        "Score":6,
+        "tags":"SCAP | INFRA | DOMEST"
+    },
+    {
+        "ticker":"HITECHGEAR",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"RAMCOIND",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"CIEINDIA",
+        "Score":7,
+        "tags":"MCAP | AUTO | GLOBEX"
+    },
+    {
+        "ticker":"SHRIRAMFIN",
+        "Score":8,
+        "tags":"LCAP | N50 | N100 | NBFC | RURALX | DOMEST | INDST"
+    },
+    {
+        "ticker":"TVSSCS",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"ORIENTHOT",
+        "Score":6,
+        "tags":"SCAP | CONSUM | DOMEST"
+    },
+    {
+        "ticker":"RSYSTEMS",
+        "Score":6,
+        "tags":"SCAP | TECH | EXPORT"
+    },
+    {
+        "ticker":"EMIL",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"MONARCH",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"NINSYS",
+        "Score":5,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"ARVINDFASN",
+        "Score":6,
+        "tags":"MCAP"
+    },
+    {
+        "ticker":"BEL",
+        "Score":8,
+        "tags":"LCAP | N50 | N100 | DEFX | PSU | STRAT | GOVCAP | GOVORD | MAKEIN | GROWTH | INDST"
+    },
+    {
+        "ticker":"TATVA",
+        "Score":7,
+        "tags":"SCAP | CHEMX | NICHE | EXPORT"
+    },
+    {
+        "ticker":"SUMMITSEC",
+        "Score":5,
+        "tags":"SCAP | NBFC"
+    },
+    {
+        "ticker":"CARTRADE",
+        "Score":6,
+        "tags":"MCAP | TECH | PLTFRM | MARKET | DOMEST"
+    },
+    {
+        "ticker":"ANUP",
+        "Score":7,
+        "tags":"SCAP | INFRA | NICHE | EXPORT"
+    },
+    {
+        "ticker":"MPSLTD",
+        "Score":6,
+        "tags":"SCAP | TECH | EXPORT"
+    },
+    {
+        "ticker":"IFBIND",
+        "Score":6,
+        "tags":"SCAP | CONSUM | DOMEST"
+    },
+    {
+        "ticker":"NILKAMAL",
+        "Score":6,
+        "tags":"SCAP | CONSUM | DOMEST"
+    },
+    {
+        "ticker":"GMBREW",
+        "Score":5,
+        "tags":"SCAP | FMCG | DOMEST"
+    },
+    {
+        "ticker":"MRF",
+        "Score":7,
+        "tags":"LCAP | AUTO | LEADER | HROE | COMPD | DOMEST"
+    },
+    {
+        "ticker":"ABB",
+        "Score":8,
+        "tags":"LCAP | N100 | INFRA | CAPEX | GROWTH | GLOBEX | INDST"
+    },
+    {
+        "ticker":"KEI",
+        "Score":8,
+        "tags":"LCAP | INFRA | GROWTH | DOMEST"
+    },
+    {
+        "ticker":"HAL",
+        "Score":8,
+        "tags":"LCAP | N100 | DEFX | PSU | STRAT | GOVCAP | GOVORD | MAKEIN | CAPEX | GROWTH | INDST"
+    },
+    {
+        "ticker":"ESCORTS",
+        "Score":7,
+        "tags":"LCAP | AUTO | DOMEST | RURALX | AGRTX"
+    },
+    {
+        "ticker":"CHOLAFIN",
+        "Score":8,
+        "tags":"LCAP | N100 | NBFC | GROWTH | HROE | COMPD | INDST"
+    },
+    {
+        "ticker":"TCS",
+        "Score":7,
+        "tags":"LCAP | N50 | N100 | TECH | LEADER | GLOBEX | EXPORT | USREV | HROE | COMPD | QLTY | DIVX"
+    },
+    {
+        "ticker":"RRKABEL",
+        "Score":7,
+        "tags":"LCAP | INFRA | GROWTH | DOMEST"
+    },
+    {
+        "ticker":"APLAPOLLO",
+        "Score":8,
+        "tags":"LCAP | INFRA | LEADER | GROWTH | DOMEST"
+    },
+    {
+        "ticker":"DIAMONDYD",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"SAKSOFT",
+        "Score":6,
+        "tags":"SCAP | TECH | EXPORT"
+    },
+    {
+        "ticker":"STOVEKRAFT",
+        "Score":6,
+        "tags":"SCAP | CONSUM | DOMEST"
+    },
+    {
+        "ticker":"PANSARI",
+        "Score":5,
+        "tags":"MICAP | FMCG | DOMEST"
+    },
+    {
+        "ticker":"SUBROS",
+        "Score":6,
+        "tags":"SCAP | AUTO | NICHE"
+    },
+    {
+        "ticker":"MAHLIFE",
+        "Score":7,
+        "tags":"MCAP | REAL | DOMEST"
+    },
+    {
+        "ticker":"LIBERTSHOE",
+        "Score":5,
+        "tags":"MICAP | RETAIL | DOMEST"
+    },
+    {
+        "ticker":"YUKEN",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"KITEX",
+        "Score":6,
+        "tags":"SCAP | CONSUM | EXPORT"
+    },
+    {
+        "ticker":"PRIMESECU",
+        "Score":5,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"NAVA",
+        "Score":6,
+        "tags":"MCAP"
+    },
+    {
+        "ticker":"SHANKARA",
+        "Score":6,
+        "tags":"MICAP | RETAIL | DOMEST"
+    },
+    {
+        "ticker":"WEALTH",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"RALLIS",
+        "Score":6,
+        "tags":"SCAP | CHEMX | DOMEST"
+    },
+    {
+        "ticker":"RELINFRA",
+        "Score":1,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"SUVEN",
+        "Score":7,
+        "tags":"MCAP"
+    },
+    {
+        "ticker":"RATEGAIN",
+        "Score":7,
+        "tags":"MCAP | TECH | SAAS | SUBREV | GLOBEX | GROWTH"
+    },
+    {
+        "ticker":"PDSL",
+        "Score":7,
+        "tags":"SCAP | DEFX | TECH | NICHE"
+    },
+    {
+        "ticker":"NRAIL",
+        "Score":5,
+        "tags":"SCAP | INFRA | GOVCAP"
+    },
+    {
+        "ticker":"GALLANTT",
+        "Score":6,
+        "tags":"MCAP | METAL | CYCL"
+    },
+    {
+        "ticker":"WESTLIFE",
+        "Score":6,
+        "tags":"MCAP | RETAIL | FRANCH | DOMEST"
+    },
+    {
+        "ticker":"DBCORP",
+        "Score":5,
+        "tags":"SCAP | MEDIA | DOMEST"
+    },
+    {
+        "ticker":"INDUSINDBK",
+        "Score":6,
+        "tags":"LCAP | N50 | N100 | BANKX | LEADER | INDST"
+    },
+    {
+        "ticker":"DEEPINDS",
+        "Score":6,
+        "tags":"SCAP | CHEMX | NICHE"
+    },
+    {
+        "ticker":"RSWM",
+        "Score":5,
+        "tags":"SCAP | CONSUM | EXPORT"
+    },
+    {
+        "ticker":"RELIGARE",
+        "Score":5,
+        "tags":"MCAP"
+    },
+    {
+        "ticker":"INDIANCARD",
+        "Score":5,
+        "tags":"MICAP | CONSUM"
+    },
+    {
+        "ticker":"SIYSIL",
+        "Score":6,
+        "tags":"SCAP | CHEMX | NICHE"
+    },
+    {
+        "ticker":"ABCAPITAL",
+        "Score":7,
+        "tags":"LCAP | NBFC | GROWTH | INDST"
+    },
+    {
+        "ticker":"BIRLACABLE",
+        "Score":6,
+        "tags":"MICAP | INFRA"
+    },
+    {
+        "ticker":"ONGC",
+        "Score":6,
+        "tags":"LCAP | N50 | N100 | ENERGY | PSU | STRAT | ENSEC | COMMOD | DIVX"
+    },
+    {
+        "ticker":"INDNIPPON",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"TRITURBINE",
+        "Score":8,
+        "tags":"LCAP | POWER | NICHE | EXPORT | GROWTH"
+    },
+    {
+        "ticker":"KANSAINER",
+        "Score":6,
+        "tags":"MCAP | CONSUM | DOMEST"
+    },
+    {
+        "ticker":"SENCO",
+        "Score":7,
+        "tags":"MCAP | RETAIL | DOMEST"
+    },
+    {
+        "ticker":"AARTIDRUGS",
+        "Score":6,
+        "tags":"SCAP | PHARMA | EXPORT"
+    },
+    {
+        "ticker":"UCAL",
+        "Score":5,
+        "tags":"MICAP | AUTO"
+    },
+    {
+        "ticker":"GUJALKALI",
+        "Score":6,
+        "tags":"MCAP | CHEMX"
+    },
+    {
+        "ticker":"DREAMFOLKS",
+        "Score":7,
+        "tags":"MICAP | SERVX | PLTFRM | GROWTH"
+    },
+    {
+        "ticker":"RAMRAT",
+        "Score":6,
+        "tags":"SCAP | INFRA"
+    },
+    {
+        "ticker":"MARINE",
+        "Score":7,
+        "tags":"SCAP | LOGIS | EXPORT"
+    },
+    {
+        "ticker":"SDBL",
+        "Score":5,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"GMRP&UI",
+        "Score":6,
+        "tags":"MCAP"
+    },
+    {
+        "ticker":"ADFFOODS",
+        "Score":6,
+        "tags":"SCAP | FMCG | EXPORT"
+    },
+    {
+        "ticker":"ASHAPURMIN",
+        "Score":6,
+        "tags":"MCAP"
+    },
+    {
+        "ticker":"GOCLCORP",
+        "Score":6,
+        "tags":"SCAP | LOGIS | DOMEST"
+    },
+    {
+        "ticker":"NATCOPHARM",
+        "Score":7,
+        "tags":"LCAP | PHARMA | NICHE | EXPORT"
+    },
+    {
+        "ticker":"MANYAVAR",
+        "Score":7,
+        "tags":"MCAP | RETAIL | BRANDX | GROWTH | DOMEST"
+    },
+    {
+        "ticker":"ELECTHERM",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"CENTUM",
+        "Score":7,
+        "tags":"SCAP | DEFX | NICHE | EXPORT | GROWTH"
+    },
+    {
+        "ticker":"ENDURANCE",
+        "Score":7,
+        "tags":"LCAP | AUTO | GLOBEX | GROWTH"
+    },
+    {
+        "ticker":"VOLTAS",
+        "Score":7,
+        "tags":"LCAP | N100 | CONSUM | LEADER | GROWTH | DOMEST"
+    },
+    {
+        "ticker":"MANORAMA",
+        "Score":6,
+        "tags":"MCAP"
+    },
+    {
+        "ticker":"SJS",
+        "Score":7,
+        "tags":"MCAP | AUTO | NICHE | EXPORT"
+    },
+    {
+        "ticker":"CHOLAHLDNG",
+        "Score":7,
+        "tags":"LCAP | NBFC | ECOSYS | INDST"
+    },
+    {
+        "ticker":"GODFRYPHLP",
+        "Score":6,
+        "tags":"LCAP | FMCG | CONSUM | DOMEST"
+    },
+    {
+        "ticker":"POCL",
+        "Score":5,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"LANDMARK",
+        "Score":5,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"YATHARTH",
+        "Score":7,
+        "tags":"MCAP | PHARMA | GROWTH | DOMEST | INDST"
+    },
+    {
+        "ticker":"NAHARSPING",
+        "Score":5,
+        "tags":"SCAP | CONSUM | EXPORT"
+    },
+    {
+        "ticker":"ORBTEXP",
+        "Score":6,
+        "tags":"MICAP | LOGIS"
+    },
+    {
+        "ticker":"SPMLINFRA",
+        "Score":5,
+        "tags":"SCAP | INFRA | GOVCAP"
+    },
+    {
+        "ticker":"ASIANENE",
+        "Score":6,
+        "tags":"SCAP | POWER | SOLX | GRENX"
+    },
+    {
+        "ticker":"NURECA",
+        "Score":6,
+        "tags":"MICAP | PHARMA | MEDTX"
+    },
+    {
+        "ticker":"DECCANCE",
+        "Score":6,
+        "tags":"SCAP | CONSUM"
+    },
+    {
+        "ticker":"SAMHI",
+        "Score":7,
+        "tags":"SCAP | CONSUM | DOMEST"
+    },
+    {
+        "ticker":"PARAS",
+        "Score":7,
+        "tags":"MCAP | DEFX | NICHE"
+    },
+    {
+        "ticker":"IRCTC",
+        "Score":7,
+        "tags":"LCAP | N100 | LOGIS | PSU | MONO | PLTFRM | DIGIND | DOMEST"
+    },
+    {
+        "ticker":"VLSFINANCE",
+        "Score":5,
+        "tags":"SCAP | NBFC"
+    },
+    {
+        "ticker":"TDPOWERSYS",
+        "Score":7,
+        "tags":"MCAP | INFRA | POWER | GROWTH"
+    },
+    {
+        "ticker":"MARKSANS",
+        "Score":7,
+        "tags":"MCAP | PHARMA | EXPORT | GROWTH"
+    },
+    {
+        "ticker":"JSWINFRA",
+        "Score":8,
+        "tags":"LCAP | LOGIS | INFRA | GROWTH | DOMEST"
+    },
+    {
+        "ticker":"VESUVIUS",
+        "Score":7,
+        "tags":"MCAP | INFRA | NICHE | GLOBEX"
+    },
+    {
+        "ticker":"SHIVALIK",
+        "Score":7,
+        "tags":"MICAP | METAL | NICHE | EXPORT | GROWTH"
+    },
+    {
+        "ticker":"TALBROAUTO",
+        "Score":6,
+        "tags":"SCAP | AUTO | GLOBEX"
+    },
+    {
+        "ticker":"SURYAROSNI",
+        "Score":7,
+        "tags":"MCAP"
+    },
+    {
+        "ticker":"TATASTEEL",
+        "Score":7,
+        "tags":"LCAP | N50 | N100 | METAL | CYCL | COMMOD | GLOBEX | CAPEX"
+    },
+    {
+        "ticker":"POONAWALLA",
+        "Score":7,
+        "tags":"LCAP | NBFC | GROWTH | INDST"
+    },
+    {
+        "ticker":"HINDPETRO",
+        "Score":6,
+        "tags":"LCAP | N100 | ENERGY | PSU | ENSEC"
+    },
+    {
+        "ticker":"AYMSYNTEX",
+        "Score":5,
+        "tags":"SCAP | CONSUM | EXPORT"
+    },
+    {
+        "ticker":"EXIDEIND",
+        "Score":7,
+        "tags":"LCAP | AUTO | BATTX | GROWTH | DOMEST"
+    },
+    {
+        "ticker":"CHEMFAB",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"FUSION",
+        "Score":6,
+        "tags":"SCAP | NBFC | RURALX | INDST"
+    },
+    {
+        "ticker":"SHAREINDIA",
+        "Score":7,
+        "tags":"SCAP | NBFC | FINX | INDST"
+    },
+    {
+        "ticker":"HERITGFOOD",
+        "Score":5,
+        "tags":"SCAP | FMCG | DOMEST"
+    },
+    {
+        "ticker":"STARPAPER",
+        "Score":5,
+        "tags":"MICAP | CONSUM"
+    },
+    {
+        "ticker":"FINOPB",
+        "Score":6,
+        "tags":"SCAP | BANKX | RURALX | INDST"
+    },
+    {
+        "ticker":"CGPOWER",
+        "Score":8,
+        "tags":"LCAP | N100 | POWER | CAPEX | GROWTH | MAKEIN | INDST"
+    },
+    {
+        "ticker":"KPIGREEN",
+        "Score":8,
+        "tags":"MCAP | POWER | SOLX | GRENX | CLNENG | GROWTH"
+    },
+    {
+        "ticker":"CAMPUS",
+        "Score":5,
+        "tags":"MCAP | CONSUM | DOMEST | GROWTH"
+    },
+    {
+        "ticker":"GOKEX",
+        "Score":6,
+        "tags":"MCAP | CONSUM | DOMEST"
+    },
+    {
+        "ticker":"RAMCOSYS",
+        "Score":5,
+        "tags":"SCAP | TECH | SAAS | GROWTH"
+    },
+    {
+        "ticker":"HUBTOWN",
+        "Score":6,
+        "tags":"SCAP | REAL | DOMEST"
+    },
+    {
+        "ticker":"RAYMOND",
+        "Score":7,
+        "tags":"SCAP | CONSUM | BRANDX | DOMEST"
+    },
+    {
+        "ticker":"TITAGARH",
+        "Score":8,
+        "tags":"MCAP | INFRA | GOVCAP | GROWTH | MAKEIN"
+    },
+    {
+        "ticker":"IGARASHI",
+        "Score":6,
+        "tags":"SCAP | AUTO | EXPORT | EVX"
+    },
+    {
+        "ticker":"TANLA",
+        "Score":6,
+        "tags":"MCAP | TECH | PLTFRM | GROWTH"
+    },
+    {
+        "ticker":"BORORENEW",
+        "Score":7,
+        "tags":"MCAP | POWER | GRENX | GROWTH"
+    },
+    {
+        "ticker":"SUPERHOUSE",
+        "Score":5,
+        "tags":"MICAP | CONSUM | EXPORT"
+    },
+    {
+        "ticker":"BALRAMCHIN",
+        "Score":6,
+        "tags":"MCAP | FMCG | CYCL"
+    },
+    {
+        "ticker":"BANDHANBNK",
+        "Score":5,
+        "tags":"LCAP | BANKX | INDST | RURALX"
+    },
+    {
+        "ticker":"BAFNAPH",
+        "Score":5,
+        "tags":"MICAP | PHARMA"
+    },
+    {
+        "ticker":"THOMASCOOK",
+        "Score":6,
+        "tags":"SCAP | CONSUM | GLOBEX"
+    },
+    {
+        "ticker":"SKIPPER",
+        "Score":7,
+        "tags":"MCAP | INFRA | GROWTH | GOVCAP"
+    },
+    {
+        "ticker":"KALYANIFRG",
+        "Score":6,
+        "tags":"MICAP | AUTO | EXPORT"
+    },
+    {
+        "ticker":"USHAMART",
+        "Score":6,
+        "tags":"MCAP"
+    },
+    {
+        "ticker":"PRAKASH",
+        "Score":5,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"TVTODAY",
+        "Score":4,
+        "tags":"SCAP | MEDIA | DOMEST"
+    },
+    {
+        "ticker":"CHENNPETRO",
+        "Score":5,
+        "tags":"MCAP | ENERGY | PSU | CYCL"
+    },
+    {
+        "ticker":"BERGEPAINT",
+        "Score":7,
+        "tags":"LCAP | N100 | CONSUM | BRANDX | DUO30 | DOMEST"
+    },
+    {
+        "ticker":"VTL",
+        "Score":6,
+        "tags":"MCAP"
+    },
+    {
+        "ticker":"MANAKCOAT",
+        "Score":5,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"PRAJIND",
+        "Score":7,
+        "tags":"MCAP | INFRA | EXPORT | GROWTH | NICHE"
+    },
+    {
+        "ticker":"SHILPAMED",
+        "Score":6,
+        "tags":"MCAP | PHARMA | MEDTX | NICHE | EXPORT"
+    },
+    {
+        "ticker":"EVERESTIND",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"SEJALLTD",
+        "Score":5,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"FAIRCHEMOR",
+        "Score":6,
+        "tags":"SCAP | CHEMX | NICHE"
+    },
+    {
+        "ticker":"VISHNU",
+        "Score":6,
+        "tags":"SCAP | CHEMX"
+    },
+    {
+        "ticker":"MAZDA",
+        "Score":5,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"OPTIEMUS",
+        "Score":6,
+        "tags":"SCAP | TECH | CONTRX | MAKEIN"
+    },
+    {
+        "ticker":"ARROWGREEN",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"REDTAPE",
+        "Score":6,
+        "tags":"MCAP | RETAIL | GROWTH | DOMEST"
+    },
+    {
+        "ticker":"KRISHANA",
+        "Score":5,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"CLEAN",
+        "Score":7,
+        "tags":"MCAP"
+    },
+    {
+        "ticker":"FDC",
+        "Score":6,
+        "tags":"MCAP"
+    },
+    {
+        "ticker":"PKTEA",
+        "Score":7,
+        "tags":"MICAP | FMCG"
+    },
+    {
+        "ticker":"MHRIL",
+        "Score":6,
+        "tags":"SCAP | CONSUM | DOMEST"
+    },
+    {
+        "ticker":"HUHTAMAKI",
+        "Score":5,
+        "tags":"SCAP | CONSUM | NICHE | GLOBEX"
+    },
+    {
+        "ticker":"ABSLAMC",
+        "Score":7,
+        "tags":"LCAP | NBFC | ASSETL | INDST | FINFORM"
+    },
+    {
+        "ticker":"DALMIASUG",
+        "Score":5,
+        "tags":"SCAP | FMCG | CYCL"
+    },
+    {
+        "ticker":"RBLBANK",
+        "Score":5,
+        "tags":"LCAP | BANKX | INDST | TURN"
+    },
+    {
+        "ticker":"CSLFINANCE",
+        "Score":6,
+        "tags":"SCAP | NBFC | INDST"
+    },
+    {
+        "ticker":"TECHNOE",
+        "Score":7,
+        "tags":"MCAP | TECH | GROWTH"
+    },
+    {
+        "ticker":"SEAMECLTD",
+        "Score":5,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"KERNEX",
+        "Score":6,
+        "tags":"SCAP | INFRA | GOVORD | NICHE"
+    },
+    {
+        "ticker":"SASKEN",
+        "Score":5,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"AJANTPHARM",
+        "Score":7,
+        "tags":"LCAP | PHARMA | EXPORT | GLOBEX | GROWTH"
+    },
+    {
+        "ticker":"TCIEXP",
+        "Score":7,
+        "tags":"SCAP | LOGIS | DOMEST | GROWTH"
+    },
+    {
+        "ticker":"UDS",
+        "Score":6,
+        "tags":"SCAP | INFRA"
+    },
+    {
+        "ticker":"BOROLTD",
+        "Score":6,
+        "tags":"SCAP | INFRA"
+    },
+    {
+        "ticker":"TAINWALCHM",
+        "Score":5,
+        "tags":"MICAP | CHEMX"
+    },
+    {
+        "ticker":"ROSSARI",
+        "Score":6,
+        "tags":"SCAP | CHEMX | NICHE"
+    },
+    {
+        "ticker":"BIOCON",
+        "Score":6,
+        "tags":"LCAP | PHARMA | BIOX | GLOBEX | EXPORT"
+    },
+    {
+        "ticker":"BALMLAWRIE",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"SHK",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"TATAPOWER",
+        "Score":7,
+        "tags":"LCAP | N100 | POWER | SOLX | ENTRANS | GROWTH | INDST"
+    },
+    {
+        "ticker":"VIPIND",
+        "Score":6,
+        "tags":"SCAP | CONSUM | DOMEST"
+    },
+    {
+        "ticker":"HAPPSTMNDS",
+        "Score":7,
+        "tags":"MCAP | TECH | EXPORT | GROWTH"
+    },
+    {
+        "ticker":"BHAGERIA",
+        "Score":6,
+        "tags":"SCAP | CHEMX | EXPORT"
+    },
+    {
+        "ticker":"PANACEABIO",
+        "Score":6,
+        "tags":"SCAP | PHARMA | BIOX | EXPORT"
+    },
+    {
+        "ticker":"SONACOMS",
+        "Score":8,
+        "tags":"LCAP | AUTO | EVX | EXPORT | GROWTH"
+    },
+    {
+        "ticker":"TEJASNET",
+        "Score":7,
+        "tags":"MCAP | TELE | GROWTH | MAKEIN"
+    },
+    {
+        "ticker":"GICRE",
+        "Score":6,
+        "tags":"LCAP | INSUR | PSU | INDST"
+    },
+    {
+        "ticker":"CHAMBLFERT",
+        "Score":6,
+        "tags":"MCAP | CHEMX"
+    },
+    {
+        "ticker":"UGROCAP",
+        "Score":7,
+        "tags":"SCAP | NBFC | GROWTH | INDST"
+    },
+    {
+        "ticker":"TBZ",
+        "Score":6,
+        "tags":"SCAP | RETAIL | DOMEST"
+    },
+    {
+        "ticker":"DCBBANK",
+        "Score":6,
+        "tags":"MCAP | BANKX | INDST"
+    },
+    {
+        "ticker":"JUBLFOOD",
+        "Score":6,
+        "tags":"LCAP | RETAIL | FRANCH | DOMEST | CONSUP"
+    },
+    {
+        "ticker":"HINDALCO",
+        "Score":7,
+        "tags":"LCAP | N50 | N100 | METAL | CYCL | COMMOD | GLOBEX"
+    },
+    {
+        "ticker":"PSPPROJECT",
+        "Score":7,
+        "tags":"SCAP | INFRA | GOVCAP | NICHE"
+    },
+    {
+        "ticker":"NUVOCO",
+        "Score":6,
+        "tags":"MCAP | INFRA | DOMEST"
+    },
+    {
+        "ticker":"JKPAPER",
+        "Score":6,
+        "tags":"MCAP | CONSUM | DOMEST"
+    },
+    {
+        "ticker":"PATANJALI",
+        "Score":6,
+        "tags":"LCAP | FMCG | BRANDX | DOMEST"
+    },
+    {
+        "ticker":"NIACL",
+        "Score":5,
+        "tags":"LCAP | INSUR | PSU | INDST"
+    },
+    {
+        "ticker":"CAMLINFINE",
+        "Score":6,
+        "tags":"SCAP | CHEMX | EXPORT | NICHE"
+    },
+    {
+        "ticker":"SPLPETRO",
+        "Score":7,
+        "tags":"MCAP | ENERGY | NICHE"
+    },
+    {
+        "ticker":"AMBUJACEM",
+        "Score":7,
+        "tags":"LCAP | N100 | INFRA | LEADER | DOMEST"
+    },
+    {
+        "ticker":"FEDERALBNK",
+        "Score":7,
+        "tags":"LCAP | BANKX | INDST | GROWTH"
+    },
+    {
+        "ticker":"UNIONBANK",
+        "Score":7,
+        "tags":"LCAP | BANKX | PSU | INDST | REVIVAL"
+    },
+    {
+        "ticker":"UNICHEMLAB",
+        "Score":6,
+        "tags":"SCAP | PHARMA | EXPORT"
+    },
+    {
+        "ticker":"ZYDUSWELL",
+        "Score":6,
+        "tags":"MCAP | FMCG | DOMEST"
+    },
+    {
+        "ticker":"CENTENKA",
+        "Score":5,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"GENESYS",
+        "Score":5,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"BIRLAMONEY",
+        "Score":6,
+        "tags":"SCAP | NBFC | INDST"
+    },
+    {
+        "ticker":"AGARIND",
+        "Score":5,
+        "tags":"SCAP | CONSUM"
+    },
+    {
+        "ticker":"SBCL",
+        "Score":8,
+        "tags":"SCAP | NBFC | INDST"
+    },
+    {
+        "ticker":"ADANIPOWER",
+        "Score":7,
+        "tags":"LCAP | N100 | POWER | GROWTH | INDST"
+    },
+    {
+        "ticker":"RUSTOMJEE",
+        "Score":7,
+        "tags":"MCAP | REAL | DOMEST"
+    },
+    {
+        "ticker":"JASH",
+        "Score":6,
+        "tags":"SCAP | INFRA | NICHE | EXPORT"
+    },
+    {
+        "ticker":"GUFICBIO",
+        "Score":6,
+        "tags":"SCAP | PHARMA | BIOX"
+    },
+    {
+        "ticker":"RELCHEMQ",
+        "Score":5,
+        "tags":"SCAP | CHEMX"
+    },
+    {
+        "ticker":"HEMIPROP",
+        "Score":5,
+        "tags":"SCAP | REAL | DOMEST"
+    },
+    {
+        "ticker":"SHAKTIPUMP",
+        "Score":7,
+        "tags":"MCAP"
+    },
+    {
+        "ticker":"DELPHIFX",
+        "Score":5,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"KAKATCEM",
+        "Score":5,
+        "tags":"SCAP | INFRA | REGLEAD | DOMEST"
+    },
+    {
+        "ticker":"SILINV",
+        "Score":5,
+        "tags":"MICAP | NBFC | VALUE"
+    },
+    {
+        "ticker":"TREJHARA",
+        "Score":5,
+        "tags":"MICAP | NBFC | VALUE"
+    },
+    {
+        "ticker":"SKYGOLD",
+        "Score":7,
+        "tags":"MCAP | RETAIL | DOMEST"
+    },
+    {
+        "ticker":"APCL",
+        "Score":6,
+        "tags":"MICAP | CHEMX"
+    },
+    {
+        "ticker":"AVANTIFEED",
+        "Score":7,
+        "tags":"MCAP | FMCG | EXPORT"
+    },
+    {
+        "ticker":"RGL",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"ELDEHSG",
+        "Score":6,
+        "tags":"SCAP | REAL | DOMEST"
+    },
+    {
+        "ticker":"MAHLOG",
+        "Score":6,
+        "tags":"SCAP | LOGIS | DOMEST"
+    },
+    {
+        "ticker":"EKC",
+        "Score":6,
+        "tags":"SCAP | INFRA | NICHE | EXPORT"
+    },
+    {
+        "ticker":"PPAP",
+        "Score":6,
+        "tags":"MICAP | AUTO | NICHE"
+    },
+    {
+        "ticker":"GUJGASLTD",
+        "Score":7,
+        "tags":"LCAP | ENERGY | DUO30 | INFRA | NATINF"
+    },
+    {
+        "ticker":"VENUSREM",
+        "Score":5,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"PAKKA",
+        "Score":6,
+        "tags":"MICAP | CONSUM | GRENX"
+    },
+    {
+        "ticker":"PRECOT",
+        "Score":5,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"SEQUENT",
+        "Score":6,
+        "tags":"SCAP | PHARMA | EXPORT"
+    },
+    {
+        "ticker":"SSWL",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"GARFIBRES",
+        "Score":7,
+        "tags":"MCAP | CONSUM | EXPORT | NICHE"
+    },
+    {
+        "ticker":"TNPETRO",
+        "Score":5,
+        "tags":"SCAP | ENERGY | PSU | CYCL"
+    },
+    {
+        "ticker":"SBFC",
+        "Score":7,
+        "tags":"MCAP | NBFC | GROWTH | INDST"
+    },
+    {
+        "ticker":"GENUSPOWER",
+        "Score":7,
+        "tags":"MCAP | POWER | IOTX | GROWTH | INDST"
+    },
+    {
+        "ticker":"MANOMAY",
+        "Score":5,
+        "tags":"MICAP | NBFC"
+    },
+    {
+        "ticker":"J&KBANK",
+        "Score":6,
+        "tags":"MCAP | BANKX | REGLEAD | INDST"
+    },
+    {
+        "ticker":"TEXINFRA",
+        "Score":6,
+        "tags":"SCAP | INFRA | GOVCAP"
+    },
+    {
+        "ticker":"AWHCL",
+        "Score":6,
+        "tags":"SCAP | CONSUM | DOMEST"
+    },
+    {
+        "ticker":"CARERATING",
+        "Score":6,
+        "tags":"MCAP | NBFC | ASSETL | INDST"
+    },
+    {
+        "ticker":"CIGNITITEC",
+        "Score":6,
+        "tags":"SCAP | TECH | EXPORT | GROWTH"
+    },
+    {
+        "ticker":"AUTOAXLES",
+        "Score":6,
+        "tags":"SCAP | AUTO | NICHE"
+    },
+    {
+        "ticker":"UFLEX",
+        "Score":6,
+        "tags":"SCAP | CONSUM | EXPORT"
+    },
+    {
+        "ticker":"JINDALPOLY",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"EMUDHRA",
+        "Score":7,
+        "tags":"SCAP | TECH | CYBRX | GROWTH | INDST"
+    },
+    {
+        "ticker":"S&SPOWER",
+        "Score":6,
+        "tags":"MICAP | INFRA | EXPORT"
+    },
+    {
+        "ticker":"LIKHITHA",
+        "Score":7,
+        "tags":"SCAP | INFRA | GROWTH | GOVCAP"
+    },
+    {
+        "ticker":"JKLAKSHMI",
+        "Score":7,
+        "tags":"MCAP | INFRA | DOMEST"
+    },
+    {
+        "ticker":"MANORG",
+        "Score":5,
+        "tags":"MICAP | PHARMA"
+    },
+    {
+        "ticker":"LINCOLN",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"KSOLVES",
+        "Score":6,
+        "tags":"SCAP | TECH | EXPORT"
+    },
+    {
+        "ticker":"KRBL",
+        "Score":6,
+        "tags":"MCAP | FMCG | EXPORT | DOMEST"
+    },
+    {
+        "ticker":"CHALET",
+        "Score":7,
+        "tags":"MCAP | CONSUM | GROWTH | DOMEST"
+    },
+    {
+        "ticker":"PGEL",
+        "Score":7,
+        "tags":"MCAP | POWER | SOLX | GRENX | GROWTH"
+    },
+    {
+        "ticker":"KKCL",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"APTUS",
+        "Score":7,
+        "tags":"MCAP | NBFC | GROWTH | INDST | RURALX"
+    },
+    {
+        "ticker":"GRANULES",
+        "Score":7,
+        "tags":"MCAP | PHARMA | EXPORT | GROWTH"
+    },
+    {
+        "ticker":"KHADIM",
+        "Score":5,
+        "tags":"MICAP | RETAIL | DOMEST"
+    },
+    {
+        "ticker":"SRGHFL",
+        "Score":7,
+        "tags":"MICAP | NBFC | INDST"
+    },
+    {
+        "ticker":"VSSL",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"BFUTILITIE",
+        "Score":5,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"IONEXCHANG",
+        "Score":7,
+        "tags":"SCAP | CHEMX | NICHE | EXPORT | GRENX"
+    },
+    {
+        "ticker":"SHREEPUSHK",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"REDINGTON",
+        "Score":6,
+        "tags":"MCAP"
+    },
+    {
+        "ticker":"DIAMINESQ",
+        "Score":5,
+        "tags":"MICAP | CHEMX"
+    },
+    {
+        "ticker":"MEDICAMEQ",
+        "Score":5,
+        "tags":"MICAP | PHARMA | MEDTX"
+    },
+    {
+        "ticker":"LOKESHMACH",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"ASHOKA",
+        "Score":7,
+        "tags":"SCAP | INFRA | GOVCAP"
+    },
+    {
+        "ticker":"HARRMALAYA",
+        "Score":5,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"IDEAFORGE",
+        "Score":6,
+        "tags":"SCAP | DEFX | ROBOTX | NICHE | GROWTH"
+    },
+    {
+        "ticker":"ASAHISONG",
+        "Score":6,
+        "tags":"MICAP | CONSUM"
+    },
+    {
+        "ticker":"GOLDIAM",
+        "Score":7,
+        "tags":"SCAP | RETAIL | EXPORT"
+    },
+    {
+        "ticker":"PODDARMENT",
+        "Score":5,
+        "tags":"MICAP | CONSUM"
+    },
+    {
+        "ticker":"M&MFIN",
+        "Score":6,
+        "tags":"LCAP | NBFC | RURALX | DOMEST | INDST"
+    },
+    {
+        "ticker":"SPANDANA",
+        "Score":5,
+        "tags":"SCAP | NBFC | RURALX | INDST"
+    },
+    {
+        "ticker":"CAPACITE",
+        "Score":6,
+        "tags":"SCAP | INFRA | GOVCAP"
+    },
+    {
+        "ticker":"BAJAJCON",
+        "Score":5,
+        "tags":"MCAP | FMCG | BRANDX | DOMEST"
+    },
+    {
+        "ticker":"WIPRO",
+        "Score":6,
+        "tags":"LCAP | N50 | N100 | TECH | LEADER | GLOBEX | EXPORT | USREV"
+    },
+    {
+        "ticker":"EIHAHOTELS",
+        "Score":7,
+        "tags":"SCAP | CONSUM | PREM | DOMEST"
+    },
+    {
+        "ticker":"UNITEDTEA",
+        "Score":7,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"SANGAMIND",
+        "Score":5,
+        "tags":"SCAP | CONSUM | EXPORT"
+    },
+    {
+        "ticker":"NATHBIOGEN",
+        "Score":5,
+        "tags":"MICAP | CHEMX | AGRTX"
+    },
+    {
+        "ticker":"CMSINFO",
+        "Score":7,
+        "tags":"MCAP | TECH | SERVX | ASSETL | GROWTH"
+    },
+    {
+        "ticker":"HINDOILEXP",
+        "Score":5,
+        "tags":"SCAP | ENERGY | SPECX"
+    },
+    {
+        "ticker":"HLEGLAS",
+        "Score":6,
+        "tags":"SCAP | CONSUM | NICHE"
+    },
+    {
+        "ticker":"HERANBA",
+        "Score":6,
+        "tags":"SCAP | CHEMX | EXPORT"
+    },
+    {
+        "ticker":"HINDCOPPER",
+        "Score":7,
+        "tags":"LCAP | METAL | PSU | COMMOD"
+    },
+    {
+        "ticker":"KILITCH",
+        "Score":5,
+        "tags":"SCAP | PHARMA"
+    },
+    {
+        "ticker":"ZAGGLE",
+        "Score":7,
+        "tags":"SCAP | TECH | FINX | SAAS | GROWTH | INDST"
+    },
+    {
+        "ticker":"UTTAMSUGAR",
+        "Score":6,
+        "tags":"SCAP | FMCG | CYCL"
+    },
+    {
+        "ticker":"NAHARPOLY",
+        "Score":5,
+        "tags":"SCAP | CONSUM | EXPORT"
+    },
+    {
+        "ticker":"GREENLAM",
+        "Score":7,
+        "tags":"MCAP | CONSUM | GROWTH | DOMEST"
+    },
+    {
+        "ticker":"SWELECTES",
+        "Score":6,
+        "tags":"SCAP | INFRA | GROWTH"
+    },
+    {
+        "ticker":"CANBK",
+        "Score":7,
+        "tags":"LCAP | N100 | BANKX | PSU | INDST"
+    },
+    {
+        "ticker":"THYROCARE",
+        "Score":6,
+        "tags":"MCAP | PHARMA | DOMEST | INDST"
+    },
+    {
+        "ticker":"TNPL",
+        "Score":5,
+        "tags":"SCAP | CONSUM | PSU"
+    },
+    {
+        "ticker":"MARATHON",
+        "Score":6,
+        "tags":"SCAP | REAL | DOMEST"
+    },
+    {
+        "ticker":"KAMATHOTEL",
+        "Score":5,
+        "tags":"MICAP | CONSUM | DOMEST"
+    },
+    {
+        "ticker":"ASPINWALL",
+        "Score":5,
+        "tags":"MICAP | LOGIS"
+    },
+    {
+        "ticker":"ARIHANTSUP",
+        "Score":6,
+        "tags":"SCAP | REAL | DOMEST"
+    },
+    {
+        "ticker":"BANKINDIA",
+        "Score":6,
+        "tags":"LCAP | BANKX | PSU | INDST"
+    },
+    {
+        "ticker":"DIACABS",
+        "Score":6,
+        "tags":"MCAP | INFRA | GROWTH"
+    },
+    {
+        "ticker":"PRECWIRE",
+        "Score":6,
+        "tags":"MCAP | INFRA | GROWTH"
+    },
+    {
+        "ticker":"DCMNVL",
+        "Score":5,
+        "tags":"MICAP | CHEMX"
+    },
+    {
+        "ticker":"MEGASTAR",
+        "Score":5,
+        "tags":"MICAP | CONSUM"
+    },
+    {
+        "ticker":"VAIBHAVGBL",
+        "Score":5,
+        "tags":"SCAP | RETAIL | DOMEST"
+    },
+    {
+        "ticker":"MUKANDLTD",
+        "Score":6,
+        "tags":"SCAP | METAL | CYCL"
+    },
+    {
+        "ticker":"SMARTLINK",
+        "Score":5,
+        "tags":"MICAP | TECH | GLOBEX"
+    },
+    {
+        "ticker":"JAICORPLTD",
+        "Score":5,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"JBMA",
+        "Score":8,
+        "tags":"MCAP | AUTO | EVX | GROWTH"
+    },
+    {
+        "ticker":"BANARBEADS",
+        "Score":5,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"AARVI",
+        "Score":5,
+        "tags":"MICAP | SERVX"
+    },
+    {
+        "ticker":"LOYALTEX",
+        "Score":5,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"GUJAPOLLO",
+        "Score":6,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"BLS",
+        "Score":8,
+        "tags":"MCAP | SERVX | GROWTH | GLOBEX"
+    },
+    {
+        "ticker":"MBAPL",
+        "Score":5,
+        "tags":"SCAP | LOGIS | PSU"
+    },
+    {
+        "ticker":"QUESS",
+        "Score":6,
+        "tags":"SCAP | SERVX | DOMEST"
+    },
+    {
+        "ticker":"SHOPERSTOP",
+        "Score":6,
+        "tags":"SCAP | RETAIL | DOMEST"
+    },
+    {
+        "ticker":"LOTUSEYE",
+        "Score":6,
+        "tags":"MICAP | PHARMA | DOMEST"
+    },
+    {
+        "ticker":"MINDTECK",
+        "Score":5,
+        "tags":"SCAP | TECH | EXPORT"
+    },
+    {
+        "ticker":"SUNTECK",
+        "Score":7,
+        "tags":"SCAP | REAL | PREM | DOMEST"
+    },
+    {
+        "ticker":"ROHLTD",
+        "Score":5,
+        "tags":"SCAP | CONSUM"
+    },
+    {
+        "ticker":"INTENTECH",
+        "Score":5,
+        "tags":"MICAP | TECH"
+    },
+    {
+        "ticker":"LAOPALA",
+        "Score":6,
+        "tags":"SCAP | CONSUM | DOMEST"
+    },
+    {
+        "ticker":"PALASHSECU",
+        "Score":4,
+        "tags":"SCAP | NBFC"
+    },
+    {
+        "ticker":"BSHSL",
+        "Score":5,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"BALAJITELE",
+        "Score":4,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"PENIND",
+        "Score":6,
+        "tags":"SCAP | AUTO | NICHE"
+    },
+    {
+        "ticker":"DABUR",
+        "Score":7,
+        "tags":"LCAP | N100 | FMCG | BRANDX | COMPD | DOMEST"
+    },
+    {
+        "ticker":"KECL",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"SHALBY",
+        "Score":6,
+        "tags":"SCAP | PHARMA | DOMEST | INDST"
+    },
+    {
+        "ticker":"VERANDA",
+        "Score":6,
+        "tags":"SCAP | TECH | DOMEST | GROWTH"
+    },
+    {
+        "ticker":"ELECON",
+        "Score":7,
+        "tags":"MCAP | INFRA | GROWTH"
+    },
+    {
+        "ticker":"UNIDT",
+        "Score":5,
+        "tags":"MICAP | CONSUM"
+    },
+    {
+        "ticker":"MCX",
+        "Score":7,
+        "tags":"LCAP | MONO | ASSETL | NETWRK | INDST | FINFORM"
+    },
+    {
+        "ticker":"SANSERA",
+        "Score":7,
+        "tags":"MCAP | AUTO | EXPORT | GLOBEX"
+    },
+    {
+        "ticker":"MANAPPURAM",
+        "Score":6,
+        "tags":"LCAP | NBFC | INDST | RURALX"
+    },
+    {
+        "ticker":"JSWENERGY",
+        "Score":8,
+        "tags":"LCAP | POWER | SOLX | GRENX | ENTRANS | GROWTH | INDST"
+    },
+    {
+        "ticker":"RESPONIND",
+        "Score":5,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"SKMEGGPROD",
+        "Score":6,
+        "tags":"SCAP | FMCG | DOMEST"
+    },
+    {
+        "ticker":"BBTCL",
+        "Score":5,
+        "tags":"MICAP | CONSUM"
+    },
+    {
+        "ticker":"ASHIANA",
+        "Score":7,
+        "tags":"SCAP | REAL | DOMEST"
+    },
+    {
+        "ticker":"ORIENTBELL",
+        "Score":6,
+        "tags":"SCAP | CONSUM | DOMEST"
+    },
+    {
+        "ticker":"JYOTHYLAB",
+        "Score":7,
+        "tags":"MCAP | FMCG | DOMEST | RURALX"
+    },
+    {
+        "ticker":"SIRCA",
+        "Score":6,
+        "tags":"SCAP | CONSUM | DOMEST"
+    },
+    {
+        "ticker":"HARSHA",
+        "Score":7,
+        "tags":"SCAP | INFRA | EXPORT | NICHE"
+    },
+    {
+        "ticker":"MVGJL",
+        "Score":5,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"MINDACORP",
+        "Score":7,
+        "tags":"MCAP | AUTO | EVX | GROWTH"
+    },
+    {
+        "ticker":"ORIENTELEC",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"HINDZINC",
+        "Score":7,
+        "tags":"LCAP | METAL | COMMOD | EXPORT | DIVX"
+    },
+    {
+        "ticker":"UNIPARTS",
+        "Score":5,
+        "tags":"SCAP | AUTO | EXPORT"
+    },
+    {
+        "ticker":"QUICKHEAL",
+        "Score":6,
+        "tags":"SCAP | TECH | CYBRX | DOMEST"
+    },
+    {
+        "ticker":"IPL",
+        "Score":6,
+        "tags":"SCAP | INFRA | NICHE"
+    },
+    {
+        "ticker":"FINPIPE",
+        "Score":6,
+        "tags":"MCAP | INFRA | GROWTH"
+    },
+    {
+        "ticker":"HSCL",
+        "Score":7,
+        "tags":"LCAP | CHEMX | GROWTH"
+    },
+    {
+        "ticker":"TRIVENI",
+        "Score":7,
+        "tags":"MCAP | INFRA | POWER | GROWTH"
+    },
+    {
+        "ticker":"LXCHEM",
+        "Score":6,
+        "tags":"SCAP | CHEMX | NICHE"
+    },
+    {
+        "ticker":"VEDL",
+        "Score":7,
+        "tags":"LCAP | N100 | METAL | CYCL | COMMOD | GLOBEX | DIVX"
+    },
+    {
+        "ticker":"PONNIERODE",
+        "Score":5,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"RITCO",
+        "Score":5,
+        "tags":"SCAP | LOGIS"
+    },
+    {
+        "ticker":"ANANTRAJ",
+        "Score":8,
+        "tags":"MCAP | REAL | GROWTH | DOMEST"
+    },
+    {
+        "ticker":"PRECAM",
+        "Score":6,
+        "tags":"SCAP | AUTO | NICHE | EXPORT"
+    },
+    {
+        "ticker":"CESC",
+        "Score":6,
+        "tags":"LCAP | POWER | REGLEAD"
+    },
+    {
+        "ticker":"RUPA",
+        "Score":5,
+        "tags":"SCAP | CONSUM | DOMEST"
+    },
+    {
+        "ticker":"PRINCEPIPE",
+        "Score":7,
+        "tags":"SCAP | INFRA | GROWTH | DOMEST"
+    },
+    {
+        "ticker":"NCC",
+        "Score":7,
+        "tags":"MCAP | INFRA | GOVCAP"
+    },
+    {
+        "ticker":"HISARMETAL",
+        "Score":5,
+        "tags":"SCAP | METAL | CYCL"
+    },
+    {
+        "ticker":"IITL",
+        "Score":5,
+        "tags":"MICAP | NBFC | VALUE"
+    },
+    {
+        "ticker":"SUNFLAG",
+        "Score":6,
+        "tags":"MCAP | METAL | CYCL"
+    },
+    {
+        "ticker":"SCHAND",
+        "Score":5,
+        "tags":"SCAP | CONSUM | DOMEST"
+    },
+    {
+        "ticker":"PTC",
+        "Score":6,
+        "tags":"MCAP | POWER | INFRA"
+    },
+    {
+        "ticker":"NAHARCAP",
+        "Score":5,
+        "tags":"MICAP | NBFC | VALUE"
+    },
+    {
+        "ticker":"KSB",
+        "Score":7,
+        "tags":"MCAP | INFRA | EXPORT | NICHE"
+    },
+    {
+        "ticker":"DMCC",
+        "Score":5,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"HGS",
+        "Score":5,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"RAMKY",
+        "Score":6,
+        "tags":"SCAP | INFRA | GOVCAP"
+    },
+    {
+        "ticker":"NYKAA",
+        "Score":7,
+        "tags":"LCAP | RETAIL | PLTFRM | MARKET | GROWTH | DOMEST | DIGIND"
+    },
+    {
+        "ticker":"VSTIND",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"JINDRILL",
+        "Score":5,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"DHARMAJ",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"CYBERTECH",
+        "Score":6,
+        "tags":"MICAP | TECH | EXPORT"
+    },
+    {
+        "ticker":"AGRITECH",
+        "Score":5,
+        "tags":"SCAP | AGRTX | GROWTH"
+    },
+    {
+        "ticker":"SATIN",
+        "Score":5,
+        "tags":"SCAP | NBFC | RURALX"
+    },
+    {
+        "ticker":"GULPOLY",
+        "Score":5,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"VIDHIING",
+        "Score":6,
+        "tags":"SCAP | CHEMX | NICHE"
+    },
+    {
+        "ticker":"THOMASCOTT",
+        "Score":5,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"SESHAPAPER",
+        "Score":5,
+        "tags":"SCAP | CONSUM"
+    },
+    {
+        "ticker":"SURYODAY",
+        "Score":6,
+        "tags":"SCAP | BANKX | INDST"
+    },
+    {
+        "ticker":"EVEREADY",
+        "Score":6,
+        "tags":"SCAP | CONSUM | DOMEST | BATTX"
+    },
+    {
+        "ticker":"BOMDYEING",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"SPARC",
+        "Score":6,
+        "tags":"MCAP"
+    },
+    {
+        "ticker":"PREMEXPLN",
+        "Score":7,
+        "tags":"SCAP | ENERGY | NICHE"
+    },
+    {
+        "ticker":"DLINKINDIA",
+        "Score":5,
+        "tags":"SCAP | TECH | GLOBEX"
+    },
+    {
+        "ticker":"GEECEE",
+        "Score":5,
+        "tags":"SCAP | NBFC | VALUE"
+    },
+    {
+        "ticker":"KABRAEXTRU",
+        "Score":6,
+        "tags":"SCAP | INFRA | NICHE"
+    },
+    {
+        "ticker":"INDOAMIN",
+        "Score":5,
+        "tags":"SCAP | CHEMX"
+    },
+    {
+        "ticker":"SOMICONVEY",
+        "Score":5,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"DBREALTY",
+        "Score":6,
+        "tags":"MCAP | REAL | DOMEST"
+    },
+    {
+        "ticker":"TIPSFILMS",
+        "Score":6,
+        "tags":"MICAP | MEDIA | DOMEST"
+    },
+    {
+        "ticker":"ROLEXRINGS",
+        "Score":7,
+        "tags":"SCAP | INFRA | EXPORT | NICHE"
+    },
+    {
+        "ticker":"WSTCSTPAPR",
+        "Score":6,
+        "tags":"SCAP | CONSUM | DOMEST"
+    },
+    {
+        "ticker":"RUCHIRA",
+        "Score":5,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"BSOFT",
+        "Score":6,
+        "tags":"MCAP"
+    },
+    {
+        "ticker":"BAJAJHCARE",
+        "Score":6,
+        "tags":"SCAP | FMCG | DOMEST"
+    },
+    {
+        "ticker":"AVROIND",
+        "Score":5,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"NITINSPIN",
+        "Score":5,
+        "tags":"SCAP | CONSUM | EXPORT"
+    },
+    {
+        "ticker":"MASFIN",
+        "Score":7,
+        "tags":"MCAP | NBFC | INDST"
+    },
+    {
+        "ticker":"ZUARIIND",
+        "Score":6,
+        "tags":"SCAP | CHEMX | DOMEST"
+    },
+    {
+        "ticker":"NBCC",
+        "Score":7,
+        "tags":"LCAP | INFRA | PSU | GOVCAP | GOVORD | NATINF"
+    },
+    {
+        "ticker":"HIMATSEIDE",
+        "Score":6,
+        "tags":"SCAP | CONSUM | EXPORT"
+    },
+    {
+        "ticker":"IFGLEXPOR",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"INDUSTOWER",
+        "Score":7,
+        "tags":"LCAP | N100 | TELE | INFRA | ASSETL | MONO | DOMEST"
+    },
+    {
+        "ticker":"BEDMUTHA",
+        "Score":6,
+        "tags":"MICAP | INFRA"
+    },
+    {
+        "ticker":"MENONBE",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"RHL",
+        "Score":5,
+        "tags":"MICAP | NBFC"
+    },
+    {
+        "ticker":"SHEMAROO",
+        "Score":6,
+        "tags":"MICAP | MEDIA | DOMEST"
+    },
+    {
+        "ticker":"AARTISURF",
+        "Score":6,
+        "tags":"MICAP | CHEMX | NICHE"
+    },
+    {
+        "ticker":"INDIANHUME",
+        "Score":6,
+        "tags":"SCAP | INFRA | GOVCAP"
+    },
+    {
+        "ticker":"20MICRONS",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"KEYFINSERV",
+        "Score":5,
+        "tags":"MICAP | NBFC"
+    },
+    {
+        "ticker":"GSPL",
+        "Score":6,
+        "tags":"MCAP | ENERGY | INFRA | NATINF"
+    },
+    {
+        "ticker":"THEMISMED",
+        "Score":6,
+        "tags":"SCAP | PHARMA"
+    },
+    {
+        "ticker":"ARVEE",
+        "Score":5,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"NCLIND",
+        "Score":6,
+        "tags":"SCAP | CHEMX | NICHE"
+    },
+    {
+        "ticker":"STLTECH",
+        "Score":6,
+        "tags":"MCAP | TELE | INFRA | EXPORT | GROWTH"
+    },
+    {
+        "ticker":"IDBI",
+        "Score":7,
+        "tags":"LCAP | BANKX | PSU | INDST | REVIVAL"
+    },
+    {
+        "ticker":"NAVKARCORP",
+        "Score":6,
+        "tags":"SCAP | LOGIS | DOMEST"
+    },
+    {
+        "ticker":"ENGINERSIN",
+        "Score":6,
+        "tags":"MCAP"
+    },
+    {
+        "ticker":"OAL",
+        "Score":6,
+        "tags":"SCAP | FMCG | NICHE"
+    },
+    {
+        "ticker":"MANINDS",
+        "Score":6,
+        "tags":"SCAP | AUTO | NICHE"
+    },
+    {
+        "ticker":"DICIND",
+        "Score":6,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"JIOFIN",
+        "Score":7,
+        "tags":"LCAP | NBFC | FINX | PLTFRM | GROWTH | INDST | DIGFIN"
+    },
+    {
+        "ticker":"LUMAXTECH",
+        "Score":7,
+        "tags":"MCAP | AUTO | GROWTH"
+    },
+    {
+        "ticker":"DCXINDIA",
+        "Score":7,
+        "tags":"SCAP | DEFX | CONTRX | MAKEIN | GROWTH"
+    },
+    {
+        "ticker":"BANKBARODA",
+        "Score":7,
+        "tags":"LCAP | N100 | BANKX | PSU | INDST | REVIVAL"
+    },
+    {
+        "ticker":"MAXIND",
+        "Score":6,
+        "tags":"SCAP | CONSUM"
+    },
+    {
+        "ticker":"REFEX",
+        "Score":7,
+        "tags":"SCAP | ENERGY | GRENX | GROWTH"
+    },
+    {
+        "ticker":"WALCHANNAG",
+        "Score":7,
+        "tags":"SCAP | INFRA | GROWTH"
+    },
+    {
+        "ticker":"IKIO",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"PETRONET",
+        "Score":6,
+        "tags":"LCAP | ENERGY | PSU | ENSEC | LNGX | INFRA"
+    },
+    {
+        "ticker":"GSFC",
+        "Score":6,
+        "tags":"MCAP | CHEMX | PSU"
+    },
+    {
+        "ticker":"CHEMPLASTS",
+        "Score":6,
+        "tags":"SCAP | CHEMX"
+    },
+    {
+        "ticker":"SOTL",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"HINDWAREAP",
+        "Score":6,
+        "tags":"SCAP | CONSUM | DOMEST"
+    },
+    {
+        "ticker":"ORIENTCEM",
+        "Score":6,
+        "tags":"SCAP | INFRA | DOMEST"
+    },
+    {
+        "ticker":"LFIC",
+        "Score":6,
+        "tags":"SCAP | NBFC"
+    },
+    {
+        "ticker":"AETHER",
+        "Score":7,
+        "tags":"MCAP | CHEMX | NICHE | EXPORT | GROWTH"
+    },
+    {
+        "ticker":"FMGOETZE",
+        "Score":6,
+        "tags":"SCAP | AUTO | GLOBEX"
+    },
+    {
+        "ticker":"APCOTEXIND",
+        "Score":6,
+        "tags":"SCAP | CHEMX"
+    },
+    {
+        "ticker":"JINDALSAW",
+        "Score":7,
+        "tags":"MCAP | INFRA | EXPORT"
+    },
+    {
+        "ticker":"CONSOFINVT",
+        "Score":5,
+        "tags":"SCAP | NBFC | VALUE"
+    },
+    {
+        "ticker":"POWERGRID",
+        "Score":7,
+        "tags":"LCAP | N50 | N100 | POWER | PSU | STRAT | NATINF | MONO | CAPINT"
+    },
+    {
+        "ticker":"ARTEMISMED",
+        "Score":7,
+        "tags":"LCAP | PHARMA | DOMEST | INDST"
+    },
+    {
+        "ticker":"KNRCON",
+        "Score":7,
+        "tags":"SCAP | INFRA | GOVCAP | GROWTH"
+    },
+    {
+        "ticker":"PARADEEP",
+        "Score":6,
+        "tags":"MCAP | CHEMX | PSU"
+    },
+    {
+        "ticker":"SONATSOFTW",
+        "Score":7,
+        "tags":"MCAP | TECH | EXPORT | GROWTH"
+    },
+    {
+        "ticker":"LATENTVIEW",
+        "Score":7,
+        "tags":"MCAP | TECH | DATAX | AIX | EXPORT | GROWTH"
+    },
+    {
+        "ticker":"DOLLAR",
+        "Score":6,
+        "tags":"SCAP | CONSUM | DOMEST | RURALX"
+    },
+    {
+        "ticker":"DCAL",
+        "Score":6,
+        "tags":"SCAP | AUTO | NICHE"
+    },
+    {
+        "ticker":"DYCL",
+        "Score":7,
+        "tags":"SCAP | CHEMX | NICHE"
+    },
+    {
+        "ticker":"BHAGYANGR",
+        "Score":6,
+        "tags":"SCAP | REAL | DOMEST"
+    },
+    {
+        "ticker":"TARSONS",
+        "Score":6,
+        "tags":"SCAP | PHARMA | MEDTX | EXPORT | GROWTH"
+    },
+    {
+        "ticker":"MIDHANI",
+        "Score":7,
+        "tags":"MCAP | DEFX | PSU | STRAT | GOVORD | MAKEIN | NICHE"
+    },
+    {
+        "ticker":"INDOCO",
+        "Score":6,
+        "tags":"SCAP | PHARMA | EXPORT"
+    },
+    {
+        "ticker":"IEX",
+        "Score":6,
+        "tags":"MCAP | MONO | ASSETL | NETWRK | POWER | ENTRANS | INDST"
+    },
+    {
+        "ticker":"TIRUMALCHM",
+        "Score":6,
+        "tags":"SCAP | CHEMX"
+    },
+    {
+        "ticker":"GREENPANEL",
+        "Score":7,
+        "tags":"SCAP | CONSUM | DOMEST"
+    },
+    {
+        "ticker":"FAZE3Q",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"PRSMJOHNSN",
+        "Score":7,
+        "tags":"MCAP"
+    },
+    {
+        "ticker":"BGRENERGY",
+        "Score":6,
+        "tags":"SCAP | POWER | SOLX | GRENX"
+    },
+    {
+        "ticker":"ARIES",
+        "Score":6,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"BBOX",
+        "Score":7,
+        "tags":"MCAP"
+    },
+    {
+        "ticker":"TEXRAIL",
+        "Score":7,
+        "tags":"SCAP | INFRA | GOVCAP | GROWTH"
+    },
+    {
+        "ticker":"NTPC",
+        "Score":8,
+        "tags":"LCAP | N50 | N100 | POWER | PSU | SOLX | STRAT | NATINF | ENSEC | ENTRANS"
+    },
+    {
+        "ticker":"MANINFRA",
+        "Score":7,
+        "tags":"SCAP | INFRA | GOVCAP"
+    },
+    {
+        "ticker":"TERASOFT",
+        "Score":6,
+        "tags":"MICAP | TECH"
+    },
+    {
+        "ticker":"INDIACEM",
+        "Score":6,
+        "tags":"MCAP"
+    },
+    {
+        "ticker":"PNC",
+        "Score":7,
+        "tags":"SCAP | INFRA"
+    },
+    {
+        "ticker":"STARCEMENT",
+        "Score":7,
+        "tags":"MCAP | INFRA | REGLEAD | DOMEST"
+    },
+    {
+        "ticker":"DHAMPURSUG",
+        "Score":6,
+        "tags":"SCAP | FMCG | CYCL"
+    },
+    {
+        "ticker":"ZENITHEXPO",
+        "Score":5,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"THEINVEST",
+        "Score":5,
+        "tags":"SCAP | NBFC | VALUE"
+    },
+    {
+        "ticker":"ENIL",
+        "Score":6,
+        "tags":"SCAP | MEDIA | DOMEST"
+    },
+    {
+        "ticker":"SPECIALITY",
+        "Score":6,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"PCBL",
+        "Score":7,
+        "tags":"MCAP | CHEMX | EXPORT"
+    },
+    {
+        "ticker":"SMSPHARMA",
+        "Score":6,
+        "tags":"SCAP | PHARMA"
+    },
+    {
+        "ticker":"GPTINFRA",
+        "Score":7,
+        "tags":"SCAP | INFRA | GOVCAP"
+    },
+    {
+        "ticker":"EDELWEISS",
+        "Score":6,
+        "tags":"MCAP | NBFC | INDST"
+    },
+    {
+        "ticker":"DPWIRES",
+        "Score":6,
+        "tags":"MICAP | INFRA"
+    },
+    {
+        "ticker":"AUSOMENT",
+        "Score":5,
+        "tags":"MICAP | INFRA"
+    },
+    {
+        "ticker":"TRF",
+        "Score":6,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"BLAL",
+        "Score":5,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"GILLANDERS",
+        "Score":5,
+        "tags":"MICAP | CONSUM"
+    },
+    {
+        "ticker":"RPPINFRA",
+        "Score":6,
+        "tags":"MICAP | INFRA | GOVCAP"
+    },
+    {
+        "ticker":"GRAPHITE",
+        "Score":6,
+        "tags":"MCAP | METAL | NICHE | EXPORT | CYCL"
+    },
+    {
+        "ticker":"TOUCHWOOD",
+        "Score":5,
+        "tags":"SCAP | CONSUM"
+    },
+    {
+        "ticker":"MAHAPEXLTD",
+        "Score":5,
+        "tags":"MICAP | NBFC"
+    },
+    {
+        "ticker":"JAGSNPHARM",
+        "Score":6,
+        "tags":"SCAP | PHARMA"
+    },
+    {
+        "ticker":"SAKAR",
+        "Score":6,
+        "tags":"SCAP | PHARMA"
+    },
+    {
+        "ticker":"KIRIINDUS",
+        "Score":6,
+        "tags":"SCAP | CHEMX | EXPORT"
+    },
+    {
+        "ticker":"JKIL",
+        "Score":7,
+        "tags":"SCAP | INFRA | GOVCAP"
+    },
+    {
+        "ticker":"TIMETECHNO",
+        "Score":7,
+        "tags":"MCAP | TECH | EXPORT"
+    },
+    {
+        "ticker":"GREAVESCOT",
+        "Score":7,
+        "tags":"SCAP | AUTO | EVX | GROWTH"
+    },
+    {
+        "ticker":"HARIOMPIPE",
+        "Score":6,
+        "tags":"SCAP | INFRA | GROWTH"
+    },
+    {
+        "ticker":"ASAL",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"CASTROLIND",
+        "Score":7,
+        "tags":"MCAP | ENERGY | DOMEST | DIVX"
+    },
+    {
+        "ticker":"KIOCL",
+        "Score":6,
+        "tags":"LCAP | METAL | PSU | EXPORT"
+    },
+    {
+        "ticker":"SOUTHWEST",
+        "Score":6,
+        "tags":"SCAP | LOGIS"
+    },
+    {
+        "ticker":"VALIANTORG",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"GPPL",
+        "Score":7,
+        "tags":"MCAP | LOGIS | INFRA | GROWTH"
+    },
+    {
+        "ticker":"BHARATWIRE",
+        "Score":7,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"PPLPHARMA",
+        "Score":7,
+        "tags":"LCAP | PHARMA | CONTRX | EXPORT"
+    },
+    {
+        "ticker":"HEIDELBERG",
+        "Score":6,
+        "tags":"SCAP | INFRA | DOMEST"
+    },
+    {
+        "ticker":"ICIL",
+        "Score":7,
+        "tags":"MCAP | CONSUM | NICHE | EXPORT"
+    },
+    {
+        "ticker":"HEG",
+        "Score":6,
+        "tags":"MCAP | METAL | NICHE | EXPORT | CYCL"
+    },
+    {
+        "ticker":"AARTIIND",
+        "Score":7,
+        "tags":"MCAP | CHEMX | EXPORT | GROWTH"
+    },
+    {
+        "ticker":"GICHSGFIN",
+        "Score":6,
+        "tags":"SCAP | INSUR | INDST"
+    },
+    {
+        "ticker":"IRCON",
+        "Score":7,
+        "tags":"MCAP | INFRA | PSU | GOVCAP | GOVORD | NATINF | EXPORT"
+    },
+    {
+        "ticker":"DYNPRO",
+        "Score":6,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"YATRA",
+        "Score":6,
+        "tags":"SCAP | TECH | PLTFRM | DOMEST"
+    },
+    {
+        "ticker":"NAZARA",
+        "Score":7,
+        "tags":"MCAP | MEDIA | TECH | GROWTH | DOMEST"
+    },
+    {
+        "ticker":"CROMPTON",
+        "Score":7,
+        "tags":"MCAP | CONSUM | GROWTH | DOMEST"
+    },
+    {
+        "ticker":"CHEMBOND",
+        "Score":6,
+        "tags":"MICAP | CHEMX"
+    },
+    {
+        "ticker":"RAMAPHO",
+        "Score":6,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"HERCULES",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"RAILTEL",
+        "Score":7,
+        "tags":"MCAP | TECH | PSU | GOVCAP | GROWTH | INFRA"
+    },
+    {
+        "ticker":"SALONA",
+        "Score":5,
+        "tags":"MICAP | CONSUM"
+    },
+    {
+        "ticker":"GIPCL",
+        "Score":6,
+        "tags":"SCAP | POWER | PSU"
+    },
+    {
+        "ticker":"RHIM",
+        "Score":7,
+        "tags":"MCAP"
+    },
+    {
+        "ticker":"MOLDTECH",
+        "Score":6,
+        "tags":"MICAP | CONSUM"
+    },
+    {
+        "ticker":"NLCINDIA",
+        "Score":6,
+        "tags":"LCAP | POWER | PSU | SOLX | ENTRANS"
+    },
+    {
+        "ticker":"MODISONLTD",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"CSBBANK",
+        "Score":7,
+        "tags":"MCAP | BANKX | INDST"
+    },
+    {
+        "ticker":"JMFINANCIL",
+        "Score":7,
+        "tags":"MCAP | NBFC | INDST"
+    },
+    {
+        "ticker":"MRPL",
+        "Score":6,
+        "tags":"LCAP | ENERGY | PSU | CYCL"
+    },
+    {
+        "ticker":"MAHASTEEL",
+        "Score":6,
+        "tags":"SCAP | METAL | CYCL"
+    },
+    {
+        "ticker":"TEMBO",
+        "Score":5,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"INDOSTAR",
+        "Score":6,
+        "tags":"SCAP | NBFC | INDST"
+    },
+    {
+        "ticker":"HINDCOMPOS",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"SANGHVIMOV",
+        "Score":7,
+        "tags":"SCAP | LOGIS | NICHE"
+    },
+    {
+        "ticker":"SAIL",
+        "Score":6,
+        "tags":"LCAP | METAL | PSU | CYCL | COMMOD"
+    },
+    {
+        "ticker":"HIKAL",
+        "Score":7,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"WANBURY",
+        "Score":6,
+        "tags":"SCAP | PHARMA"
+    },
+    {
+        "ticker":"MAHEPC",
+        "Score":5,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"BCONCEPTS",
+        "Score":6,
+        "tags":"MICAP | TECH"
+    },
+    {
+        "ticker":"SEMAC",
+        "Score":5,
+        "tags":"MICAP | INFRA"
+    },
+    {
+        "ticker":"PRICOLLTD",
+        "Score":7,
+        "tags":""
+    },
+    {
+        "ticker":"SOFTTECH",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"RKFORGE",
+        "Score":7,
+        "tags":"MCAP | INFRA | EXPORT | AUTO"
+    },
+    {
+        "ticker":"HECPROJECT",
+        "Score":6,
+        "tags":"MICAP | INFRA | PSU"
+    },
+    {
+        "ticker":"STCINDIA",
+        "Score":6,
+        "tags":"SCAP | LOGIS | PSU"
+    },
+    {
+        "ticker":"MUNJALSHOW",
+        "Score":6,
+        "tags":"SCAP | AUTO | DOMEST"
+    },
+    {
+        "ticker":"ASIANHOTNR",
+        "Score":6,
+        "tags":"SCAP | CONSUM | DOMEST"
+    },
+    {
+        "ticker":"HUDCO",
+        "Score":7,
+        "tags":"LCAP | INFRA | PSU | GOVCAP | NATINF"
+    },
+    {
+        "ticker":"LAMBODHARA",
+        "Score":5,
+        "tags":"MICAP | CONSUM"
+    },
+    {
+        "ticker":"IRFC",
+        "Score":7,
+        "tags":"LCAP | N100 | INFRA | PSU | GOVCAP | NATINF"
+    },
+    {
+        "ticker":"REMSONSIND",
+        "Score":6,
+        "tags":"MICAP | AUTO"
+    },
+    {
+        "ticker":"ZODIAC",
+        "Score":6,
+        "tags":""
+    },
+    {
+        "ticker":"JWL",
+        "Score":8,
+        "tags":"MCAP | INFRA | GROWTH"
+    },
+    {
+        "ticker":"MOTHERSON",
+        "Score":7,
+        "tags":"LCAP | N100 | AUTO | GLOBEX | COMPD"
+    },
+    {
+        "ticker":"REPCOHOME",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"NELCAST",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"KHAITANLTD",
+        "Score":6,
+        "tags":"SCAP | NBFC | VALUE"
+    },
+    {
+        "ticker":"IFBAGRO",
+        "Score":6,
+        "tags":"SCAP | FMCG | DOMEST"
+    },
+    {
+        "ticker":"KTKBANK",
+        "Score":7,
+        "tags":"MCAP | BANKX | REGLEAD | INDST"
+    },
+    {
+        "ticker":"KAYA",
+        "Score":6,
+        "tags":"MICAP | CONSUM | DOMEST"
+    },
+    {
+        "ticker":"ONWARDTEC",
+        "Score":7,
+        "tags":"SCAP | TECH | EXPORT"
+    },
+    {
+        "ticker":"IIFL",
+        "Score":7,
+        "tags":"MCAP | NBFC | INDST"
+    },
+    {
+        "ticker":"MEGASOFT",
+        "Score":5,
+        "tags":"SCAP | TECH | EXPORT"
+    },
+    {
+        "ticker":"CORDSCABLE",
+        "Score":6,
+        "tags":"MICAP | INFRA"
+    },
+    {
+        "ticker":"GOKULAGRO",
+        "Score":6,
+        "tags":"MCAP | FMCG | DOMEST"
+    },
+    {
+        "ticker":"EMKAY",
+        "Score":6,
+        "tags":"SCAP | NBFC | INDST"
+    },
+    {
+        "ticker":"JKTYRE",
+        "Score":6,
+        "tags":"MCAP | AUTO | DOMEST | CYCL"
+    },
+    {
+        "ticker":"WINDMACHIN",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"MUTHOOTCAP",
+        "Score":6,
+        "tags":"MICAP | NBFC | INDST"
+    },
+    {
+        "ticker":"NRBBEARING",
+        "Score":6,
+        "tags":"SCAP | AUTO | NICHE | EXPORT"
+    },
+    {
+        "ticker":"NACLIND",
+        "Score":6,
+        "tags":"SCAP | CHEMX | AGRTX"
+    },
+    {
+        "ticker":"HITECHCORP",
+        "Score":6,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"GAIL",
+        "Score":7,
+        "tags":"LCAP | ENERGY | PSU | STRAT | ENSEC | LNGX | INFRA"
+    },
+    {
+        "ticker":"GREENPLY",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"ASHOKLEY",
+        "Score":7,
+        "tags":"LCAP | AUTO | DOMEST | GROWTH"
+    },
+    {
+        "ticker":"ELIN",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"PLASTIBLEN",
+        "Score":6,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"CLSEL",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"RECLTD",
+        "Score":8,
+        "tags":"LCAP | N100 | INFRA | PSU | GOVCAP | GROWTH | NATINF"
+    },
+    {
+        "ticker":"HEXATRADEX",
+        "Score":5,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"TARC",
+        "Score":7,
+        "tags":"SCAP | REAL | DOMEST"
+    },
+    {
+        "ticker":"PYRAMID",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"INDOBORAX",
+        "Score":5,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"SIMPLEXINF",
+        "Score":5,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"NOCIL",
+        "Score":6,
+        "tags":"SCAP | CHEMX | NICHE"
+    },
+    {
+        "ticker":"LEMONTREE",
+        "Score":7,
+        "tags":"MCAP | CONSUM | GROWTH | DOMEST"
+    },
+    {
+        "ticker":"GPIL",
+        "Score":7,
+        "tags":"MCAP | METAL | CYCL"
+    },
+    {
+        "ticker":"KARURVYSYA",
+        "Score":7,
+        "tags":"LCAP | BANKX | REGLEAD | INDST"
+    },
+    {
+        "ticker":"RACE",
+        "Score":6,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"RAJRATAN",
+        "Score":7,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"MAANALU",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"SANDHAR",
+        "Score":6,
+        "tags":"SCAP | AUTO | GLOBEX"
+    },
+    {
+        "ticker":"JTEKTINDIA",
+        "Score":6,
+        "tags":"SCAP | AUTO | NICHE"
+    },
+    {
+        "ticker":"RVNL",
+        "Score":8,
+        "tags":"LCAP | INFRA | PSU | GOVCAP | GOVORD | NATINF | GROWTH"
+    },
+    {
+        "ticker":"PURVA",
+        "Score":7,
+        "tags":"MCAP | REAL | DOMEST"
+    },
+    {
+        "ticker":"AWL",
+        "Score":7,
+        "tags":"LCAP | FMCG | GROWTH | DOMEST | INDST"
+    },
+    {
+        "ticker":"RITES",
+        "Score":7,
+        "tags":"MCAP | INFRA | PSU | GOVCAP | EXPORT"
+    },
+    {
+        "ticker":"AHLEAST",
+        "Score":5,
+        "tags":"MICAP | CONSUM"
+    },
+    {
+        "ticker":"GANGESSECU",
+        "Score":5,
+        "tags":"MICAP | NBFC"
+    },
+    {
+        "ticker":"CROWN",
+        "Score":5,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"PANACHE",
+        "Score":5,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"UNIVPHOTO",
+        "Score":5,
+        "tags":"MICAP | CONSUM"
+    },
+    {
+        "ticker":"KOTHARIPET",
+        "Score":5,
+        "tags":"SCAP | FMCG"
+    },
+    {
+        "ticker":"ALPHAGEO",
+        "Score":8,
+        "tags":"MICAP | ENERGY | NICHE | SPECX"
+    },
+    {
+        "ticker":"INOXWIND",
+        "Score":8,
+        "tags":"MCAP | POWER | GRENX | CLNENG | GROWTH | ENTRANS"
+    },
+    {
+        "ticker":"GNA",
+        "Score":7,
+        "tags":"SCAP | AUTO | EXPORT"
+    },
+    {
+        "ticker":"BANSWRAS",
+        "Score":5,
+        "tags":"MICAP | CONSUM"
+    },
+    {
+        "ticker":"MSTCLTD",
+        "Score":6,
+        "tags":"SCAP | TECH | PSU | PLTFRM"
+    },
+    {
+        "ticker":"INOXGREEN",
+        "Score":7,
+        "tags":"MCAP | POWER | GRENX | CLNENG | GROWTH"
+    },
+    {
+        "ticker":"SASTASUNDR",
+        "Score":6,
+        "tags":"SCAP | RETAIL | PLTFRM | DOMEST"
+    },
+    {
+        "ticker":"APOLLOPIPE",
+        "Score":7,
+        "tags":"SCAP | INFRA | GROWTH"
+    },
+    {
+        "ticker":"GLOBALVECT",
+        "Score":5,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"PARAGMILK",
+        "Score":6,
+        "tags":"SCAP | FMCG | DOMEST"
+    },
+    {
+        "ticker":"NDTV",
+        "Score":5,
+        "tags":"SCAP | MEDIA | DOMEST"
+    },
+    {
+        "ticker":"NIITMTS",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"KAPSTON",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"AEROFLEX",
+        "Score":7,
+        "tags":"MCAP | INFRA | NICHE | EXPORT | GROWTH"
+    },
+    {
+        "ticker":"RAJESHEXPO",
+        "Score":5,
+        "tags":"SCAP | RETAIL | EXPORT"
+    },
+    {
+        "ticker":"NITIRAJ",
+        "Score":6,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"KANPRPLA",
+        "Score":5,
+        "tags":"MICAP | CHEMX"
+    },
+    {
+        "ticker":"JITFINFRA",
+        "Score":5,
+        "tags":"SCAP | LOGIS | INFRA"
+    },
+    {
+        "ticker":"SHREYANIND",
+        "Score":5,
+        "tags":"MICAP | INFRA"
+    },
+    {
+        "ticker":"AURUM",
+        "Score":7,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"BHEL",
+        "Score":7,
+        "tags":"LCAP | INFRA | PSU | CAPEX | REVIVAL"
+    },
+    {
+        "ticker":"STERTOOLS",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"NMDC",
+        "Score":7,
+        "tags":"LCAP | N100 | METAL | PSU | COMMOD | DIVX"
+    },
+    {
+        "ticker":"AARON",
+        "Score":5,
+        "tags":"MICAP | CONSUM"
+    },
+    {
+        "ticker":"INFOBEAN",
+        "Score":6,
+        "tags":"SCAP | TECH | EXPORT"
+    },
+    {
+        "ticker":"GMDCLTD",
+        "Score":7,
+        "tags":"LCAP | METAL | PSU | COMMOD"
+    },
+    {
+        "ticker":"BLISSGVS",
+        "Score":6,
+        "tags":"SCAP | PHARMA | EXPORT"
+    },
+    {
+        "ticker":"MMP",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"NRL",
+        "Score":6,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"ADSL",
+        "Score":5,
+        "tags":"SCAP | TECH | GROWTH"
+    },
+    {
+        "ticker":"RATNAVEER",
+        "Score":7,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"WIPL",
+        "Score":5,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"KALAMANDIR",
+        "Score":6,
+        "tags":"SCAP | RETAIL | DOMEST"
+    },
+    {
+        "ticker":"KOPRAN",
+        "Score":6,
+        "tags":"SCAP | PHARMA"
+    },
+    {
+        "ticker":"AKSHARCHEM",
+        "Score":6,
+        "tags":"MICAP | CHEMX | EXPORT"
+    },
+    {
+        "ticker":"UNIENTER",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"DEVYANI",
+        "Score":7,
+        "tags":"MCAP | RETAIL | FRANCH | DOMEST | GROWTH"
+    },
+    {
+        "ticker":"DOLPHIN",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"PIGL",
+        "Score":8,
+        "tags":"MICAP | INFRA | GROWTH"
+    },
+    {
+        "ticker":"BHAGCHEM",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"MODIRUBBER",
+        "Score":6,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"XELPMOC",
+        "Score":6,
+        "tags":"MICAP | TECH | GROWTH"
+    },
+    {
+        "ticker":"JAMNAAUTO",
+        "Score":7,
+        "tags":"SCAP | AUTO | EXPORT"
+    },
+    {
+        "ticker":"RUBYMILLS",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"MHLXMIRU",
+        "Score":7,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"STEELCAS",
+        "Score":7,
+        "tags":"SCAP | INFRA | GLOBEX"
+    },
+    {
+        "ticker":"INDOTHAI",
+        "Score":5,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"GSLSU",
+        "Score":5,
+        "tags":"MICAP | CHEMX"
+    },
+    {
+        "ticker":"OMAXAUTO",
+        "Score":6,
+        "tags":"MICAP | AUTO"
+    },
+    {
+        "ticker":"COALINDIA",
+        "Score":7,
+        "tags":"LCAP | N50 | N100 | METAL | PSU | COMMOD | STRAT | DIVX"
+    },
+    {
+        "ticker":"RISHABH",
+        "Score":7,
+        "tags":"SCAP | INFRA | EXPORT | GROWTH"
+    },
+    {
+        "ticker":"PANAMAPET",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"LORDSCHLO",
+        "Score":6,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"PFC",
+        "Score":8,
+        "tags":"LCAP | INFRA | PSU | GOVCAP | NATINF | GROWTH"
+    },
+    {
+        "ticker":"GRMOVER",
+        "Score":6,
+        "tags":"SCAP | LOGIS | DOMEST"
+    },
+    {
+        "ticker":"SAHYADRI",
+        "Score":6,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"MASKINVEST",
+        "Score":5,
+        "tags":"SCAP | NBFC | VALUE"
+    },
+    {
+        "ticker":"EIFFL",
+        "Score":7,
+        "tags":"SCAP | REAL | DOMEST"
+    },
+    {
+        "ticker":"5PAISA",
+        "Score":7,
+        "tags":"SCAP | NBFC | FINX | INDST"
+    },
+    {
+        "ticker":"NAVNETEDUL",
+        "Score":6,
+        "tags":"SCAP | CONSUM | DOMEST"
+    },
+    {
+        "ticker":"BECTORFOOD",
+        "Score":7,
+        "tags":"MCAP | FMCG | GROWTH | DOMEST"
+    },
+    {
+        "ticker":"JOCIL",
+        "Score":6,
+        "tags":"MICAP | CHEMX | NICHE"
+    },
+    {
+        "ticker":"PFOCUS",
+        "Score":7,
+        "tags":"MCAP | PHARMA | NICHE"
+    },
+    {
+        "ticker":"ZUARI",
+        "Score":4,
+        "tags":""
+    },
+    {
+        "ticker":"NATIONALUM",
+        "Score":7,
+        "tags":"LCAP | METAL | PSU | COMMOD | EXPORT"
+    },
+    {
+        "ticker":"STARTECK",
+        "Score":5,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"CANTABIL",
+        "Score":7,
+        "tags":"SCAP | RETAIL | DOMEST | GROWTH"
+    },
+    {
+        "ticker":"SAPPHIRE",
+        "Score":7,
+        "tags":"MCAP | RETAIL | FRANCH | DOMEST | GROWTH"
+    },
+    {
+        "ticker":"NIRAJISPAT",
+        "Score":2,
+        "tags":"SCAP | METAL | CYCL"
+    },
+    {
+        "ticker":"GAEL",
+        "Score":6,
+        "tags":"MCAP"
+    },
+    {
+        "ticker":"RICOAUTO",
+        "Score":7,
+        "tags":"SCAP | AUTO | EXPORT"
+    },
+    {
+        "ticker":"NAHARINDUS",
+        "Score":6,
+        "tags":"MICAP | CONSUM | EXPORT"
+    },
+    {
+        "ticker":"BHARATGEAR",
+        "Score":6,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"CUBEXTUB",
+        "Score":6,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"SCPL",
+        "Score":6,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"SHIVATEX",
+        "Score":6,
+        "tags":"MICAP"
+    },
+    {
+        "ticker":"MOIL",
+        "Score":7,
+        "tags":"MCAP | METAL | PSU | COMMOD"
+    },
+    {
+        "ticker":"SUKHJITS",
+        "Score":6,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"MMFL",
+        "Score":7,
+        "tags":"SCAP | NBFC | INDST"
+    },
+    {
+        "ticker":"RBA",
+        "Score":1,
+        "tags":"SCAP"
+    },
+    {
+        "ticker":"CUPID",
+        "Score":7,
+        "tags":"MCAP | PHARMA | EXPORT | NICHE"
+    },
+    {
+        "ticker":"SANDUMA",
+        "Score":7,
+        "tags":""
+    }
+]

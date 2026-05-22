@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Risk Calculators Lab - Position Sizing & Risk Management Tools | Swing Intelligence</title>
+  <meta name="description" content="Professional risk management calculators for swing traders: position sizing, risk-reward ratios, stop-loss impact analysis with interactive charts and export functionality.">
+  <meta name="keywords" content="position size calculator, risk reward calculator, stop loss calculator, trading risk management, position sizing tool">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  
+  <style>
+    .calculator-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+    
+    .calculator-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      transition: all 0.3s ease;
+    }
+    
+    .calculator-card:hover {
+      border-color: var(--accent);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .calculator-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .calculator-icon {
+      font-size: 2.5rem;
+    }
+    
+    .calculator-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 0;
+    }
+    
+    .result-box {
+      margin-top: 1.5rem;
+      padding: 1.5rem;
+      background: var(--bg-tertiary);
+      border-left: 4px solid var(--accent);
+      border-radius: 0.5rem;
+      display: none;
+    }
+    
+    .result-box.show {
+      display: block;
+      animation: slideInUp 0.4s ease-out;
+    }
+    
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 0;
+      border-bottom: 1px dashed var(--border);
+    }
+    
+    .result-row:last-child {
+      border-bottom: none;
+    }
+    
+    .result-label {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+    
+    .result-value {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    
+    .result-value.success {
+      color: var(--success);
+    }
+    
+    .result-value.warning {
+      color: var(--warning);
+    }
+    
+    .result-value.danger {
+      color: var(--danger);
+    }
+    
+    .chart-container-small {
+      margin-top: 1rem;
+      height: 200px;
+    }
+    
+    .btn-group-calc {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    
+    .btn-small {
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+    }
+    
+    .input-group {
+      position: relative;
+    }
+    
+    .input-prefix {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    
+    .input-with-prefix {
+      padding-left: 2.5rem;
+    }
+    
+    .quick-preset {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+      flex-wrap: wrap;
+    }
+    
+    .preset-btn {
+      padding: 0.25rem 0.75rem;
+      font-size: 0.75rem;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      border-radius: 0.375rem;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .preset-btn:hover {
+      background: var(--accent-light);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+  
+  <nav class="top-nav">
+    <div class="nav-left">
+      <span class="nav-logo">📊</span>
+      <span>Swing Intelligence</span>
+    </div>
+    
+    <div class="nav-center">
+      <a href="index.html">Home</a>
+      <a href="market-intelligence.html">Intelligence</a>
+      <a href="strategy-museum.html">Strategies</a>
+      <a href="explain-score.html">Scoring</a>
+      <a href="calculators.html" class="active">Calculators</a>
+      <a href="resources.html">Resources</a>
+      <a href="about.html">About</a>
+    </div>
+    
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <button id="themeToggle" class="theme-toggle">🌙</button>
+    </div>
+    
+    <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span>→</span>
+    <span>Calculators Lab</span>
+  </div>
+
+  <main id="main-content" class="container">
+    <div class="section-header">
+      <h1>Risk Calculators Lab</h1>
+      <p>Quantify risk before execution. Never after. Professional-grade risk management tools.</p>
+    </div>
+
+    <div class="alert alert-info mb-4">
+      <span style="font-size: 1.5rem;">⚠️</span>
+      <div>
+        <strong>Risk-First Philosophy:</strong> These calculators help you define maximum loss BEFORE entering a trade. 
+        Position sizing based on risk tolerance prevents emotional decisions and capital destruction.
+      </div>
+    </div>
+
+    <div class="calculator-grid">
+      <!-- Position Size Calculator -->
+      <div class="calculator-card">
+        <div class="calculator-header">
+          <span class="calculator-icon">📏</span>
+          <h3 class="calculator-title">Position Size Calculator</h3>
+        </div>
+        
+        <div class="form-group">
+          <label for="capital">Total Trading Capital (₹)</label>
+          <div class="input-group">
+            <span class="input-prefix">₹</span>
+            <input type="number" id="capital" class="input-with-prefix" placeholder="100000" value="100000">
+          </div>
+          <div class="quick-preset">
+            <button class="preset-btn" onclick="setCapital(50000)">₹50K</button>
+            <button class="preset-btn" onclick="setCapital(100000)">₹1L</button>
+            <button class="preset-btn" onclick="setCapital(500000)">₹5L</button>
+            <button class="preset-btn" onclick="setCapital(1000000)">₹10L</button>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="risk">Risk Per Trade (%)</label>
+          <input type="number" id="risk" placeholder="1" value="1" min="0.1" max="5" step="0.1">
+          <div class="quick-preset">
+            <button class="preset-btn" onclick="document.getElementById('risk').value=0.5">0.5%</button>
+            <button class="preset-btn" onclick="document.getElementById('risk').value=1">1%</button>
+            <button class="preset-btn" onclick="document.getElementById('risk').value=2">2%</button>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="entry">Entry Price (₹)</label>
+          <div class="input-group">
+            <span class="input-prefix">₹</span>
+            <input type="number" id="entry" class="input-with-prefix" placeholder="500" value="500">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="stopLoss">Stop-Loss Price (₹)</label>
+          <div class="input-group">
+            <span class="input-prefix">₹</span>
+            <input type="number" id="stopLoss" class="input-with-prefix" placeholder="480" value="480">
+          </div>
+        </div>
+        
+        <button class="btn btn-primary" style="width: 100%;" onclick="calculatePosition()">
+          Calculate Position
+        </button>
+        
+        <div id="positionResult" class="result-box">
+          <div class="result-row">
+            <span class="result-label">Maximum Risk Amount</span>
+            <span class="result-value" id="maxRisk">₹1,000</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Risk Per Share</span>
+            <span class="result-value" id="riskPerShare">₹20</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">📊 Position Size (Shares)</span>
+            <span class="result-value success" id="positionSize">50</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Total Investment</span>
+            <span class="result-value" id="totalInvest">₹25,000</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Capital Allocation</span>
+            <span class="result-value" id="capAlloc">25%</span>
+          </div>
+        </div>
+        
+        <div class="btn-group-calc" style="display: none;" id="positionActions">
+          <button class="btn btn-ghost btn-small" onclick="exportCalculation('position')">📥 Export</button>
+          <button class="btn btn-ghost btn-small" onclick="clearPosition()">🔄 Reset</button>
+        </div>
+      </div>
+
+      <!-- Risk-Reward Calculator -->
+      <div class="calculator-card">
+        <div class="calculator-header">
+          <span class="calculator-icon">⚖️</span>
+          <h3 class="calculator-title">Risk-Reward Calculator</h3>
+        </div>
+        
+        <div class="form-group">
+          <label for="rrEntry">Entry Price (₹)</label>
+          <div class="input-group">
+            <span class="input-prefix">₹</span>
+            <input type="number" id="rrEntry" class="input-with-prefix" placeholder="500" value="500">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="rrStopLoss">Stop-Loss Price (₹)</label>
+          <div class="input-group">
+            <span class="input-prefix">₹</span>
+            <input type="number" id="rrStopLoss" class="input-with-prefix" placeholder="480" value="480">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="rrTarget">Target Price (₹)</label>
+          <div class="input-group">
+            <span class="input-prefix">₹</span>
+            <input type="number" id="rrTarget" class="input-with-prefix" placeholder="560" value="560">
+          </div>
+        </div>
+        
+        <button class="btn btn-primary" style="width: 100%;" onclick="calculateRR()">
+          Calculate R:R
+        </button>
+        
+        <div id="rrResult" class="result-box">
+          <div class="result-row">
+            <span class="result-label">Risk Amount (₹)</span>
+            <span class="result-value danger" id="rrRisk">20</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Reward Amount (₹)</span>
+            <span class="result-value success" id="rrReward">60</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">📊 Risk:Reward Ratio</span>
+            <span class="result-value" id="rrRatio">1:3.0</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Verdict</span>
+            <span class="badge" id="rrVerdict">Excellent</span>
+          </div>
+          
+          <div class="chart-container-small">
+            <canvas id="rrChart"></canvas>
+          </div>
+        </div>
+        
+        <div class="btn-group-calc" style="display: none;" id="rrActions">
+          <button class="btn btn-ghost btn-small" onclick="exportCalculation('rr')">📥 Export</button>
+          <button class="btn btn-ghost btn-small" onclick="clearRR()">🔄 Reset</button>
+        </div>
+      </div>
+
+      <!-- Stop-Loss Impact -->
+      <div class="calculator-card">
+        <div class="calculator-header">
+          <span class="calculator-icon">🛑</span>
+          <h3 class="calculator-title">Stop-Loss Impact</h3>
+        </div>
+        
+        <div class="form-group">
+          <label for="slQuantity">Quantity (Shares)</label>
+          <input type="number" id="slQuantity" placeholder="100" value="100">
+        </div>
+        
+        <div class="form-group">
+          <label for="slEntry">Entry Price (₹)</label>
+          <div class="input-group">
+            <span class="input-prefix">₹</span>
+            <input type="number" id="slEntry" class="input-with-prefix" placeholder="500" value="500">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="slStop">Stop-Loss Price (₹)</label>
+          <div class="input-group">
+            <span class="input-prefix">₹</span>
+            <input type="number" id="slStop" class="input-with-prefix" placeholder="475" value="475">
+          </div>
+        </div>
+        
+        <button class="btn btn-primary" style="width: 100%;" onclick="calculateSL()">
+          Calculate Impact
+        </button>
+        
+        <div id="slResult" class="result-box">
+          <div class="result-row">
+            <span class="result-label">Loss Per Share</span>
+            <span class="result-value" id="slPerShare">₹25</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">📊 Total Loss</span>
+            <span class="result-value danger" id="slTotalLoss">₹2,500</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Loss Percentage</span>
+            <span class="result-value" id="slPercent">5.0%</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Status</span>
+            <span class="badge" id="slStatus">Acceptable</span>
+          </div>
+        </div>
+        
+        <div class="btn-group-calc" style="display: none;" id="slActions">
+          <button class="btn btn-ghost btn-small" onclick="exportCalculation('sl')">📥 Export</button>
+          <button class="btn btn-ghost btn-small" onclick="clearSL()">🔄 Reset</button>
+        </div>
+      </div>
+
+      <!-- Breakeven Calculator -->
+      <div class="calculator-card">
+        <div class="calculator-header">
+          <span class="calculator-icon">🎯</span>
+          <h3 class="calculator-title">Breakeven Calculator</h3>
+        </div>
+        
+        <div class="form-group">
+          <label for="beEntry">Entry Price (₹)</label>
+          <div class="input-group">
+            <span class="input-prefix">₹</span>
+            <input type="number" id="beEntry" class="input-with-prefix" placeholder="500" value="500">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="beBrokerage">Brokerage (% per trade)</label>
+          <input type="number" id="beBrokerage" placeholder="0.03" value="0.03" step="0.01">
+          <div class="quick-preset">
+            <button class="preset-btn" onclick="document.getElementById('beBrokerage').value=0.03">0.03%</button>
+            <button class="preset-btn" onclick="document.getElementById('beBrokerage').value=0.05">0.05%</button>
+            <button class="preset-btn" onclick="document.getElementById('beBrokerage').value=0.1">0.1%</button>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="beSTT">STT (% on sell)</label>
+          <input type="number" id="beSTT" placeholder="0.025" value="0.025" step="0.001">
+        </div>
+        
+        <button class="btn btn-primary" style="width: 100%;" onclick="calculateBreakeven()">
+          Calculate Breakeven
+        </button>
+        
+        <div id="beResult" class="result-box">
+          <div class="result-row">
+            <span class="result-label">Total Cost per Share</span>
+            <span class="result-value" id="beCost">₹500.38</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">📊 Breakeven Price</span>
+            <span class="result-value success" id="bePrice">₹500.76</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Required Move</span>
+            <span class="result-value" id="beMove">+0.15%</span>
+          </div>
+        </div>
+        
+        <div class="btn-group-calc" style="display: none;" id="beActions">
+          <button class="btn btn-ghost btn-small" onclick="exportCalculation('be')">📥 Export</button>
+          <button class="btn btn-ghost btn-small" onclick="clearBE()">🔄 Reset</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Educational Section -->
+    <section class="section">
+      <div class="card">
+        <h2>💡 Risk Management Principles</h2>
+        <div class="grid grid-2" style="margin-top: 1.5rem;">
+          <div>
+            <h4>1% Rule</h4>
+            <p class="text-muted">
+              Never risk more than 1-2% of your capital on a single trade. This ensures you can survive 
+              multiple consecutive losses without significant capital destruction.
+            </p>
+          </div>
+          <div>
+            <h4>Minimum R:R of 1:2</h4>
+            <p class="text-muted">
+              Every trade should offer at least 2x reward compared to risk. Asymmetric risk-reward 
+              allows profitability even with 40% win rate.
+            </p>
+          </div>
+          <div>
+            <h4>Position Sizing First</h4>
+            <p class="text-muted">
+              Calculate position size based on risk amount and stop-loss distance. Never decide quantity 
+              based on available capital alone.
+            </p>
+          </div>
+          <div>
+            <h4>Account for Costs</h4>
+            <p class="text-muted">
+              Include brokerage, STT, and taxes in breakeven calculations. Hidden costs significantly 
+              impact actual profitability.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>📊 Swing Intelligence</h4>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">
+          Rule-based swing trading platform focused on systematic analysis and capital protection.
+        </p>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="market-intelligence.html">Market Intelligence</a></li>
+          <li><a href="strategy-museum.html">Strategy Museum</a></li>
+          <li><a href="explain-score.html">Swing Scoring</a></li>
+          <li><a href="calculators.html">Risk Calculators</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="resources.html">Education Center</a></li>
+          <li><a href="resources.html#faq">FAQ</a></li>
+          <li><a href="market-psychology.html">Market Psychology</a></li>
+          <li><a href="decision-lab.html">Decision Lab</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="footer-disclaimer">
+        <strong>⚠️ Important Disclaimer:</strong> Risk calculators are educational tools only. 
+        They do not guarantee trading outcomes. Always conduct your own analysis.
+      </div>
+      <div class="footer-copy">
+        © 2026 Swing Intelligence. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Theme Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+    
+    if (localStorage.getItem('theme') === 'light') {
+      html.setAttribute('data-theme', 'light');
+      themeToggle.textContent = '☀️';
+    }
+    
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      themeToggle.textContent = newTheme === 'light' ? '☀️' : '🌙';
+    });
+    
+    // Calculator Functions
+    function setCapital(amount) {
+      document.getElementById('capital').value = amount;
+    }
+    
+    function calculatePosition() {
+      const capital = parseFloat(document.getElementById('capital').value);
+      const risk = parseFloat(document.getElementById('risk').value);
+      const entry = parseFloat(document.getElementById('entry').value);
+      const stopLoss = parseFloat(document.getElementById('stopLoss').value);
+      
+      if (!capital || !risk || !entry || !stopLoss) {
+        alert('Please fill all fields');
+        return;
+      }
+      
+      const maxRisk = capital * (risk / 100);
+      const riskPerShare = Math.abs(entry - stopLoss);
+      const quantity = Math.floor(maxRisk / riskPerShare);
+      const totalInvest = quantity * entry;
+      const capAlloc = (totalInvest / capital * 100).toFixed(1);
+      
+      document.getElementById('maxRisk').textContent = `₹${maxRisk.toLocaleString('en-IN')}`;
+      document.getElementById('riskPerShare').textContent = `₹${riskPerShare.toFixed(2)}`;
+      document.getElementById('positionSize').textContent = quantity;
+      document.getElementById('totalInvest').textContent = `₹${totalInvest.toLocaleString('en-IN')}`;
+      document.getElementById('capAlloc').textContent = `${capAlloc}%`;
+      
+      document.getElementById('positionResult').classList.add('show');
+      document.getElementById('positionActions').style.display = 'flex';
+    }
+    
+    function calculateRR() {
+      const entry = parseFloat(document.getElementById('rrEntry').value);
+      const stopLoss = parseFloat(document.getElementById('rrStopLoss').value);
+      const target = parseFloat(document.getElementById('rrTarget').value);
+      
+      if (!entry || !stopLoss || !target) {
+        alert('Please fill all fields');
+        return;
+      }
+      
+      const risk = Math.abs(entry - stopLoss);
+      const reward = Math.abs(target - entry);
+      const ratio = (reward / risk).toFixed(2);
+      
+      document.getElementById('rrRisk').textContent = risk.toFixed(2);
+      document.getElementById('rrReward').textContent = reward.toFixed(2);
+      document.getElementById('rrRatio').textContent = `1:${ratio}`;
+      
+      const verdict = document.getElementById('rrVerdict');
+      if (ratio >= 3) {
+        verdict.textContent = '🔥 Excellent';
+        verdict.className = 'badge badge-success';
+      } else if (ratio >= 2) {
+        verdict.textContent = '✅ Good';
+        verdict.className = 'badge badge-success';
+      } else if (ratio >= 1) {
+        verdict.textContent = '⚠️ Acceptable';
+        verdict.className = 'badge badge-warning';
+      } else {
+        verdict.textContent = '❌ Poor';
+        verdict.className = 'badge badge-danger';
+      }
+      
+      document.getElementById('rrResult').classList.add('show');
+      document.getElementById('rrActions').style.display = 'flex';
+      
+      // Create chart
+      createRRChart(risk, reward);
+    }
+    
+    function createRRChart(risk, reward) {
+      const ctx = document.getElementById('rrChart').getContext('2d');
+      const isDark = html.getAttribute('data-theme') !== 'light';
+      const textColor = isDark ? '#cbd5e1' : '#334155';
+      
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Risk', 'Reward'],
+          datasets: [{
+            data: [risk, reward],
+            backgroundColor: ['#ef4444', '#10b981']
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              ticks: { color: textColor }
+            },
+            x: {
+              ticks: { color: textColor }
+            }
+          }
+        }
+      });
+    }
+    
+    function calculateSL() {
+      const quantity = parseInt(document.getElementById('slQuantity').value);
+      const entry = parseFloat(document.getElementById('slEntry').value);
+      const stop = parseFloat(document.getElementById('slStop').value);
+      
+      if (!quantity || !entry || !stop) {
+        alert('Please fill all fields');
+        return;
+      }
+      
+      const lossPerShare = Math.abs(entry - stop);
+      const totalLoss = lossPerShare * quantity;
+      const lossPercent = (lossPerShare / entry * 100).toFixed(2);
+      
+      document.getElementById('slPerShare').textContent = `₹${lossPerShare.toFixed(2)}`;
+      document.getElementById('slTotalLoss').textContent = `₹${totalLoss.toLocaleString('en-IN')}`;
+      document.getElementById('slPercent').textContent = `${lossPercent}%`;
+      
+      const status = document.getElementById('slStatus');
+      if (totalLoss <= 2000) {
+        status.textContent = '✅ Safe';
+        status.className = 'badge badge-success';
+      } else if (totalLoss <= 5000) {
+        status.textContent = '⚠️ Moderate';
+        status.className = 'badge badge-warning';
+      } else {
+        status.textContent = '❌ High Risk';
+        status.className = 'badge badge-danger';
+      }
+      
+      document.getElementById('slResult').classList.add('show');
+      document.getElementById('slActions').style.display = 'flex';
+    }
+    
+    function calculateBreakeven() {
+      const entry = parseFloat(document.getElementById('beEntry').value);
+      const brokerage = parseFloat(document.getElementById('beBrokerage').value);
+      const stt = parseFloat(document.getElementById('beSTT').value);
+      
+      if (!entry || !brokerage || !stt) {
+        alert('Please fill all fields');
+        return;
+      }
+      
+      const buyCost = entry * (1 + brokerage / 100);
+      const breakeven = buyCost * (1 + (brokerage + stt) / 100);
+      const move = ((breakeven - entry) / entry * 100).toFixed(2);
+      
+      document.getElementById('beCost').textContent = `₹${buyCost.toFixed(2)}`;
+      document.getElementById('bePrice').textContent = `₹${breakeven.toFixed(2)}`;
+      document.getElementById('beMove').textContent = `+${move}%`;
+      
+      document.getElementById('beResult').classList.add('show');
+      document.getElementById('beActions').style.display = 'flex';
+    }
+    
+    function clearPosition() {
+      document.getElementById('positionResult').classList.remove('show');
+      document.getElementById('positionActions').style.display = 'none';
+    }
+    
+    function clearRR() {
+      document.getElementById('rrResult').classList.remove('show');
+      document.getElementById('rrActions').style.display = 'none';
+    }
+    
+    function clearSL() {
+      document.getElementById('slResult').classList.remove('show');
+      document.getElementById('slActions').style.display = 'none';
+    }
+    
+    function clearBE() {
+      document.getElementById('beResult').classList.remove('show');
+      document.getElementById('beActions').style.display = 'none';
+    }
+    
+    function exportCalculation(type) {
+      alert('Export functionality: Save results as PDF/CSV. Coming soon!');
+    }
+    
+    // Mobile Menu
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navCenter = document.querySelector('.nav-center');
+    
+    if (mobileMenuToggle) {
+      mobileMenuToggle.addEventListener('click', () => {
+        mobileMenuToggle.classList.toggle('active');
+        navCenter.classList.toggle('active');
+      });
+    }
+  </script>
+</body>
+</html>
+

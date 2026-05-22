@@ -1,0 +1,81 @@
+{
+  "latest": "2026-05-21",
+  "dates": [
+    {
+      "date": "2026-05-21",
+      "file": "data/close/swing_summary_2026-05-21.json",
+      "rows": 0
+    },
+    {
+      "date": "2026-05-11",
+      "file": "data/close/swing_summary_2026-05-11.json",
+      "rows": 0
+    },
+    {
+      "date": "2026-03-11",
+      "file": "data/close/swing_close_2026-03-11.json",
+      "rows": 0
+    },
+    {
+      "date": "2026-01-29",
+      "file": "data/close/swing_close_2026-01-29.json",
+      "rows": 0
+    },
+    {
+      "date": "2026-01-28",
+      "file": "data/close/swing_close_2026-01-28.json",
+      "rows": 0
+    },
+    {
+      "date": "2026-01-27",
+      "open": true,
+      "close": true
+    },
+    {
+      "date": "2026-01-23",
+      "open": false,
+      "close": true
+    },
+    {
+      "date": "2026-01-22",
+      "open": false,
+      "close": true
+    },
+    {
+      "date": "2026-01-21",
+      "open": false,
+      "close": true
+    },
+    {
+      "date": "2026-01-20",
+      "open": true,
+      "close": true
+    },
+    {
+      "date": "2026-01-19",
+      "open": true,
+      "close": true
+    },
+    {
+      "date": "2026-01-17",
+      "open": true,
+      "close": false
+    },
+    {
+      "date": "2026-01-16",
+      "open": true,
+      "close": true
+    },
+    {
+      "date": "2026-01-15",
+      "open": true,
+      "close": true
+    },
+    {
+      "date": "2026-01-14",
+      "open": true,
+      "close": true
+    }
+  ],
+  "generated_at": "2026-05-21T12:37:52"
+}

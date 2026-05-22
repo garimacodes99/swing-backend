@@ -1,193 +1,219 @@
-"""
-MARKET CLOSE ANALYSIS
---------------------
-Generates a clean swing dashboard snapshot using latest available DAILY candle.
-"""
+import os
+import sys
+import shutil
+import logging
+import pandas as pd
 
 from pathlib import Path
-import pandas as pd
-import logging
-import sys
 from datetime import datetime
+
+# ==========================================================
+# FIX IMPORT PATHS
+# ==========================================================
+
+current_dir = Path(__file__).resolve().parent
+root_dir = current_dir.parent
+
+if str(root_dir) not in sys.path:
+    sys.path.insert(0, str(root_dir))
+
+# ==========================================================
+# INTERNAL IMPORTS
+# ==========================================================
 
 from fetchers.yf_fetcher import fetch_ohlc
 from logic.swing_logic import compute_swing_score
 from utils.update_index import update_index
 
 # ==========================================================
-# Logging
+# LOGGING
 # ==========================================================
+
 logging.basicConfig(
     level=logging.INFO,
-    format="%(asctime)s | %(levelname)-6s | %(message)s",
-    datefmt="%H:%M:%S",
-    handlers=[logging.StreamHandler(sys.stdout)],
+    format="%(message)s"
 )
+
 log = logging.getLogger(__name__)
 
 # ==========================================================
-# Config
+# PATHS
 # ==========================================================
+
 UNIVERSE_FILE = "universe/stock_universe.csv"
+
+# Backend output directory
 OUTPUT_DIR = Path("output/close")
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
+# Frontend data directory
+FRONTEND_CLOSE_DIR = Path("frontend/public/data/close")
+FRONTEND_CLOSE_DIR.mkdir(parents=True, exist_ok=True)
+
 # ==========================================================
-# FINAL DASHBOARD SCHEMA
+# COLUMN ORDER
 # ==========================================================
+
 COLUMN_ORDER = [
     "Ticker",
     "LTP",
-    "Volume",
-
-    "RSI_14",
-    "RSI_Zone",
-
-    "ATR_PCT",
-    "Volatility_Class",
-
-    "SMA_200",
-    "Dist_SMA200_PCT",
-    "Trend_Regime",
-
-    "Return_3M_PCT",
-    "Return_6M_PCT",
-    "Return_1Y_PCT",
-
-    "High_52W",
-    "Low_52W",
-
-    "Swing_Score",
-    "Swing_Label",
+    "RSI 14",
+    "Weighted Avg",
+    "Distance %",
+    "Google Finance"
 ]
 
 # ==========================================================
-# Helpers
+# MAIN
 # ==========================================================
-def round2(x):
-    return round(float(x), 2) if pd.notna(x) else None
 
-
-def compute_return_pct(df, lookback):
-    if df is None or len(df) <= lookback:
-        return None
-    past = df["Close"].iloc[-(lookback + 1)]
-    curr = df["Close"].iloc[-1]
-    if pd.isna(past) or past <= 0:
-        return None
-    return round2(((curr - past) / past) * 100)
-
-
-def compute_52w_high_low(df, lookback=252):
-    if df is None or len(df) < lookback:
-        return None, None
-    w = df.tail(lookback)
-    return round2(w["High"].max()), round2(w["Low"].min())
-
-
-def rsi_zone(rsi):
-    if rsi < 30:
-        return "OVERSOLD"
-    elif rsi < 45:
-        return "WEAK"
-    elif rsi <= 65:
-        return "HEALTHY"
-    else:
-        return "OVERBOUGHT"
-
-
-def volatility_class(atr):
-    if atr < 3:
-        return "LOW_VOL"
-    elif atr <= 5:
-        return "MID_VOL"
-    else:
-        return "HIGH_VOL"
-
-# ==========================================================
-# Main
-# ==========================================================
 def main():
 
-    universe = pd.read_csv(UNIVERSE_FILE)["Ticker"].astype(str).tolist()
-    log.info(f"START | Market Close Analysis | Tickers={len(universe)}")
+    # ======================================================
+    # CHECK UNIVERSE FILE
+    # ======================================================
+
+    if not os.path.exists(UNIVERSE_FILE):
+        log.error(f"❌ Universe file missing: {UNIVERSE_FILE}")
+        return
+
+    # ======================================================
+    # LOAD STOCK LIST
+    # ======================================================
+
+    universe = pd.read_csv(UNIVERSE_FILE)["Ticker"].tolist()
+
+    # ======================================================
+    # FILE NAME
+    # ======================================================
 
     run_date = datetime.now().strftime("%Y-%m-%d")
 
-    rows = []
-    processed = skipped = failed = 0
+    save_filename = f"swing_close_{run_date}.json"
+
+    full_output_path = OUTPUT_DIR / save_filename
+
+    # ======================================================
+    # PROCESS STOCKS
+    # ======================================================
+
+    final_rows = []
+
+    log.info(f"\n🚀 Running Close Analysis for {len(universe)} tickers...\n")
 
     for ticker in universe:
+
         try:
+
+            ticker = ticker.strip()
+
+            # ==================================================
+            # FETCH MARKET DATA
+            # ==================================================
+
             df = fetch_ohlc(ticker)
 
             if df is None or df.empty:
-                skipped += 1
+                log.warning(f"⚠️ No data for {ticker}")
                 continue
 
-            df = df.dropna()
+            # ==================================================
+            # COMPUTE SWING LOGIC
+            # ==================================================
 
-            swing = compute_swing_score(df)
+            logic_output = compute_swing_score(df)
 
-            ltp = round2(df["Close"].iloc[-1])
-            rsi = round2(swing["RSI_14"])
-            atr = round2(swing["ATR_PCT"])
-            sma200 = round2(swing["SMA_200"])
+            if "Error" in logic_output:
+                log.warning(f"⚠️ Logic error for {ticker}: {logic_output['Error']}")
+                continue
 
-            dist_sma = round2(((ltp - sma200) / sma200) * 100) if sma200 else None
-            high_52w, low_52w = compute_52w_high_low(df)
+            # ==================================================
+            # EXTRACT VALUES
+            # ==================================================
 
-            row = {
+            ltp = logic_output.get("Ticker_LTP")
+
+            dist = logic_output.get("Dist_Weighted_Avg_PCT")
+
+            final_rows.append({
                 "Ticker": ticker,
                 "LTP": ltp,
-                "Volume": int(df["Volume"].iloc[-1]),
-
-                "RSI_14": rsi,
-                "RSI_Zone": rsi_zone(rsi),
-
-                "ATR_PCT": atr,
-                "Volatility_Class": volatility_class(atr),
-
-                "SMA_200": sma200,
-                "Dist_SMA200_PCT": dist_sma,
-                "Trend_Regime": swing["Trend_Regime"],
-
-                "Return_3M_PCT": compute_return_pct(df, 63),
-                "Return_6M_PCT": compute_return_pct(df, 126),
-                "Return_1Y_PCT": compute_return_pct(df, 252),
-
-                "High_52W": high_52w,
-                "Low_52W": low_52w,
-
-                "Swing_Score": round2(swing["Swing_Score"]),
-                "Swing_Label": swing["Swing_Label"],
-            }
-
-            rows.append(row)
-            processed += 1
+                "RSI 14": logic_output.get("RSI_14"),
+                "Weighted Avg": logic_output.get("Weighted_Avg"),
+                "Distance %": f"{dist:+.2f}%" if dist is not None else "0.00%",
+                "Google Finance": f"https://www.google.com/finance/quote/{ticker}:NSE"
+            })
 
         except Exception as e:
-            failed += 1
-            log.error(f"FAIL | {ticker} | {e}")
 
-    if not rows:
-        log.error("No rows generated")
+            log.error(f"❌ Error processing {ticker}: {e}")
+
+    # ======================================================
+    # NO DATA CHECK
+    # ======================================================
+
+    if not final_rows:
+        log.error("❌ No data processed. JSON file not created.")
         return
 
-    final_df = pd.DataFrame(rows).reindex(columns=COLUMN_ORDER)
+    # ======================================================
+    # CREATE DATAFRAME
+    # ======================================================
 
-    csv_path = OUTPUT_DIR / f"swing_close_{run_date}.csv"
-    json_path = OUTPUT_DIR / f"swing_close_{run_date}.json"
+    summary_df = pd.DataFrame(final_rows)
 
-    final_df.to_csv(csv_path, index=False)
-    final_df.to_json(json_path, orient="records", indent=2)
+    summary_df = summary_df.reindex(columns=COLUMN_ORDER)
+
+    # ======================================================
+    # SAVE JSON TO BACKEND
+    # ======================================================
+
+    summary_df.to_json(
+        full_output_path,
+        orient="records",
+        indent=2
+    )
+
+    log.info(f"\n✅ Backend JSON saved:")
+    log.info(full_output_path)
+
+    # ======================================================
+    # COPY TO FRONTEND
+    # ======================================================
+
+    frontend_json_path = FRONTEND_CLOSE_DIR / save_filename
+
+    shutil.copy(full_output_path, frontend_json_path)
+
+    log.info(f"\n✅ Copied to frontend:")
+    log.info(frontend_json_path)
+
+    # ======================================================
+    # UPDATE INDEX
+    # ======================================================
 
     update_index(run_date)
 
-    log.info(f"DONE | Processed={processed} Skipped={skipped} Failed={failed}")
-    log.info(f"Saved CSV  → {csv_path}")
-    log.info(f"Saved JSON → {json_path}")
+    # ======================================================
+    # CONSOLE PREVIEW
+    # ======================================================
+
+    print("\n" + "-" * 120)
+
+    print(summary_df.to_string(index=False))
+
+    print("-" * 120)
+
+    # ======================================================
+    # FINAL SUCCESS MESSAGE
+    # ======================================================
+
+    log.info("\n🎯 Pipeline Completed Successfully")
+    log.info("Backend + Frontend synced automatically\n")
 
 # ==========================================================
+# RUN
+# ==========================================================
+
 if __name__ == "__main__":
     main()

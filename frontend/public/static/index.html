@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <!-- SEO Meta Tags -->
+  <title>Swing Intelligence - Rule-Based Swing Trading Scanner & Stock Analysis Platform</title>
+  <meta name="description" content="Advanced rule-based swing trading platform with intelligent stock screening, risk management calculators, technical analysis, and market psychology insights. Filter first, score later, protect capital always.">
+  <meta name="keywords" content="swing trading, stock scanner, technical analysis, risk management, trading strategies, market intelligence, rule-based trading, algorithmic screening, stock analysis, trading calculator, market psychology">
+  <meta name="author" content="Swing Intelligence">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Swing Intelligence - Rule-Based Swing Trading Platform">
+  <meta property="og:description" content="Intelligent stock screening with rule-based filters, swing scoring, and comprehensive risk management tools.">
+  <meta property="og:url" content="https://swingintelligence.com">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Swing Intelligence - Swing Trading Platform">
+  <meta name="twitter:description" content="Rule-based swing trading with intelligent stock screening and risk management.">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://swingintelligence.com">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Swing Intelligence",
+    "applicationCategory": "FinanceApplication",
+    "description": "Rule-based swing trading platform with intelligent stock screening and risk management",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "INR"
+    }
+  }
+  </script>
+  
+  <style>
+    /* Hero Section Styles */
+    .hero {
+      position: relative;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    }
+    
+    .hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0.05;
+      background-image: 
+        radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.3) 0%, transparent 50%);
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 900px;
+      padding: 2rem;
+    }
+    
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: var(--accent-light);
+      border: 1px solid var(--accent);
+      border-radius: 9999px;
+      color: var(--accent);
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      animation: fadeIn 0.6s ease-out;
+    }
+    
+    .hero h1 {
+      font-size: 4rem;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: fadeIn 0.8s ease-out 0.2s backwards;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.5rem;
+      color: var(--text-muted);
+      margin-bottom: 3rem;
+      line-height: 1.6;
+      animation: fadeIn 1s ease-out 0.4s backwards;
+    }
+    
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeIn 1.2s ease-out 0.6s backwards;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 4rem;
+      animation: fadeIn 1.4s ease-out 0.8s backwards;
+    }
+    
+    .stat-item {
+      text-align: center;
+    }
+    
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent) 0%, #8b5cf6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    
+    .stat-label {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    /* Features Grid */
+    .feature-card {
+      position: relative;
+      padding: 2rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      transition: all 0.3s ease;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--accent);
+      box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+    }
+    
+    .feature-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .feature-card:nth-child(2) .feature-icon {
+      animation-delay: 0.3s;
+    }
+    
+    .feature-card:nth-child(3) .feature-icon {
+      animation-delay: 0.6s;
+    }
+    
+    /* Process Flow */
+    .process-flow {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 2rem;
+      background: var(--bg-secondary);
+      border: 1px dashed var(--border);
+      border-radius: 1rem;
+      flex-wrap: wrap;
+    }
+    
+    .process-step {
+      flex: 1;
+      min-width: 150px;
+      text-align: center;
+      padding: 1rem;
+      position: relative;
+    }
+    
+    .process-step::after {
+      content: '→';
+      position: absolute;
+      right: -1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+      color: var(--accent);
+    }
+    
+    .process-step:last-child::after {
+      display: none;
+    }
+    
+    .process-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: var(--accent-light);
+      color: var(--accent);
+      border-radius: 50%;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    
+    /* Testimonials */
+    .testimonial-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      position: relative;
+    }
+    
+    .testimonial-content {
+      font-size: 1.125rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent) 0%, #8b5cf6 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+    }
+    
+    .author-info h4 {
+      margin: 0;
+      font-size: 1rem;
+      color: var(--text-primary);
+    }
+    
+    .author-info p {
+      margin: 0;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+    
+    /* Ticker Tape */
+    .ticker-tape {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .ticker-content {
+      display: flex;
+      gap: 3rem;
+      animation: scroll 30s linear infinite;
+      white-space: nowrap;
+    }
+    
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    
+    .ticker-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+    }
+    
+    .ticker-symbol {
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    
+    .ticker-change {
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      font-weight: 600;
+    }
+    
+    .ticker-change.positive {
+      background: var(--success-bg);
+      color: var(--success);
+    }
+    
+    .ticker-change.negative {
+      background: var(--danger-bg);
+      color: var(--danger);
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, var(--accent) 0%, #8b5cf6 100%);
+      border-radius: 2rem;
+      padding: 4rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      animation: rotate 20s linear infinite;
+    }
+    
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .cta-section h2 {
+      color: white;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .cta-section p {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .cta-section .btn {
+      background: white;
+      color: var(--accent);
+      position: relative;
+      z-index: 1;
+    }
+    
+    .cta-section .btn:hover {
+      background: var(--bg-primary);
+      transform: translateY(-4px) scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+  
+  <!-- Navigation -->
+  <nav class="top-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-left">
+      <span class="nav-logo">📊</span>
+      <span>Swing Intelligence</span>
+    </div>
+    
+    <div class="nav-center">
+      <a href="index.html" class="active" aria-current="page">Home</a>
+      <a href="market-intelligence.html">Intelligence</a>
+      <a href="strategy-museum.html">Strategies</a>
+      <a href="explain-score.html">Scoring</a>
+      <a href="calculators.html">Calculators</a>
+      <a href="resources.html">Resources</a>
+      <a href="about.html">About</a>
+    </div>
+    
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <a href="scanner-preview.html" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+        Launch Scanner
+      </a>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+    </div>
+    
+    <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Hero Section -->
+  <main id="main-content">
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span>✨</span>
+          <span>Rule-Based Trading Intelligence</span>
+        </div>
+        
+        <h1 id="hero-heading">
+          Filter First. Score Later.<br>
+          Protect Capital Always.
+        </h1>
+        
+        <p class="hero-subtitle">
+          Advanced swing trading platform that filters stocks through strict rule-based criteria before scoring. 
+          No predictions. No emotions. Just systematic analysis.
+        </p>
+        
+        <div class="hero-cta">
+          <a href="scanner-preview.html" class="btn btn-primary">
+            🚀 Enter Scanner
+          </a>
+          <a href="about.html" class="btn btn-secondary">
+            📖 How It Works
+          </a>
+          <a href="market-intelligence.html" class="btn btn-ghost">
+            📊 Market Intelligence
+          </a>
+        </div>
+        
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-number">5+</span>
+            <span class="stat-label">Filter Layers</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">0-100</span>
+            <span class="stat-label">Swing Score</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Rule-Based</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label">Market Analysis</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ticker Tape -->
+    <div class="ticker-tape" aria-hidden="true">
+      <div class="ticker-content">
+        <div class="ticker-item">
+          <span class="ticker-symbol">RELIANCE</span>
+          <span class="ticker-change positive">+2.4%</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-symbol">TCS</span>
+          <span class="ticker-change positive">+1.8%</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-symbol">INFY</span>
+          <span class="ticker-change negative">-0.5%</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-symbol">HDFCBANK</span>
+          <span class="ticker-change positive">+3.2%</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-symbol">WIPRO</span>
+          <span class="ticker-change positive">+1.1%</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-symbol">ICICIBANK</span>
+          <span class="ticker-change negative">-1.3%</span>
+        </div>
+        <!-- Duplicate for seamless loop -->
+        <div class="ticker-item">
+          <span class="ticker-symbol">RELIANCE</span>
+          <span class="ticker-change positive">+2.4%</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-symbol">TCS</span>
+          <span class="ticker-change positive">+1.8%</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-symbol">INFY</span>
+          <span class="ticker-change negative">-0.5%</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-symbol">HDFCBANK</span>
+          <span class="ticker-change positive">+3.2%</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-symbol">WIPRO</span>
+          <span class="ticker-change positive">+1.1%</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-symbol">ICICIBANK</span>
+          <span class="ticker-change negative">-1.3%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- System Process Flow -->
+    <section class="container section">
+      <div class="section-header">
+        <h2>How The System Thinks</h2>
+        <p>Multi-layered filtering system that protects capital before measuring opportunity</p>
+      </div>
+      
+      <div class="process-flow">
+        <div class="process-step">
+          <div class="process-number">1</div>
+          <div>Market Safe?</div>
+        </div>
+        <div class="process-step">
+          <div class="process-number">2</div>
+          <div>Trend Aligned?</div>
+        </div>
+        <div class="process-step">
+          <div class="process-number">3</div>
+          <div>Volatility OK?</div>
+        </div>
+        <div class="process-step">
+          <div class="process-number">4</div>
+          <div>Measure Conviction</div>
+        </div>
+        <div class="process-step">
+          <div class="process-number">5</div>
+          <div>Generate Score</div>
+        </div>
+      </div>
+      
+      <div class="alert alert-info mt-4">
+        <span style="font-size: 1.5rem;">ℹ️</span>
+        <div>
+          <strong>Filter-First Philosophy:</strong> Only stocks that pass ALL filters earn a swing score (0-100). 
+          Most stocks are rejected before scoring even begins. Capital protection > Activity.
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Features -->
+    <section class="container section">
+      <div class="section-header">
+        <h2>Platform Modules</h2>
+        <p>Comprehensive tools for systematic swing trading analysis</p>
+      </div>
+      
+      <div class="grid grid-3">
+        <div class="feature-card">
+          <div class="feature-icon">🧠</div>
+          <h3>Market Intelligence</h3>
+          <p>Real-time market regime analysis, breadth indicators, and volatility assessments. Understand the macro context before taking positions.</p>
+          <a href="market-intelligence.html" class="btn btn-ghost mt-2" style="width: 100%;">Explore →</a>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🏛️</div>
+          <h3>Strategy Museum</h3>
+          <p>Documented rule-based strategies with entry/exit criteria, risk parameters, and forbidden trade conditions. No discretion, only rules.</p>
+          <a href="strategy-museum.html" class="btn btn-ghost mt-2" style="width: 100%;">View Strategies →</a>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Swing Score System</h3>
+          <p>Transparent 0-100 scoring system combining trend, volatility, conviction, and breadth. Understand exactly why stocks qualify or fail.</p>
+          <a href="explain-score.html" class="btn btn-ghost mt-2" style="width: 100%;">Learn Scoring →</a>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🧮</div>
+          <h3>Risk Calculators</h3>
+          <p>Position sizing, risk-reward ratios, stop-loss impact calculators. Quantify risk before execution, never after.</p>
+          <a href="calculators.html" class="btn btn-ghost mt-2" style="width: 100%;">Calculate Risk →</a>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🚫</div>
+          <h3>Forbidden Trades</h3>
+          <p>Comprehensive list of rejected trade scenarios. Learn what the system avoids and why most opportunities are traps.</p>
+          <a href="forbidden-trades.html" class="btn btn-ghost mt-2" style="width: 100%;">See Rules →</a>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🧠</div>
+          <h3>Market Psychology</h3>
+          <p>Fear/greed cycles, market phases, and behavioral analysis. Understand why technical setups fail in hostile environments.</p>
+          <a href="market-psychology.html" class="btn btn-ghost mt-2" style="width: 100%;">Study Psychology →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Benefits -->
+    <section class="container section">
+      <div class="section-header">
+        <h2>Why Swing Intelligence?</h2>
+        <p>Systematic trading based on proven principles</p>
+      </div>
+      
+      <div class="grid grid-2">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon">✅</div>
+            <h3 class="card-title">Rule-Based Discipline</h3>
+          </div>
+          <div class="card-body">
+            <ul style="margin: 0; padding-left: 1.5rem;">
+              <li>No emotional trading decisions</li>
+              <li>Consistent filtering methodology</li>
+              <li>Transparent scoring criteria</li>
+              <li>Repeatable analysis process</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon">🛡️</div>
+            <h3 class="card-title">Capital Protection First</h3>
+          </div>
+          <div class="card-body">
+            <ul style="margin: 0; padding-left: 1.5rem;">
+              <li>Multi-layer rejection filters</li>
+              <li>Mandatory risk assessment</li>
+              <li>Volatility screening</li>
+              <li>Market regime awareness</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon">📈</div>
+            <h3 class="card-title">Systematic Analysis</h3>
+          </div>
+          <div class="card-body">
+            <ul style="margin: 0; padding-left: 1.5rem;">
+              <li>Technical indicator confluence</li>
+              <li>Breadth analysis integration</li>
+              <li>Trend alignment verification</li>
+              <li>Conviction threshold enforcement</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon">🎓</div>
+            <h3 class="card-title">Educational Focus</h3>
+          </div>
+          <div class="card-body">
+            <ul style="margin: 0; padding-left: 1.5rem;">
+              <li>Transparent methodology</li>
+              <li>Documented strategies</li>
+              <li>Psychology insights</li>
+              <li>Risk management education</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="container section">
+      <div class="section-header">
+        <h2>What Traders Say</h2>
+        <p>Real feedback from systematic traders</p>
+      </div>
+      
+      <div class="grid grid-3">
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            "The filter-first approach completely changed my trading. I'm no longer chasing every signal—only quality setups that pass strict criteria."
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">DS</div>
+            <div class="author-info">
+              <h4>Divya Shakti</h4>
+              <p>Retail Swing Trader</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            "Risk calculators are game-changers. I now know exactly how much I'm risking before entering, not after the loss hits."
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">JK</div>
+            <div class="author-info">
+              <h4>Jahanvi Kolelkar</h4>
+              <p>Part-Time Trader</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            "Understanding forbidden trades saved me from countless bad entries. The system teaches you what NOT to do."
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">RS</div>
+            <div class="author-info">
+              <h4>Raj Shekhar</h4>
+              <p>Technical Analyst</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="container section">
+      <div class="cta-section">
+        <h2>Ready to Trade Systematically?</h2>
+        <p>Start screening stocks with rule-based intelligence</p>
+        <div class="btn-group" style="justify-content: center;">
+          <a href="scanner-preview.html" class="btn">Launch Scanner Now</a>
+          <a href="about.html" class="btn" style="background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.3);">Learn More</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>📊 Swing Intelligence</h4>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">
+          Rule-based swing trading platform focused on systematic analysis and capital protection.
+        </p>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="market-intelligence.html">Market Intelligence</a></li>
+          <li><a href="strategy-museum.html">Strategy Museum</a></li>
+          <li><a href="explain-score.html">Swing Scoring</a></li>
+          <li><a href="calculators.html">Risk Calculators</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="resources.html">Education Center</a></li>
+          <li><a href="resources.html#faq">FAQ</a></li>
+          <li><a href="market-psychology.html">Market Psychology</a></li>
+          <li><a href="decision-lab.html">Decision Lab</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="footer-disclaimer">
+        <strong>⚠️ Important Disclaimer:</strong> Swing Intelligence is an educational and analytical platform. 
+        All information provided is for educational purposes only and does not constitute investment advice, financial advice, 
+        trading advice, or any other sort of advice. You should not treat any content as a recommendation to buy, sell, or hold 
+        any security or financial instrument. Trading stocks involves substantial risk of loss. Capital protection remains the user's responsibility. 
+        Past performance does not guarantee future results. Always conduct your own research and consult with licensed financial advisors 
+        before making investment decisions.
+      </div>
+      <div class="footer-copy">
+        © 2026 Swing Intelligence. All rights reserved. Built with discipline and systematic thinking.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Theme Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+    
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+      html.setAttribute('data-theme', 'light');
+      themeToggle.textContent = '☀️';
+    }
+    
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      themeToggle.textContent = newTheme === 'light' ? '☀️' : '🌙';
+    });
+    
+    // Mobile Menu Toggle
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navCenter = document.querySelector('.nav-center');
+    
+    if (mobileMenuToggle) {
+      mobileMenuToggle.addEventListener('click', () => {
+        mobileMenuToggle.classList.toggle('active');
+        navCenter.classList.toggle('active');
+        
+        const isExpanded = navCenter.classList.contains('active');
+        mobileMenuToggle.setAttribute('aria-expanded', isExpanded);
+      });
+    }
+    
+    // Navbar Scroll Effect
+    const nav = document.querySelector('.top-nav');
+    let lastScroll = 0;
+    
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      
+      if (currentScroll > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+      
+      lastScroll = currentScroll;
+    });
+    
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+    
+    // Observe all cards and sections
+    document.querySelectorAll('.card, .feature-card, .testimonial-card').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+      observer.observe(el);
+    });
+    
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href !== '#' && href !== '') {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

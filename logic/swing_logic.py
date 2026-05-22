@@ -1,139 +1,69 @@
 import pandas as pd
 import numpy as np
 
-RSI_PERIOD = 14
-ATR_PERIOD = 14
-
-# ==========================================================
-# INDICATORS
-# ==========================================================
-
-def compute_rsi(close, period=RSI_PERIOD):
-    delta = close.diff()
-    gain = delta.clip(lower=0)
-    loss = -delta.clip(upper=0)
-    avg_gain = gain.rolling(period).mean()
-    avg_loss = loss.rolling(period).mean()
-    rs = avg_gain / avg_loss
-    return 100 - (100 / (1 + rs))
-
-
-def compute_atr(df, period=ATR_PERIOD):
-    tr = pd.concat(
-        [
-            df["High"] - df["Low"],
-            (df["High"] - df["Close"].shift()).abs(),
-            (df["Low"] - df["Close"].shift()).abs(),
-        ],
-        axis=1,
-    ).max(axis=1)
-    return tr.rolling(period).mean()
-
-# ==========================================================
-# CORE SWING LOGIC
-# ==========================================================
+def calculate_time_weighted_avg(df):
+    """
+    Calculates price weighted by recency.
+    FORCED ALIGNMENT: Ensures today's price ALWAYS gets the max weight.
+    """
+    # 1. Prepare data (Ensure oldest-to-newest for calculation)
+    # If the index is already sorted, this just ensures we are looking at the right tail
+    df_val = df.sort_index(ascending=True).dropna(subset=['Adj Close']).tail(252).copy()
+    total_rows = len(df_val)
+    
+    if total_rows < 20: 
+        return None
+    
+    # 2. Extract prices as a numpy array
+    prices = df_val['Adj Close'].values
+    
+    # 3. Create Weights: 0 to 1 squared
+    # np.arange(total_rows) creates [0, 1, 2, ... 251]
+    # This ensures the HIGHEST index (Today) gets the HIGHEST weight.
+    indices = np.arange(total_rows)
+    weights = (indices / (total_rows - 1)) ** 2
+    
+    # 4. Math: Sum(Price * Weight) / Sum(Weights)
+    weighted_sum = np.sum(prices * weights)
+    sum_of_weights = np.sum(weights)
+    
+    raw_weighted_avg = weighted_sum / sum_of_weights
+    
+    # DEBUG: Uncomment the line below if you want to see the math in your console
+    # print(f"DEBUG: LTP={prices[-1]}, W_AVG={raw_weighted_avg}, WEIGHT_LAST={weights[-1]}")
+    
+    return round(float(raw_weighted_avg), 2)
 
 def compute_swing_score(df: pd.DataFrame) -> dict:
-    df = df.copy()
+    if df.empty or len(df) < 20:
+        return {"Error": "Insufficient data"}
 
-    # Indicators
-    df["SMA_50"] = df["Close"].rolling(50).mean()
-    df["SMA_200"] = df["Close"].rolling(200).mean()
-    df["RSI_14"] = compute_rsi(df["Close"])
-    df["ATR"] = compute_atr(df)
-    df["ATR_PCT"] = (df["ATR"] / df["Close"]) * 100  # ✅ FIXED
+    # Ensure we use Adjusted prices for everything to match the chart
+    if 'Adj Close' not in df.columns:
+        df['Adj Close'] = df['Close']
 
-    idx = df.index[-1]
+    # 1. RSI on Adjusted Close
+    delta = df["Adj Close"].diff()
+    gain = delta.clip(lower=0).rolling(14).mean()
+    loss = (-delta.clip(upper=0)).rolling(14).mean()
+    rs = gain / loss
+    rsi_val = 100 - (100 / (1 + rs.iloc[-1]))
+    
+    # 2. Weighted Average
+    weighted_avg = calculate_time_weighted_avg(df)
+    
+    # 3. LTP (Must be Adjusted to match Weighted Avg)
+    ltp = df["Adj Close"].iloc[-1]
+    
+    dist_pct = None
+    if weighted_avg and weighted_avg != 0:
+        # If LTP > Weighted Avg, distance is positive (Stock is RISING)
+        # If LTP < Weighted Avg, distance is negative (Stock is FALLING)
+        dist_pct = round(((ltp - weighted_avg) / weighted_avg) * 100, 2)
 
-    close = round(float(df.at[idx, "Close"]), 2)
-    sma50 = df.at[idx, "SMA_50"]
-    sma200 = df.at[idx, "SMA_200"]
-    rsi = df.at[idx, "RSI_14"]
-    atr_pct = df.at[idx, "ATR_PCT"]
-
-    # Guard: insufficient history
-    if pd.isna(sma200) or pd.isna(rsi) or pd.isna(atr_pct):
-        return {
-            "RSI_14": None,
-            "ATR_PCT": None,
-            "SMA_200": None,
-            "Trend_Regime": "WEAK",
-            "Swing_Score": 0,
-            "Swing_Label": "FORBIDDEN",
-            "Volatility_Class": None,
-        }
-
-    # ======================================================
-    # Volatility Classification
-    # ======================================================
-    if atr_pct < 3:
-        vol_class = "LOW_VOL"
-        eligible = close >= sma200
-    elif atr_pct <= 5:
-        vol_class = "MID_VOL"
-        eligible = close >= 0.98 * sma200
-    else:
-        vol_class = "HIGH_VOL"
-        eligible = close >= 0.95 * sma200 and rsi >= 45
-
-    # ======================================================
-    # Trend Regime
-    # ======================================================
-    if close >= sma200 and close <= sma200 * 1.05:
-        trend, max_score = "EARLY", 25
-    elif close > sma200 * 1.05 and sma50 > sma200:
-        trend, max_score = "MATURE", 18
-    else:
-        trend, max_score = "WEAK", 14
-
-    # ======================================================
-    # Extension & Consolidation
-    # ======================================================
-    extension = int(
-        (close > sma50 * 1.10)
-        + (close > sma200 * 1.20)
-        + (rsi > 70)
-        >= 2
-    )
-
-    recent = df.tail(20)
-    range_pct = ((recent["High"].max() - recent["Low"].min()) / close) * 100
-
-    consolidation = int(
-        close >= sma200
-        and 45 <= rsi <= 65
-        and range_pct <= atr_pct * 1.5
-    )
-
-    # ======================================================
-    # RAW SCORE
-    # ======================================================
-    raw_score = (
-        (10 if trend == "EARLY" else 6 if trend == "MATURE" else 3)
-        + (6 if 45 <= rsi <= 65 else 4 if 40 <= rsi <= 70 else 2)
-        + (5 if atr_pct < 3 else 3 if atr_pct < 5 else 1)
-        - (3 if extension else 0)
-        + (3 if consolidation else 0)
-    )
-
-    raw_score = min(raw_score, max_score)
-    score = round((raw_score / max_score) * 100, 1)
-
-    label = (
-        "BUY" if score >= 70 else
-        "NEUTRAL" if score >= 50 else
-        "FORBIDDEN"
-    )
-
-    # ======================================================
-    # FINAL RETURN (STRICT SCHEMA)
-    # ======================================================
     return {
-        "RSI_14": round(float(rsi), 2),
-        "ATR_PCT": round(float(atr_pct), 2),
-        "SMA_200": round(float(sma200), 2),
-        "Trend_Regime": trend,
-        "Swing_Score": score,
-        "Swing_Label": label,
-        "Volatility_Class": vol_class,
+        "Ticker_LTP": round(float(ltp), 2),
+        "RSI_14": round(float(rsi_val), 2) if pd.notna(rsi_val) else None,
+        "Weighted_Avg": weighted_avg,
+        "Dist_Weighted_Avg_PCT": dist_pct
     }

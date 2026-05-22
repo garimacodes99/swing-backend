@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Market Psychology</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root {
+  --bg:#020617; --panel:#020617; --border:#1e293b;
+  --text:#e5e7eb; --muted:#94a3b8; --button:#1e293b;
+}
+[data-theme="light"] {
+  --bg:#f8fafc; --panel:#ffffff; --border:#e2e8f0;
+  --text:#020617; --muted:#475569; --button:#e2e8f0;
+}
+body {
+  margin:0; font-family:Arial,sans-serif;
+  background:var(--bg); color:var(--text);
+}
+
+.top-nav {
+  position:sticky; top:0; z-index:100;
+  display:flex; justify-content:space-between; align-items:center;
+  padding:12px 20px;
+  background:var(--panel); border-bottom:1px solid var(--border);
+}
+.nav-left { font-weight:700; }
+.nav-center a {
+  margin:0 8px; font-size:13px;
+  color:var(--muted); text-decoration:none;
+}
+.nav-center a.active,
+.nav-center a:hover { color:var(--text); font-weight:600; }
+.theme-toggle {
+  background:var(--panel); border:1px solid var(--border);
+  color:var(--text); padding:6px 8px; border-radius:6px; cursor:pointer;
+}
+
+.breadcrumb {
+  max-width:1100px; margin:16px auto 0;
+  padding:0 28px; font-size:12px;
+  color:var(--muted); display:flex; gap:6px;
+}
+.breadcrumb a { color:var(--muted); text-decoration:none; }
+.breadcrumb a:hover { text-decoration:underline; }
+.breadcrumb span:last-child { color:var(--text); }
+
+.container {
+  max-width:1100px; margin:auto; padding:40px 28px;
+}
+
+h1 { font-size:30px; margin-bottom:6px; color:#38bdf8; }
+.sub { color:var(--muted); font-size:14px; margin-bottom:30px; }
+
+.card {
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:22px;
+  background:var(--panel);
+  margin-bottom:22px;
+}
+.card:hover { border-color:var(--muted); }
+
+.cycle {
+  border:1px dashed var(--border);
+  padding:22px;
+  border-radius:16px;
+  text-align:center;
+  font-size:14px;
+  line-height:1.8;
+  margin-bottom:40px;
+}
+
+.zone-grid, .regime-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:22px;
+}
+
+.fear { border-left:4px solid #f87171; }
+.greed { border-left:4px solid #22c55e; }
+.riskon { border-left:4px solid #22c55e; }
+.riskoff { border-left:4px solid #f87171; }
+
+ul {
+  padding-left:18px;
+  font-size:14px;
+  line-height:1.7;
+}
+
+.footer {
+  margin-top:80px;
+  padding:30px;
+  text-align:center;
+  border-top:1px solid var(--border);
+  background:var(--panel);
+}
+.footer-nav a {
+  margin:0 6px;
+  font-size:12px;
+  color:var(--muted);
+  text-decoration:none;
+}
+.footer-nav a:hover { color:var(--text); }
+.footer-disclaimer {
+  font-size:12px;
+  color:var(--muted);
+  margin:14px auto;
+  max-width:800px;
+}
+.footer-copy {
+  font-size:11px;
+  color:var(--muted);
+}
+</style>
+</head>
+
+<body>
+
+<nav class="top-nav">
+  <div class="nav-left">Swing Intelligence</div>
+  <div class="nav-center">
+    <a href="/static/home.html">Home</a>
+    <a href="/static/market-intelligence.html">Intelligence</a>
+    <a href="/static/strategy-museum.html">Strategy</a>
+    <a href="/static/explain-score.html">Score</a>
+    <a href="/static/calculators.html">Calculators</a>
+    <a href="/static/forbidden-trades.html">Forbidden</a>
+    <a href="/static/market-psychology.html" class="active">Psychology</a>
+  </div>
+  <button id="themeToggle" class="theme-toggle">🌙</button>
+</nav>
+
+<div class="breadcrumb">
+  <a href="/static/home.html">Home</a>
+  <span>→</span>
+  <span>Market Psychology</span>
+</div>
+
+<div class="container">
+  <h1>Market Psychology</h1>
+  <div class="sub">
+    Why good setups fail in hostile environments
+  </div>
+
+  <div class="cycle">
+    Optimism → Excitement → Euphoria → Complacency → Anxiety →  
+    Fear → Capitulation → Despair → Hope
+  </div>
+
+  <div class="zone-grid">
+    <div class="card fear">
+      <h3>Fear Zone</h3>
+      <ul>
+        <li>High volatility</li>
+        <li>News-driven candles</li>
+        <li>False technical signals</li>
+        <li>Emotional liquidation</li>
+      </ul>
+      <p><b>System response:</b> Reject most trades</p>
+    </div>
+
+    <div class="card greed">
+      <h3>Greed Zone</h3>
+      <ul>
+        <li>Smooth trends</li>
+        <li>Controlled pullbacks</li>
+        <li>Broad participation</li>
+        <li>Follow-through moves</li>
+      </ul>
+      <p><b>System response:</b> Allow trend-aligned trades</p>
+    </div>
+  </div>
+
+  <div class="regime-grid" style="margin-top:40px;">
+    <div class="card riskon">
+      <h3>Risk-ON Regime</h3>
+      <ul>
+        <li>Sector rotation works</li>
+        <li>Momentum respected</li>
+        <li>Higher win-rate environment</li>
+      </ul>
+    </div>
+
+    <div class="card riskoff">
+      <h3>Risk-OFF Regime</h3>
+      <ul>
+        <li>Sharp reversals</li>
+        <li>False breakouts</li>
+        <li>Capital flight dominates</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:40px;">
+    <h3>Psychological Traps</h3>
+    <ul>
+      <li>FOMO after large green candles</li>
+      <li>Revenge trading after stop-loss</li>
+      <li>Confusing volatility with opportunity</li>
+      <li>Overtrading during uncertainty</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>System Philosophy</h3>
+    <ul>
+      <li>The system aligns with psychology — it does not fight it</li>
+      <li>Activity reduces during fear</li>
+      <li>Capital is protected during uncertainty</li>
+    </ul>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-nav">
+    <a href="/static/home.html">Home</a>
+    <a href="/static/market-intelligence.html">Intelligence</a>
+    <a href="/static/strategy-museum.html">Strategy</a>
+  </div>
+  <div class="footer-disclaimer">
+    Market psychology explains context, not outcomes. Discipline is non-negotiable.
+  </div>
+  <div class="footer-copy">© 2026 Swing Intelligence</div>
+</footer>
+
+<script>
+const t=document.getElementById("themeToggle");
+if(localStorage.theme==="light"){
+  document.documentElement.setAttribute("data-theme","light");
+  t.textContent="🌞";
+}
+t.onclick=()=>{
+  const l=document.documentElement.getAttribute("data-theme")==="light";
+  document.documentElement.toggleAttribute("data-theme",!l);
+  localStorage.theme=l?"dark":"light";
+  t.textContent=l?"🌙":"🌞";
+};
+</script>
+
+</body>
+</html>

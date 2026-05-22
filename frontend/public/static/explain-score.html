@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Explain My Score</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root {
+  --bg:#020617; --panel:#020617; --border:#1e293b;
+  --text:#e5e7eb; --muted:#94a3b8; --button:#1e293b;
+}
+[data-theme="light"] {
+  --bg:#f8fafc; --panel:#ffffff; --border:#e2e8f0;
+  --text:#020617; --muted:#475569; --button:#e2e8f0;
+}
+body {
+  margin:0; font-family:Arial,sans-serif;
+  background:var(--bg); color:var(--text);
+}
+
+.top-nav {
+  position:sticky; top:0; z-index:100;
+  display:flex; justify-content:space-between; align-items:center;
+  padding:12px 20px;
+  background:var(--panel); border-bottom:1px solid var(--border);
+}
+.nav-left { font-weight:700; }
+.nav-center a {
+  margin:0 8px; font-size:13px;
+  color:var(--muted); text-decoration:none;
+}
+.nav-center a.active,
+.nav-center a:hover { color:var(--text); font-weight:600; }
+.theme-toggle {
+  background:var(--panel); border:1px solid var(--border);
+  color:var(--text); padding:6px 8px; border-radius:6px; cursor:pointer;
+}
+
+.breadcrumb {
+  max-width:1100px; margin:16px auto 0;
+  padding:0 28px; font-size:12px;
+  color:var(--muted); display:flex; gap:6px;
+}
+.breadcrumb a { color:var(--muted); text-decoration:none; }
+.breadcrumb a:hover { text-decoration:underline; }
+.breadcrumb span:last-child { color:var(--text); }
+
+.container {
+  max-width:1100px; margin:auto; padding:40px 28px;
+}
+
+h1 { font-size:30px; margin-bottom:6px; }
+.sub { color:var(--muted); font-size:14px; margin-bottom:30px; }
+
+.card {
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:22px;
+  background:var(--panel);
+  margin-bottom:22px;
+}
+.card:hover { border-color:var(--muted); }
+
+.band {
+  display:flex; gap:12px; margin-top:12px;
+}
+.band div {
+  flex:1; padding:10px; border-radius:8px;
+  text-align:center; font-size:16px;
+}
+.red { background:#ecd9d9; color:#050000; }
+.amber { background:#f1e7ce; color:#090700; }
+.green { background:#cff3eb; color:#000c05; }
+
+.flow {
+  margin-top:30px;
+  border:1px dashed var(--border);
+  padding:22px;
+  border-radius:16px;
+  text-align:center;
+  font-size:14px;
+  line-height:1.8;
+}
+
+ul {
+  padding-left:18px;
+  font-size:14px;
+  line-height:1.7;
+}
+
+.footer {
+  margin-top:80px;
+  padding:30px;
+  text-align:center;
+  border-top:1px solid var(--border);
+  background:var(--panel);
+}
+.footer-nav a {
+  margin:0 6px;
+  font-size:12px;
+  color:var(--muted);
+  text-decoration:none;
+}
+.footer-nav a:hover { color:var(--text); }
+.footer-disclaimer {
+  font-size:12px;
+  color:var(--muted);
+  margin:14px auto;
+  max-width:800px;
+}
+.footer-copy {
+  font-size:11px;
+  color:var(--muted);
+}
+</style>
+</head>
+
+<body>
+
+<nav class="top-nav">
+  <div class="nav-left">Swing Intelligence</div>
+  <div class="nav-center">
+    <a href="/static/home.html">Home</a>
+    <a href="/static/market-intelligence.html">Intelligence</a>
+    <a href="/static/strategy-museum.html">Strategy</a>
+    <a href="/static/explain-score.html" class="active">Score</a>
+    <a href="/static/calculators.html">Calculators</a>
+    <a href="/static/forbidden-trades.html">Forbidden</a>
+    <a href="/static/market-psychology.html">Psychology</a>
+  </div>
+  <button id="themeToggle" class="theme-toggle">🌙</button>
+</nav>
+
+<div class="breadcrumb">
+  <a href="/static/home.html">Home</a>
+  <span>→</span>
+  <span>Explain My Score</span>
+</div>
+
+<div class="container">
+  <h1>Explain My Score</h1>
+  <div class="sub">
+    How the swing score is constructed • Filter-first logic
+  </div>
+
+  <div class="card">
+    <h3>What is the Swing Score?</h3>
+    <p>Overall quality of a swing setup on a 0–100 scale.</p>
+    <div class="band">
+      <div class="red">0–40<br>Avoid</div>
+      <div class="amber">40–70<br>Watch</div>
+      <div class="green">70–100<br>Eligible</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Conviction Score</h3>
+    <ul>
+      <li>Measures agreement between signals</li>
+      <li>Defines minimum confidence threshold</li>
+      <li>Below conviction floor → trade rejected</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Trend Score</h3>
+    <ul>
+      <li>Directional bias filter</li>
+      <li>Price below SMA 200 → swing BUY forbidden</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Volatility Score</h3>
+    <ul>
+      <li>Based on ATR and price expansion</li>
+      <li>Too high = unstable</li>
+      <li>Too low = inactive</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Market Breadth</h3>
+    <ul>
+      <li>Measures market participation</li>
+      <li>Strong breadth = tailwind</li>
+      <li>Weak breadth = isolated risk</li>
+    </ul>
+  </div>
+
+  <div class="flow">
+    If Trend ❌ → Reject<br>
+    Else if Conviction ❌ → Reject<br>
+    Else if Volatility ❌ → Reject<br>
+    Else → Score & Rank
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-nav">
+    <a href="/static/home.html">Home</a>
+    <a href="/static/strategy-museum.html">Strategy</a>
+    <a href="/static/calculators.html">Calculators</a>
+  </div>
+  <div class="footer-disclaimer">
+    Scores indicate structural quality, not guaranteed outcomes.
+  </div>
+  <div class="footer-copy">© 2026 Swing Intelligence</div>
+</footer>
+
+<script>
+const t=document.getElementById("themeToggle");
+if(localStorage.theme==="light"){
+  document.documentElement.setAttribute("data-theme","light");
+  t.textContent="🌞";
+}
+t.onclick=()=>{
+  const l=document.documentElement.getAttribute("data-theme")==="light";
+  document.documentElement.toggleAttribute("data-theme",!l);
+  localStorage.theme=l?"dark":"light";
+  t.textContent=l?"🌙":"🌞";
+};
+</script>
+
+</body>
+</html>
