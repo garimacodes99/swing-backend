@@ -16,40 +16,46 @@ export const useSnapshotStore = create<SnapshotState>((set) => ({
 
       let targetDate = date;
 
-      // 1. If no date provided, fetch index.json to find the latest
       if (!targetDate) {
-        const indexRes = await fetch("/data/index.json");
+        console.log("No date provided to load(), fetching latest from index.json");
+        const indexRes = await fetch("/close/index.json");
         if (indexRes.ok) {
           const index = await indexRes.json();
           targetDate = index.latest;
+          console.log("Latest date from index:", targetDate);
+        } else {
+          console.error("Failed to fetch /close/index.json", indexRes.status);
         }
       }
 
       if (!targetDate) {
+        console.warn("Could not determine target date, aborting load.");
         set({ rows: [], loading: false });
         return;
       }
 
-      // 2. Load the specific snapshot for the target date
-      const snapshotUrl = `/data/close/swing_close_${targetDate}.json`;
-      console.log("Fetching snapshot from:", snapshotUrl);
+      const snapshotUrl = `/close/swing_close_${targetDate}.json`;
+      console.log("Attempting to fetch snapshot:", snapshotUrl);
+
       const res = await fetch(snapshotUrl);
 
       if (!res.ok) {
-        console.error("Snapshot not found at:", snapshotUrl);
+        console.error(`Snapshot fetch failed for ${targetDate}. Status: ${res.status} ${res.statusText}`);
+        // If we get an HTML response (likely a 404 fallback), log a snippet for debugging
+        const contentType = res.headers.get("content-type");
+        if (contentType && contentType.includes("text/html")) {
+          console.error("Received HTML instead of JSON. Ensure the file exists in public/close/");
+        }
         set({ rows: [], loading: false });
         return;
       }
 
       const rawRows = await res.json();
-      console.log("Raw rows loaded:", rawRows.length, "Sample:", rawRows[0]);
+      console.log(`Successfully loaded ${rawRows.length} rows for ${targetDate}`);
 
-      // 3. Normalize keys: JSON has "RSI 14", "Weighted Avg", "Distance %"
-      //    but frontend expects RSI_14, Weighted_Avg, Dist_Weighted_Avg_PCT
       const rowsWithDate = rawRows.map((r: any) => {
-        // Parse Distance % string like "-5.25%" or "+2.65%" into a number
         const distStr = r["Distance %"] || "0";
-        const distNum = parseFloat(distStr.replace('%', ''));
+        const distNum = parseFloat(String(distStr).replace("%", ""));
 
         return {
           Ticker: r["Ticker"],
@@ -66,9 +72,8 @@ export const useSnapshotStore = create<SnapshotState>((set) => ({
         rows: rowsWithDate,
         loading: false,
       });
-
     } catch (err) {
-      console.error("Snapshot load failed:", err);
+      console.error("Failed to process snapshot data:", err);
       set({ rows: [], loading: false });
     }
   },

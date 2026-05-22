@@ -17,27 +17,27 @@ import type { SortingState } from "@tanstack/react-table";
    TAG BADGE — compact pill with color coding
    ──────────────────────────────────────────────────────────── */
 const tagColors: Record<string, string> = {
-  LCAP:    'bg-blue-500/15 text-blue-300 border-blue-500/25',
-  MCAP:    'bg-cyan-500/15 text-cyan-300 border-cyan-500/25',
-  SCAP:    'bg-slate-500/15 text-slate-300 border-slate-600/30',
-  MICAP:   'bg-slate-600/15 text-slate-400 border-slate-600/20',
-  N50:     'bg-amber-500/15 text-amber-300 border-amber-500/25',
-  N100:    'bg-amber-500/10 text-amber-400/80 border-amber-600/20',
-  LEADER:  'bg-emerald-500/15 text-emerald-300 border-emerald-500/25',
-  GROWTH:  'bg-green-500/15 text-green-300 border-green-600/25',
-  EXPORT:  'bg-violet-500/15 text-violet-300 border-violet-500/25',
-  TECH:    'bg-sky-500/15 text-sky-300 border-sky-500/25',
-  PHARMA:  'bg-rose-500/12 text-rose-300 border-rose-500/20',
-  BANKX:   'bg-indigo-500/15 text-indigo-300 border-indigo-500/25',
-  INFRA:   'bg-orange-500/12 text-orange-300 border-orange-500/20',
-  DEFX:    'bg-red-500/12 text-red-300 border-red-500/20',
-  DUO30:   'bg-yellow-500/15 text-yellow-300 border-yellow-500/25',
+  LCAP: 'bg-blue-500/15 text-blue-300 border-blue-500/25',
+  MCAP: 'bg-cyan-500/15 text-cyan-300 border-cyan-500/25',
+  SCAP: 'bg-slate-500/15 text-slate-300 border-slate-600/30',
+  MICAP: 'bg-slate-600/15 text-slate-400 border-slate-600/20',
+  N50: 'bg-amber-500/15 text-amber-300 border-amber-500/25',
+  N100: 'bg-amber-500/10 text-amber-400/80 border-amber-600/20',
+  LEADER: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/25',
+  GROWTH: 'bg-green-500/15 text-green-300 border-green-600/25',
+  EXPORT: 'bg-violet-500/15 text-violet-300 border-violet-500/25',
+  TECH: 'bg-sky-500/15 text-sky-300 border-sky-500/25',
+  PHARMA: 'bg-rose-500/12 text-rose-300 border-rose-500/20',
+  BANKX: 'bg-indigo-500/15 text-indigo-300 border-indigo-500/25',
+  INFRA: 'bg-orange-500/12 text-orange-300 border-orange-500/20',
+  DEFX: 'bg-red-500/12 text-red-300 border-red-500/20',
+  DUO30: 'bg-yellow-500/15 text-yellow-300 border-yellow-500/25',
 };
 
 const TagPill = ({ label }: { label: string }) => {
   const color = tagColors[label] || 'bg-slate-700/20 text-slate-400 border-slate-600/30';
   return (
-    <span className={`inline-block px-1.5 py-[1px] rounded text-[9px] font-semibold tracking-wide border ${color} whitespace-nowrap`}>
+    <span className={`inline-block px-2 py-[2.5px] rounded text-[12.5px] font-semibold tracking-wide border ${color} whitespace-nowrap`}>
       {label}
     </span>
   );
@@ -67,9 +67,8 @@ const FilterSelect = ({ label, value, onChange, options }: {
   <div className="flex items-center gap-2.5">
     <span className="text-xs uppercase text-slate-500 font-semibold tracking-wider whitespace-nowrap">{label}</span>
     <select
-      className={`bg-slate-800 border rounded-md outline-none px-3 py-2 text-sm cursor-pointer font-mono transition-all hover:border-slate-500 shadow-sm ${
-        value !== 'All' ? 'border-blue-500/50 text-blue-300 bg-blue-500/5' : 'border-slate-700/60 text-slate-300'
-      } focus:border-blue-500/60`}
+      className={`bg-slate-800 border rounded-md outline-none px-3 py-2 text-sm cursor-pointer font-mono transition-all hover:border-slate-500 shadow-sm ${value !== 'All' ? 'border-blue-500/50 text-blue-300 bg-blue-500/5' : 'border-slate-700/60 text-slate-300'
+        } focus:border-blue-500/60`}
       value={value}
       onChange={e => onChange(e.target.value)}
     >
@@ -81,12 +80,24 @@ const FilterSelect = ({ label, value, onChange, options }: {
 /* ────────────────────────────────────────────────────────────
    MAIN TERMINAL COMPONENT
    ──────────────────────────────────────────────────────────── */
+
+// ── Market cap classification by tags ──
+const getMarketCapFromTags = (tagList: string[]): string => {
+  if (tagList.includes('LCAP')) return 'Large';
+  if (tagList.includes('MCAP')) return 'Mid';
+  if (tagList.includes('SCAP')) return 'Small';
+  if (tagList.includes('MICAP')) return 'Micro';
+  return 'Unknown';
+};
+
+const columnHelper = createColumnHelper<any>();
+
 export default function SwingTerminalDark() {
   const { rows, load } = useSnapshotStore();
 
   const [dates, setDates] = useState<string[]>([]);
   const [selectedDate, setSelectedDate] = useState<string>("");
-  const [scores, setScores] = useState<{ ticker?: string; Tickers?: string; Score: number; tags?: string }[]>([]);
+  const [scores, setScores] = useState<{ ticker?: string; Tickers?: string; Score?: number; score?: number; tags?: string }[]>([]);
 
   // Filter State
   const [searchTerm, setSearchTerm] = useState("");
@@ -111,18 +122,22 @@ export default function SwingTerminalDark() {
 
   // ── Data Loading ──
   useEffect(() => {
-    fetch("/data/index.json")
+    // Primary index for trading snapshots
+    fetch("/close/index.json")
       .then(r => r.json())
       .then(data => {
         const dList = data.dates.map((d: { date: string }) => d.date);
         setDates(dList);
-        if (data.latest && !selectedDate) setSelectedDate(data.latest);
+        if (data.latest && !selectedDate) {
+          console.log("Setting initial date from index:", data.latest);
+          setSelectedDate(data.latest);
+        }
       })
-      .catch(err => console.error("Error loading index:", err));
+      .catch(err => console.error("Error loading index from /close/index.json:", err));
 
     fetch("/data/scores.json")
       .then(r => r.json())
-      .then((data: { ticker?: string; Tickers?: string; Score: number; tags?: string }[]) => setScores(data))
+      .then((data: { ticker?: string; Tickers?: string; Score?: number; score?: number; tags?: string }[]) => setScores(data))
       .catch(err => console.error("Error loading scores:", err));
   }, []);
 
@@ -136,7 +151,7 @@ export default function SwingTerminalDark() {
     };
     document.addEventListener('mousedown', handler);
     return () => document.removeEventListener('mousedown', handler);
-  }, []);
+  }, [setIsCalOpen]);
 
   // ── Calendar ──
   const calendarData = useMemo(() => {
@@ -158,7 +173,7 @@ export default function SwingTerminalDark() {
       if (!ticker) return;
       const rawTags = (s.tags || "").toUpperCase();
       const tagList = rawTags.split('|').map(t => t.trim()).filter(Boolean);
-      map[ticker] = { score: s.Score, tags: rawTags, tagList };
+      map[ticker] = { score: s.score ?? s.Score ?? 0, tags: rawTags, tagList };
     });
     return map;
   }, [scores]);
@@ -169,15 +184,6 @@ export default function SwingTerminalDark() {
     Object.values(scoreMap).forEach(v => v.tagList.forEach(t => set.add(t)));
     return Array.from(set).sort();
   }, [scoreMap]);
-
-  // ── Market cap classification by tags ──
-  const getMarketCapFromTags = (tagList: string[]): string => {
-    if (tagList.includes('LCAP')) return 'Large';
-    if (tagList.includes('MCAP')) return 'Mid';
-    if (tagList.includes('SCAP')) return 'Small';
-    if (tagList.includes('MICAP')) return 'Micro';
-    return 'Unknown';
-  };
 
   // ── Filtered Data & Score Counts ──
   const { filteredData, scoreCounts } = useMemo(() => {
@@ -258,7 +264,6 @@ export default function SwingTerminalDark() {
   }, [rows, selectedDate, searchTerm, exactScore, minDist, maxDist, rsiZone, marketCap, trend, tagsInput, scoreMap]);
 
   // ── TanStack Table ──
-  const columnHelper = createColumnHelper<any>();
 
   const columns = useMemo(() => [
     columnHelper.accessor((_row, i) => i + 1, {
@@ -364,14 +369,14 @@ export default function SwingTerminalDark() {
         const visible = tags.slice(0, 5);
         const extra = tags.length - 5;
         return (
-          <div className="flex gap-1 flex-wrap items-center">
+          <div className="flex gap-1.5 flex-wrap items-center">
             {visible.map((t: string, i: number) => <TagPill key={i} label={t} />)}
-            {extra > 0 && <span className="text-[9px] text-slate-500 font-mono">+{extra}</span>}
+            {extra > 0 && <span className="text-[10px] text-slate-500 font-mono">+{extra}</span>}
           </div>
         );
       },
       enableSorting: false,
-      size: 280,
+      size: 300,
     }),
 
     columnHelper.display({
@@ -385,11 +390,11 @@ export default function SwingTerminalDark() {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center w-7 h-7 rounded-md bg-slate-800/60 border border-slate-700/40 text-slate-500 hover:text-blue-400 hover:border-blue-500/40 hover:bg-blue-500/10 transition-all"
           >
-            <ExternalLink size={13} />
+            <ExternalLink size={20} />
           </a>
         </div>
       ),
-      size: 60,
+      size: 70,
     }),
   ], []);
 
@@ -459,7 +464,7 @@ export default function SwingTerminalDark() {
                   </div>
                 </div>
                 <div className="grid grid-cols-7 mb-2 text-center text-[10px] font-mono text-slate-500">
-                  {['Su','Mo','Tu','We','Th','Fr','Sa'].map(d => <div key={d} className="py-1">{d}</div>)}
+                  {['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'].map(d => <div key={d} className="py-1">{d}</div>)}
                 </div>
                 <div className="grid grid-cols-7 gap-0.5 text-[12px] font-mono">
                   {Array.from({ length: calendarData.firstDayOfMonth }).map((_, i) => <div key={`e-${i}`} />)}
@@ -469,7 +474,7 @@ export default function SwingTerminalDark() {
                     const isAvail = dates.includes(dStr);
                     const isSel = selectedDate === dStr;
                     return (
-                      <button key={day} onClick={() => { if (isAvail) { setSelectedDate(dStr); setIsCalOpen(false); }}}
+                      <button key={day} onClick={() => { if (isAvail) { setSelectedDate(dStr); setIsCalOpen(false); } }}
                         className={`py-1.5 rounded text-center transition-all ${isSel ? 'bg-blue-600 text-white font-bold' : isAvail ? 'hover:bg-slate-700/50 text-slate-300' : 'opacity-15 cursor-not-allowed'}`}
                       >{day}</button>
                     );
@@ -568,7 +573,7 @@ export default function SwingTerminalDark() {
                     onClick={header.column.getToggleSortingHandler()}
                     style={{ width: header.getSize() }}
                   >
-                    <div className="flex items-center gap-1.5" style={{ justifyContent: ['LTP','Score','RSI_14','Weighted_Avg','Dist_Weighted_Avg_PCT'].includes(header.column.id) ? 'flex-end' : header.column.id === 'link' ? 'center' : 'flex-start' }}>
+                    <div className="flex items-center gap-1.5" style={{ justifyContent: ['LTP', 'Score', 'RSI_14', 'Weighted_Avg', 'Dist_Weighted_Avg_PCT'].includes(header.column.id) ? 'flex-end' : header.column.id === 'link' ? 'center' : 'flex-start' }}>
                       {flexRender(header.column.columnDef.header, header.getContext())}
                       {header.column.getCanSort() && (
                         <span className={`transition-opacity ${header.column.getIsSorted() ? 'opacity-100' : 'opacity-0 group-hover:opacity-40'}`}>
@@ -585,7 +590,7 @@ export default function SwingTerminalDark() {
             {table.getRowModel().rows.map((row, i) => (
               <tr key={row.id} className={`border-b border-slate-800/60 hover:bg-slate-800 transition-colors ${i % 2 === 0 ? 'bg-transparent' : 'bg-slate-900/40'}`}>
                 {row.getVisibleCells().map(cell => (
-                  <td key={cell.id} className="px-6 py-4 align-middle">
+                  <td key={cell.id} className="px-6 py-5 align-middle">
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </td>
                 ))}

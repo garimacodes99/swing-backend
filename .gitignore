@@ -11,12 +11,16 @@ venv/
 env/
 .venv/
 
-# Environment files
+# Environment variables
 .env
 .env.*
 
-# Jupyter Notebook
+# Jupyter
 .ipynb_checkpoints/
+
+# Pytest / type cache
+.pytest_cache/
+.mypy_cache/
 
 # =========================================================
 # NODE / FRONTEND
@@ -25,21 +29,16 @@ env/
 node_modules/
 dist/
 build/
-
-# Vite cache
 .vite/
 
 # =========================================================
-# GENERATED BACKEND OUTPUTS
+# GENERATED OUTPUTS
 # =========================================================
 
-output/
+backend/output/
 
-# =========================================================
-# MARKET DATA CACHE
-# =========================================================
-
-utils/data_store/
+# Market/cache data
+backend/utils/data_store/
 *.parquet
 
 # =========================================================
@@ -64,21 +63,22 @@ logs/
 Thumbs.db
 
 # =========================================================
-# TEMP / CACHE FILES
+# TEMP FILES
 # =========================================================
 
 *.tmp
 *.temp
 *.bak
-
 .cache/
-pytest_cache/
-.mypy_cache/
 
 # =========================================================
-# OPTIONAL GENERATED FILES
-# Uncomment if auto-generated
+# EXCEL / DATA FILES
 # =========================================================
 
-# *.csv
-# *.xlsx
+# Ignore all Excel files
+*.xlsx
+
+# But keep important universe files
+!backend/universe/*.xlsx
+!backend/universe/*.csv
+!backend/universe/*.json
