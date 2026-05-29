@@ -30,6 +30,7 @@ FRONTEND_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 from fetchers.yf_fetcher import fetch_ohlc
 from logic.swing_logic import compute_swing_score
 from utils.update_index import update_index
+from runners.sync_scores import sync_csv_to_json
 
 # -------------------------------------------------------------------
 # LOGGING
@@ -45,9 +46,25 @@ logger = logging.getLogger(__name__)
 COLUMN_ORDER = [
     "Ticker",
     "LTP",
+
+    "Trend Status",
+
     "RSI 14",
+
+    "Momentum Status",
+
     "Weighted Avg",
+
     "Distance %",
+
+    "Distance Status",
+
+    "Volume Strength",
+
+    "Swing Score",
+
+    "Setup Type",
+
     "Google Finance",
 ]
 
@@ -76,15 +93,39 @@ def load_universe() -> list[str]:
 
 
 def build_row(ticker: str, logic_output: dict) -> dict:
+
     dist = logic_output.get("Dist_Weighted_Avg_PCT")
 
     return {
+
         "Ticker": ticker,
+
         "LTP": logic_output.get("Ticker_LTP"),
+
+        "Trend Status": logic_output.get("Trend_Status"),
+
         "RSI 14": logic_output.get("RSI_14"),
+
+        "Momentum Status": logic_output.get("Momentum_Status"),
+
         "Weighted Avg": logic_output.get("Weighted_Avg"),
-        "Distance %": f"{dist:+.2f}%" if dist is not None else "0.00%",
-        "Google Finance": f"https://www.google.com/finance/quote/{ticker}:NSE",
+
+        "Distance %": (
+            f"{dist:+.2f}%"
+            if dist is not None
+            else "0.00%"
+        ),
+
+        "Distance Status": logic_output.get("Weighted_Avg_Status"),
+
+        "Volume Strength": logic_output.get("Volume_Strength"),
+
+        "Swing Score": logic_output.get("Swing_Score"),
+
+        "Setup Type": logic_output.get("Setup_Type"),
+
+        "Google Finance":
+            f"https://www.google.com/finance/quote/{ticker}:NSE",
     }
 
 
@@ -93,6 +134,10 @@ def build_row(ticker: str, logic_output: dict) -> dict:
 # -------------------------------------------------------------------
 
 def main() -> None:
+    logger.info("Starting score sync and universe cleanup...")
+    sync_csv_to_json()
+    logger.info("Score sync completed.")
+
     run_date = datetime.now().strftime("%Y-%m-%d")
     file_name = f"swing_close_{run_date}.json"
 
