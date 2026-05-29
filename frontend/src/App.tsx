@@ -195,7 +195,7 @@ export default function SwingTerminalDark() {
     baseData.forEach(r => {
       const ticker = (r.Ticker || '').toUpperCase();
       const meta = scoreMap[ticker];
-      
+
       // Stock MUST exist in score map and MUST have a valid Health Score
       if (meta && meta.score !== undefined && meta.score !== null && String(meta.score).trim() !== "") {
         mergedData.push({ ...r, Score: meta.score, Tags: meta.tags || '', TagList: meta.tagList || [] });
@@ -391,7 +391,7 @@ export default function SwingTerminalDark() {
       cell: info => {
         const val = info.getValue() || 0;
         const status = info.row.original['Distance Status'] || '';
-        
+
         let statusColor = 'text-slate-500';
         if (status === 'IDEAL_ENTRY') statusColor = 'text-[#00ff88] font-bold';
         else if (status === 'RECOVERY_ZONE') statusColor = 'text-cyan-400';
@@ -456,13 +456,13 @@ export default function SwingTerminalDark() {
       cell: info => {
         const val = info.getValue() || '';
         if (!val) return <span className="text-slate-700">—</span>;
-        
+
         let color = 'bg-slate-700/20 text-slate-400 border-slate-600/30';
         if (val === 'HIGH_CONVICTION') color = 'bg-emerald-500/15 text-emerald-300 border-emerald-500/25';
         else if (val === 'MOMENTUM_SETUP') color = 'bg-blue-500/15 text-blue-300 border-blue-500/25';
         else if (val === 'WATCHLIST') color = 'bg-amber-500/15 text-amber-300 border-amber-500/25';
         else if (val === 'WEAK_SETUP') color = 'bg-slate-500/15 text-slate-400 border-slate-600/30';
-        
+
         return (
           <span className={`inline-block px-2 py-[2.5px] rounded text-[11px] font-semibold tracking-wide border ${color} whitespace-nowrap`}>
             {val.replace('_', ' ')}
@@ -525,8 +525,8 @@ export default function SwingTerminalDark() {
     const csv = [
       ['Ticker', 'LTP', 'Health Score', 'Trend Status', 'Momentum Status', 'RSI 14', 'Weighted Avg', 'Distance %', 'Volume Strength', 'Swing Score', 'Setup Type', 'Tags'].join(','),
       ...filteredData.map(r => [
-        r.Ticker, r.LTP, r.Score ?? '', r['Trend Status'] || '', r['Momentum Status'] || '', 
-        (r.RSI_14 || 0).toFixed(1), r.Weighted_Avg, (r.Dist_Weighted_Avg_PCT || 0).toFixed(2), 
+        r.Ticker, r.LTP, r.Score ?? '', r['Trend Status'] || '', r['Momentum Status'] || '',
+        (r.RSI_14 || 0).toFixed(1), r.Weighted_Avg, (r.Dist_Weighted_Avg_PCT || 0).toFixed(2),
         r['Volume Strength'] || '', r['Swing Score'] ?? '', r['Setup Type'] || '', `"${r.Tags || ''}"`
       ].join(','))
     ].join('\n');
@@ -655,10 +655,10 @@ export default function SwingTerminalDark() {
           <div className="h-5 w-px bg-[#1c2030]" />
 
           <FilterSelect label="Setup" value={setupFilter} onChange={setSetupFilter} options={[
-            { value: "All", label: "ALL SETUPS" }, 
-            { value: "HIGH_CONVICTION", label: "HIGH CONVICTION" }, 
-            { value: "WATCHLIST", label: "WATCHLIST" }, 
-            { value: "MOMENTUM_SETUP", label: "MOMENTUM SETUP" }, 
+            { value: "All", label: "ALL SETUPS" },
+            { value: "HIGH_CONVICTION", label: "HIGH CONVICTION" },
+            { value: "WATCHLIST", label: "WATCHLIST" },
+            { value: "MOMENTUM_SETUP", label: "MOMENTUM SETUP" },
             { value: "WEAK_SETUP", label: "WEAK SETUP" }
           ]} />
 
