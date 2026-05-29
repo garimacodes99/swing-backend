@@ -60,6 +60,12 @@ export const useSnapshotStore = create<SnapshotState>((set) => ({
         return {
           Ticker: r["Ticker"],
           LTP: r["LTP"],
+          "Trend Status": r["Trend Status"],
+          "Momentum Status": r["Momentum Status"],
+          "Volume Strength": r["Volume Strength"],
+          "Swing Score": r["Swing Score"],
+          "Setup Type": r["Setup Type"],
+          "Distance Status": r["Distance Status"],
           RSI_14: r["RSI 14"],
           Weighted_Avg: r["Weighted Avg"],
           Dist_Weighted_Avg_PCT: isNaN(distNum) ? 0 : distNum,

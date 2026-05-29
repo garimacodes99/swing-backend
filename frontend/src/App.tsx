@@ -101,23 +101,24 @@ export default function SwingTerminalDark() {
 
   // Filter State
   const [searchTerm, setSearchTerm] = useState("");
-  const [exactScore, setExactScore] = useState("");
+  const [minScore, setMinScore] = useState("");
   const [minDist, setMinDist] = useState("");
   const [maxDist, setMaxDist] = useState("");
   const [rsiZone, setRsiZone] = useState("All");
   const [marketCap, setMarketCap] = useState("All");
   const [trend, setTrend] = useState("All");
+  const [setupFilter, setSetupFilter] = useState("All");
   const [tagsInput, setTagsInput] = useState("");
-  const [sorting, setSorting] = useState<SortingState>([{ id: 'Score', desc: true }]);
+  const [sorting, setSorting] = useState<SortingState>([{ id: 'Swing Score', desc: true }]);
 
   const [isCalOpen, setIsCalOpen] = useState(false);
   const calRef = useRef<HTMLDivElement>(null);
 
-  const hasActiveFilters = searchTerm || exactScore || minDist || maxDist || rsiZone !== "All" || marketCap !== "All" || trend !== "All" || tagsInput;
+  const hasActiveFilters = searchTerm || minScore || minDist || maxDist || rsiZone !== "All" || marketCap !== "All" || trend !== "All" || setupFilter !== "All" || tagsInput;
 
   const resetFilters = useCallback(() => {
-    setSearchTerm(""); setExactScore(""); setMinDist(""); setMaxDist("");
-    setRsiZone("All"); setMarketCap("All"); setTrend("All"); setTagsInput("");
+    setSearchTerm(""); setMinScore(""); setMinDist(""); setMaxDist("");
+    setRsiZone("All"); setMarketCap("All"); setTrend("All"); setSetupFilter("All"); setTagsInput("");
   }, []);
 
   // ── Data Loading ──
@@ -167,13 +168,13 @@ export default function SwingTerminalDark() {
 
   // ── Score Map ──
   const scoreMap = useMemo(() => {
-    const map: Record<string, { score: number; tags: string; tagList: string[] }> = {};
+    const map: Record<string, { score?: number | null; tags: string; tagList: string[] }> = {};
     scores.forEach(s => {
       const ticker = (s.ticker || s.Tickers || "").toUpperCase();
       if (!ticker) return;
       const rawTags = (s.tags || "").toUpperCase();
       const tagList = rawTags.split('|').map(t => t.trim()).filter(Boolean);
-      map[ticker] = { score: s.score ?? s.Score ?? 0, tags: rawTags, tagList };
+      map[ticker] = { score: s.score ?? s.Score, tags: rawTags, tagList };
     });
     return map;
   }, [scores]);
@@ -189,11 +190,18 @@ export default function SwingTerminalDark() {
   const { filteredData, scoreCounts } = useMemo(() => {
     let baseData = [...rows].filter(r => r.date === selectedDate);
 
-    // Merge score + tags into each row
-    baseData = baseData.map(r => {
-      const meta = scoreMap[(r.Ticker || '').toUpperCase()];
-      return { ...r, Score: meta?.score, Tags: meta?.tags || '', TagList: meta?.tagList || [] };
+    // Inner join with final_score list items (scoreMap) and exclude invalid/blank/null scores
+    const mergedData: typeof baseData = [];
+    baseData.forEach(r => {
+      const ticker = (r.Ticker || '').toUpperCase();
+      const meta = scoreMap[ticker];
+      
+      // Stock MUST exist in score map and MUST have a valid Health Score
+      if (meta && meta.score !== undefined && meta.score !== null && String(meta.score).trim() !== "") {
+        mergedData.push({ ...r, Score: meta.score, Tags: meta.tags || '', TagList: meta.tagList || [] });
+      }
     });
+    baseData = mergedData;
 
     // Calculate score counts for all available data on this date
     const counts: Record<number, number> = {};
@@ -211,10 +219,10 @@ export default function SwingTerminalDark() {
       data = data.filter(r => r.Ticker?.toLowerCase().includes(q));
     }
 
-    // Exact Score
-    if (exactScore !== "") {
-      const n = Number(exactScore);
-      if (!isNaN(n)) data = data.filter(r => r.Score === n);
+    // Minimum Score
+    if (minScore !== "") {
+      const n = Number(minScore);
+      if (!isNaN(n)) data = data.filter(r => r.Score >= n);
     }
 
     // Distance % range
@@ -251,6 +259,11 @@ export default function SwingTerminalDark() {
       });
     }
 
+    // Setup Type
+    if (setupFilter !== "All") {
+      data = data.filter(r => (r['Setup Type'] || '') === setupFilter);
+    }
+
     // Tags filter (pipe-separated input)
     if (tagsInput.trim()) {
       const filterTags = tagsInput.toUpperCase().split(',').map(s => s.trim()).filter(Boolean);
@@ -261,17 +274,16 @@ export default function SwingTerminalDark() {
     }
 
     return { filteredData: data, scoreCounts: counts };
-  }, [rows, selectedDate, searchTerm, exactScore, minDist, maxDist, rsiZone, marketCap, trend, tagsInput, scoreMap]);
+  }, [rows, selectedDate, searchTerm, minScore, minDist, maxDist, rsiZone, marketCap, trend, setupFilter, tagsInput, scoreMap]);
 
   // ── TanStack Table ──
 
   const columns = useMemo(() => [
-    columnHelper.accessor((_row, i) => i + 1, {
+    columnHelper.display({
       id: 'sno',
-      header: '#',
-      cell: info => <span className="text-slate-600 font-mono text-[11px]">{info.getValue()}</span>,
+      header: 'S.No',
+      cell: info => <span className="text-slate-600 font-mono text-[11px]">{info.table.getSortedRowModel().flatRows.findIndex(r => r.id === info.row.id) + 1}</span>,
       size: 44,
-      enableSorting: false,
     }),
 
     columnHelper.accessor('Ticker', {
@@ -304,7 +316,7 @@ export default function SwingTerminalDark() {
     }),
 
     columnHelper.accessor('Score', {
-      header: () => <div className="text-right w-full">SCORE</div>,
+      header: () => <div className="text-right w-full">HEALTH SCORE</div>,
       cell: info => {
         const val = info.getValue();
         if (val === undefined || val === null) return <div className="text-right font-mono text-[14px] text-slate-600">—</div>;
@@ -321,7 +333,35 @@ export default function SwingTerminalDark() {
         );
       },
       sortingFn: "basic",
-      size: 80,
+      size: 110,
+    }),
+
+    columnHelper.accessor('Trend Status', {
+      header: 'TREND',
+      cell: info => {
+        const val = info.getValue() || '';
+        let color = 'text-slate-500';
+        if (val === 'STRONG_BULLISH') color = 'text-emerald-400';
+        else if (val === 'BULLISH') color = 'text-green-400';
+        else if (val === 'NEUTRAL') color = 'text-slate-400';
+        else if (val === 'BEARISH') color = 'text-red-400';
+        return <span className={`font-mono text-[12px] font-semibold tracking-wide ${color}`}>{val.replace('_', ' ')}</span>;
+      },
+      size: 130,
+    }),
+
+    columnHelper.accessor('Momentum Status', {
+      header: 'MOMENTUM',
+      cell: info => {
+        const val = info.getValue() || '';
+        let color = 'text-slate-500';
+        if (val === 'IMPROVING') color = 'text-emerald-400';
+        else if (val === 'WEAKENING') color = 'text-red-400';
+        else if (val === 'OVERBOUGHT') color = 'text-orange-400';
+        else if (val === 'OVERSOLD') color = 'text-purple-400';
+        return <span className={`font-mono text-[12px] font-semibold tracking-wide ${color}`}>{val}</span>;
+      },
+      size: 120,
     }),
 
     columnHelper.accessor('RSI_14', {
@@ -350,14 +390,87 @@ export default function SwingTerminalDark() {
       header: () => <div className="text-right w-full">DIST %</div>,
       cell: info => {
         const val = info.getValue() || 0;
-        const isPos = val > 0;
+        const status = info.row.original['Distance Status'] || '';
+        
+        let statusColor = 'text-slate-500';
+        if (status === 'IDEAL_ENTRY') statusColor = 'text-[#00ff88] font-bold';
+        else if (status === 'RECOVERY_ZONE') statusColor = 'text-cyan-400';
+        else if (status === 'EXTENDED') statusColor = 'text-lime-300';
+        else if (status === 'OVEREXTENDED') statusColor = 'text-amber-500/80';
+        else if (status === 'WEAK') statusColor = 'text-red-400/80';
+
         return (
-          <div className={`text-right font-mono text-[14px] font-semibold tabular-nums ${isPos ? 'text-terminal-green' : 'text-terminal-red'}`}>
-            {isPos ? '+' : ''}{val.toFixed(2)}%
+          <div className="flex flex-col items-end justify-center min-w-[70px]">
+            <div className={`font-mono text-[14px] font-semibold tabular-nums leading-tight ${val > 0 ? 'text-terminal-green' : 'text-terminal-red'}`}>
+              {val > 0 ? '+' : ''}{val.toFixed(2)}%
+            </div>
+            {status && (
+              <div className={`text-[10px] ${statusColor} uppercase tracking-wider mt-0.5 whitespace-nowrap`}>
+                {status.replace('_', ' ')}
+              </div>
+            )}
           </div>
         );
       },
-      size: 100,
+      size: 110,
+    }),
+
+    columnHelper.accessor('Volume Strength', {
+      header: 'VOLUME',
+      cell: info => {
+        const val = info.getValue() || '';
+        let color = 'text-slate-500';
+        if (val === 'VERY_HIGH') color = 'text-cyan-400';
+        else if (val === 'HIGH') color = 'text-blue-400';
+        else if (val === 'NORMAL') color = 'text-slate-400';
+        else if (val === 'LOW') color = 'text-rose-400/80';
+        return <span className={`font-mono text-[12px] font-semibold tracking-wide ${color}`}>{val.replace('_', ' ')}</span>;
+      },
+      size: 110,
+    }),
+
+    columnHelper.accessor('Swing Score', {
+      header: () => <div className="text-right w-full">SWING SCORE</div>,
+      cell: info => {
+        const val = info.getValue();
+        if (val === undefined || val === null) return <div className="text-right font-mono text-[14px] text-slate-600">—</div>;
+        let bg = 'bg-slate-700/30 text-slate-300';
+        if (val >= 80) bg = 'bg-emerald-500/20 text-emerald-400 font-bold border border-emerald-500/30 shadow-[0_0_10px_rgba(16,185,129,0.15)]';
+        else if (val >= 60) bg = 'bg-green-500/15 text-green-300 border border-green-500/20';
+        else if (val >= 40) bg = 'bg-blue-500/10 text-blue-300 border border-blue-500/10';
+        else if (val <= 20) bg = 'bg-red-500/15 text-red-400 border border-red-500/20';
+        return (
+          <div className="flex justify-end">
+            <span className={`inline-flex items-center justify-center px-2 py-0.5 min-w-[36px] h-[26px] rounded ${bg} font-mono text-[14px] tabular-nums`}>
+              {val}
+            </span>
+          </div>
+        );
+      },
+      sortingFn: "basic",
+      size: 130,
+    }),
+
+    columnHelper.accessor('Setup Type', {
+      header: 'SETUP',
+      cell: info => {
+        const val = info.getValue() || '';
+        if (!val) return <span className="text-slate-700">—</span>;
+        
+        let color = 'bg-slate-700/20 text-slate-400 border-slate-600/30';
+        if (val === 'HIGH_CONVICTION') color = 'bg-emerald-500/15 text-emerald-300 border-emerald-500/25';
+        else if (val === 'MOMENTUM_SETUP') color = 'bg-blue-500/15 text-blue-300 border-blue-500/25';
+        else if (val === 'WATCHLIST') color = 'bg-amber-500/15 text-amber-300 border-amber-500/25';
+        else if (val === 'WEAK_SETUP') color = 'bg-slate-500/15 text-slate-400 border-slate-600/30';
+        
+        return (
+          <span className={`inline-block px-2 py-[2.5px] rounded text-[11px] font-semibold tracking-wide border ${color} whitespace-nowrap`}>
+            {val.replace('_', ' ')}
+          </span>
+        );
+      },
+      enableSorting: false,
+      size: 150,
     }),
 
     columnHelper.accessor('Tags', {
@@ -410,10 +523,11 @@ export default function SwingTerminalDark() {
   // ── Export CSV ──
   const handleExport = () => {
     const csv = [
-      ['Ticker', 'LTP', 'Score', 'RSI 14', 'Weighted Avg', 'Distance %', 'Tags'].join(','),
+      ['Ticker', 'LTP', 'Health Score', 'Trend Status', 'Momentum Status', 'RSI 14', 'Weighted Avg', 'Distance %', 'Volume Strength', 'Swing Score', 'Setup Type', 'Tags'].join(','),
       ...filteredData.map(r => [
-        r.Ticker, r.LTP, r.Score ?? '', (r.RSI_14 || 0).toFixed(1), r.Weighted_Avg,
-        (r.Dist_Weighted_Avg_PCT || 0).toFixed(2), `"${r.Tags || ''}"`
+        r.Ticker, r.LTP, r.Score ?? '', r['Trend Status'] || '', r['Momentum Status'] || '', 
+        (r.RSI_14 || 0).toFixed(1), r.Weighted_Avg, (r.Dist_Weighted_Avg_PCT || 0).toFixed(2), 
+        r['Volume Strength'] || '', r['Swing Score'] ?? '', r['Setup Type'] || '', `"${r.Tags || ''}"`
       ].join(','))
     ].join('\n');
     const blob = new Blob([csv], { type: 'text/csv' });
@@ -508,10 +622,10 @@ export default function SwingTerminalDark() {
           <div className="h-5 w-px bg-[#1c2030]" />
 
           <div className="flex items-center gap-2">
-            <FilterInput label="Score" value={exactScore} onChange={setExactScore} placeholder="5" type="number" width="w-16" />
-            {exactScore && !isNaN(Number(exactScore)) && (
+            <FilterInput label="Score" value={minScore} onChange={setMinScore} placeholder="5" type="number" width="w-16" />
+            {minScore && !isNaN(Number(minScore)) && (
               <span className="bg-slate-800 text-blue-400 font-mono text-xs px-2 py-1 rounded-md border border-slate-700/60 shadow-sm ml-1">
-                ({scoreCounts[Number(exactScore)] || 0})
+                ({Object.entries(scoreCounts).reduce((acc, [score, count]) => Number(score) >= Number(minScore) ? acc + count : acc, 0)})
               </span>
             )}
           </div>
@@ -540,6 +654,16 @@ export default function SwingTerminalDark() {
 
           <div className="h-5 w-px bg-[#1c2030]" />
 
+          <FilterSelect label="Setup" value={setupFilter} onChange={setSetupFilter} options={[
+            { value: "All", label: "ALL SETUPS" }, 
+            { value: "HIGH_CONVICTION", label: "HIGH CONVICTION" }, 
+            { value: "WATCHLIST", label: "WATCHLIST" }, 
+            { value: "MOMENTUM_SETUP", label: "MOMENTUM SETUP" }, 
+            { value: "WEAK_SETUP", label: "WEAK SETUP" }
+          ]} />
+
+          <div className="h-5 w-px bg-[#1c2030]" />
+
           <FilterSelect label="Mkt Cap" value={marketCap} onChange={setMarketCap} options={[
             { value: "All", label: "ANY" }, { value: "Large", label: "LARGE" },
             { value: "Mid", label: "MID" }, { value: "Small", label: "SMALL" }, { value: "Micro", label: "MICRO" }
@@ -562,7 +686,7 @@ export default function SwingTerminalDark() {
 
       {/* ─── TABLE ─── */}
       <div className="flex-1 overflow-auto bg-slate-950 relative">
-        <table className="w-full text-left border-collapse min-w-[1200px]">
+        <table className="w-full text-left border-collapse min-w-[1800px]">
           <thead className="bg-slate-900 sticky top-0 z-20">
             {table.getHeaderGroups().map(hg => (
               <tr key={hg.id} className="border-b-2 border-slate-800">
@@ -573,7 +697,7 @@ export default function SwingTerminalDark() {
                     onClick={header.column.getToggleSortingHandler()}
                     style={{ width: header.getSize() }}
                   >
-                    <div className="flex items-center gap-1.5" style={{ justifyContent: ['LTP', 'Score', 'RSI_14', 'Weighted_Avg', 'Dist_Weighted_Avg_PCT'].includes(header.column.id) ? 'flex-end' : header.column.id === 'link' ? 'center' : 'flex-start' }}>
+                    <div className="flex items-center gap-1.5" style={{ justifyContent: ['LTP', 'Score', 'Swing Score', 'RSI_14', 'Weighted_Avg', 'Dist_Weighted_Avg_PCT'].includes(header.column.id) ? 'flex-end' : header.column.id === 'link' ? 'center' : 'flex-start' }}>
                       {flexRender(header.column.columnDef.header, header.getContext())}
                       {header.column.getCanSort() && (
                         <span className={`transition-opacity ${header.column.getIsSorted() ? 'opacity-100' : 'opacity-0 group-hover:opacity-40'}`}>
