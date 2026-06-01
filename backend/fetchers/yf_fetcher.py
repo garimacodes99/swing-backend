@@ -3,6 +3,7 @@ import datetime
 from datetime import timedelta
 import logging
 
+import pytz
 import yfinance as yf
 import pandas as pd
 
@@ -32,10 +33,16 @@ os.makedirs(DATA_DIR, exist_ok=True)
 # ==========================================================
 WINDOW_SIZE      = 300
 BOOTSTRAP_PERIOD = "2y"
+IST              = pytz.timezone("Asia/Kolkata")
 
 # ==========================================================
 # Helpers
 # ==========================================================
+
+def _now_ist() -> datetime.datetime:
+    """Current datetime in IST — used everywhere instead of datetime.now()."""
+    return datetime.datetime.now(IST)
+
 
 def _flatten_columns(df: pd.DataFrame) -> pd.DataFrame:
     """Collapses nested yfinance MultiIndex columns down to simple strings."""
@@ -98,14 +105,17 @@ def _clean(df: pd.DataFrame) -> pd.DataFrame:
 def _last_expected_trading_date() -> datetime.date:
     """
     Returns the last date on which NSE market data should be available.
-    Accounts for weekends and the 4 PM IST daily candle cutoff.
+    Uses IST timezone correctly.
+    Accounts for weekends and the 3:30 PM IST NSE market close.
     Does NOT account for public holidays.
     """
-    now   = datetime.datetime.now()
+    now   = _now_ist()
     today = now.date()
 
-    # Before 4 PM the current day's candle is not out yet
-    if now.hour < 16:
+    # NSE closes at 3:30 PM IST
+    # Before 3:30 PM → today's candle is not confirmed yet, expect yesterday's
+    market_close_time = now.replace(hour=15, minute=30, second=0, microsecond=0)
+    if now < market_close_time:
         today -= datetime.timedelta(days=1)
 
     # Roll back over Saturday (5) and Sunday (6)
@@ -119,6 +129,181 @@ def _is_market_data_stale(last_date: pd.Timestamp) -> bool:
     """Returns True if the cache is missing at least one expected trading day."""
     expected = _last_expected_trading_date()
     return last_date.date() < expected
+
+
+def _is_market_open() -> bool:
+    """
+    Returns True if NSE market is currently open.
+    NSE timings: Monday–Friday, 9:15 AM – 3:30 PM IST.
+    Does NOT account for public holidays.
+    """
+    now = _now_ist()
+
+    # Weekend
+    if now.weekday() >= 5:
+        return False
+
+    market_open  = now.replace(hour=9,  minute=15, second=0, microsecond=0)
+    market_close = now.replace(hour=15, minute=30, second=0, microsecond=0)
+
+    return market_open <= now <= market_close
+
+
+# ==========================================================
+# Live price helpers
+# ==========================================================
+
+def fetch_live_price(ticker: str) -> float | None:
+    """
+    Fetch the last traded price for a single NSE ticker right now.
+    Works whether market is open or closed (returns LTP).
+    """
+    ticker_clean = str(ticker).strip().replace("\xa0", "").upper()
+    symbol = f"{ticker_clean}.NS"
+
+    try:
+        tick  = yf.Ticker(symbol)
+        price = tick.fast_info.last_price
+        if price and float(price) > 0:
+            logger.info(f"[{ticker_clean}] Live price fetched: {price:.2f}")
+            return float(price)
+        else:
+            logger.warning(f"[{ticker_clean}] fast_info returned no valid price.")
+            return None
+    except Exception as e:
+        logger.error(f"[{ticker_clean}] fetch_live_price() failed: {e}")
+        return None
+
+
+def _build_todays_row(ticker_clean: str) -> pd.DataFrame | None:
+    """
+    Build today's OHLCV row using intraday 1-minute data.
+    - Open  → first candle's open of the day
+    - High  → highest high so far today
+    - Low   → lowest low so far today
+    - Close → last candle's close (= current price right now)
+    - Volume→ cumulative volume so far today
+
+    If market is closed and today is a trading day, returns today's
+    confirmed EOD candle via 1d download instead.
+    """
+    symbol = f"{ticker_clean}.NS"
+    today  = datetime.date.today()
+
+    # Weekend — no row needed
+    if datetime.date.today().weekday() >= 5:
+        return None
+
+    try:
+        if _is_market_open():
+            # Market open → use 1m intraday to get live OHLCV
+            logger.info(f"[{ticker_clean}] Market open — fetching 1m intraday for live row…")
+            intraday = yf.download(
+                symbol,
+                start=today,
+                interval="1m",
+                auto_adjust=True,
+                progress=False,
+                threads=False,
+                timeout=30,
+            )
+
+            if intraday is None or intraday.empty:
+                logger.warning(f"[{ticker_clean}] 1m intraday returned empty.")
+                return None
+
+            intraday = _flatten_columns(intraday)
+            intraday.index = pd.to_datetime(intraday.index).tz_localize(None)
+
+            row = pd.DataFrame([{
+                "Open":   float(intraday["Open"].iloc[0]),    # day open
+                "High":   float(intraday["High"].max()),       # day high so far
+                "Low":    float(intraday["Low"].min()),        # day low so far
+                "Close":  float(intraday["Close"].iloc[-1]),  # current price
+                "Volume": int(intraday["Volume"].sum()),       # volume so far
+            }], index=[pd.Timestamp(today)])
+
+        else:
+            # Market closed → fetch today's confirmed 1d candle
+            logger.info(f"[{ticker_clean}] Market closed — fetching confirmed EOD candle…")
+            eod = yf.download(
+                symbol,
+                start=today,
+                end=today + timedelta(days=1),
+                interval="1d",
+                auto_adjust=True,
+                progress=False,
+                threads=False,
+                timeout=30,
+            )
+
+            if eod is None or eod.empty:
+                logger.warning(f"[{ticker_clean}] EOD 1d fetch returned empty.")
+                return None
+
+            eod = _clean(eod)
+            row = eod.tail(1)
+
+        logger.info(
+            f"[{ticker_clean}] Today's row → "
+            f"O:{row['Open'].iloc[0]:.2f}  "
+            f"H:{row['High'].iloc[0]:.2f}  "
+            f"L:{row['Low'].iloc[0]:.2f}  "
+            f"C:{row['Close'].iloc[0]:.2f}  "
+            f"V:{row['Volume'].iloc[0]:,}  "
+            f"[{'LIVE' if _is_market_open() else 'EOD'}]"
+        )
+        return row
+
+    except Exception as e:
+        logger.warning(f"[{ticker_clean}] _build_todays_row() failed: {e}")
+        return None
+
+
+def _attach_live_row(ticker_clean: str, df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Attach today's live/EOD row to the historical DataFrame.
+    Saves updated DataFrame (including live row) back to parquet.
+
+    - If today's row already exists in df → replace it with fresh data
+    - If today's row is new → append it
+    - Parquet is overwritten every run so price stays fresh
+    """
+    today     = pd.Timestamp(datetime.date.today())
+    file_path = os.path.join(DATA_DIR, f"{ticker_clean}.parquet")
+
+    # Weekend — nothing to do
+    if today.weekday() >= 5:
+        logger.info(f"[{ticker_clean}] Weekend — skipping live row attachment.")
+        return df
+
+    live_row = _build_todays_row(ticker_clean)
+    if live_row is None:
+        logger.warning(f"[{ticker_clean}] No live row built — returning df unchanged.")
+        return df
+
+    # Drop existing today row (if any) and append fresh one
+    if today in df.index:
+        df = df.drop(index=today)
+        logger.info(f"[{ticker_clean}] Replaced existing today's row with fresh data.")
+    else:
+        logger.info(f"[{ticker_clean}] Appending fresh today's row.")
+
+    df = pd.concat([df, live_row]).sort_index()
+    df = df.tail(WINDOW_SIZE)  # keep window size in check
+
+    # Save to parquet — overwrites previous live row on every run
+    try:
+        df.to_parquet(file_path, index=True)
+        logger.info(
+            f"[{ticker_clean}] Parquet updated with live row — "
+            f"Close: {live_row['Close'].iloc[0]:.2f} | "
+            f"IST Time: {_now_ist().strftime('%H:%M:%S')}"
+        )
+    except Exception as e:
+        logger.error(f"[{ticker_clean}] Failed to save live row to parquet: {e}")
+
+    return df
 
 
 # ==========================================================
@@ -135,9 +320,11 @@ def fetch_ohlc(
     Fetch OHLCV data for a single NSE ticker.
 
     Behaviour:
-    - No parquet on disk  → full bootstrap (new ticker path)
-    - Parquet exists      → validate → incremental update if stale
-    - force_bootstrap=True → skip cache check, always re-download full history
+    - No parquet on disk   → full bootstrap (new ticker path)
+    - Parquet exists       → validate → incremental update if stale
+    - force_bootstrap=True → skip cache, always re-download full history
+    - Always attaches today's live/EOD row at the end before returning
+      so calculations always use the freshest available price.
 
     Returns a cleaned DataFrame or None on failure.
     """
@@ -176,8 +363,9 @@ def fetch_ohlc(
                 )
 
             if not _is_market_data_stale(last_date):
-                logger.info(f"[{ticker_clean}] Cache is up-to-date. Skipping fetch.")
-                return df
+                logger.info(f"[{ticker_clean}] Historical cache is up-to-date.")
+                # Still attach live row — price may have moved since last run
+                return _attach_live_row(ticker_clean, df)
 
             # Incremental fetch — only missing days
             fetch_start = last_date + timedelta(days=1)
@@ -195,9 +383,9 @@ def fetch_ohlc(
             except Exception as dl_err:
                 logger.warning(
                     f"[{ticker_clean}] Incremental yf.download() raised: {dl_err}. "
-                    f"Returning existing cache."
+                    f"Attaching live row to existing cache."
                 )
-                return df
+                return _attach_live_row(ticker_clean, df)
 
             if new_df is not None and not new_df.empty:
                 new_df = _clean(new_df)
@@ -205,14 +393,15 @@ def fetch_ohlc(
                 df = df[~df.index.duplicated(keep="last")]
                 df = df.sort_index().tail(WINDOW_SIZE)
                 df.to_parquet(file_path, index=True)
-                logger.info(f"[{ticker_clean}] Cache updated → {len(df)} rows")
+                logger.info(f"[{ticker_clean}] Historical cache updated → {len(df)} rows")
             else:
                 logger.warning(
-                    f"[{ticker_clean}] No new rows returned by yfinance "
-                    f"(holiday / weekend / API issue). Returning existing cache."
+                    f"[{ticker_clean}] No new historical rows from yfinance "
+                    f"(holiday / weekend / API issue). Attaching live row."
                 )
 
-            return df
+            # Always attach live row after incremental update
+            return _attach_live_row(ticker_clean, df)
 
         except Exception as e:
             logger.warning(
@@ -263,7 +452,9 @@ def fetch_ohlc(
     df = df.tail(WINDOW_SIZE)
     df.to_parquet(file_path, index=True)
     logger.info(f"[{ticker_clean}] Bootstrap complete: {len(df)} rows saved → {file_path}")
-    return df
+
+    # Attach live row after bootstrap too
+    return _attach_live_row(ticker_clean, df)
 
 
 # ==========================================================
@@ -279,9 +470,10 @@ def fetch_universe(
 
     - New tickers (no parquet on disk) → full bootstrap automatically
     - Existing tickers                 → incremental update only if stale
+    - Every ticker                     → live row attached & saved to parquet
     - Failed tickers                   → omitted from result, reason in logs
 
-    Returns: dict mapping ticker → cleaned DataFrame
+    Returns: dict mapping ticker → cleaned DataFrame with fresh live row
     """
     results:     dict[str, pd.DataFrame] = {}
     new_tickers: list[str] = []
@@ -306,7 +498,9 @@ def fetch_universe(
         )
     logger.info(
         f"Existing tickers (incremental if stale): {len(old_tickers)} | "
-        f"Total universe: {total}"
+        f"Total universe: {total} | "
+        f"Market open: {_is_market_open()} | "
+        f"IST time: {_now_ist().strftime('%H:%M:%S')}"
     )
 
     # Process new tickers first so failures surface early in logs
