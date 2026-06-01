@@ -31,11 +31,10 @@ dist/
 build/
 .vite/
 
-# =========================================================
-# GENERATED OUTPUTS
-# =========================================================
-
+# Generated analysis results
 backend/output/
+frontend/public/close/
+frontend/public/data/scores.json
 
 # Market/cache data
 backend/utils/data_store/
@@ -71,14 +70,5 @@ Thumbs.db
 *.bak
 .cache/
 
-# =========================================================
-# EXCEL / DATA FILES
-# =========================================================
-
-# Ignore all Excel files
-*.xlsx
-
 # But keep important universe files
-!backend/universe/*.xlsx
 !backend/universe/*.csv
-!backend/universe/*.json

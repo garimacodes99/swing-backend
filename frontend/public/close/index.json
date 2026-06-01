@@ -1,7 +1,12 @@
 {
-  "latest": "2026-05-29",
-  "generated_at": "2026-05-29T15:13:31",
+  "latest": "2026-06-01",
+  "generated_at": "2026-06-01T06:28:12",
   "dates": [
+    {
+      "date": "2026-06-01",
+      "file": "/close/swing_close_2026-06-01.json",
+      "rows": 842
+    },
     {
       "date": "2026-05-29",
       "file": "/close/swing_close_2026-05-29.json",

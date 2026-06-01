@@ -866,7 +866,7 @@
     },
     {
         "ticker":"LTTS",
-        "score":7,
+        "score":8,
         "tags":"LCAP | TECH | GLOBEX | EXPORT | GROWTH | RNDX"
     },
     {
@@ -4138,5 +4138,90 @@
         "ticker":"SANDUMA",
         "score":7,
         "tags":""
+    },
+    {
+        "ticker":"INFOSYS",
+        "score":10,
+        "tags":"LCAP | N50 | N100 | TECH | LEADER | GLOBEX | EXPORT | USREV | HROE | COMPD | QLTY"
+    },
+    {
+        "ticker":"BRITANNIA",
+        "score":10,
+        "tags":"LCAP | N50 | N100 | FMCG | BRANDX | COMPD | HROE | DOMEST"
+    },
+    {
+        "ticker":"TITAN",
+        "score":10,
+        "tags":"LCAP | N50 | N100 | CONSUM | RETAIL | BRANDX | LEADER | COMPD | HROE | DOMEST"
+    },
+    {
+        "ticker":"BAJAJ-AUTO",
+        "score":10,
+        "tags":"LCAP | N50 | N100 | AUTO | LEADER | EXPORT | GLOBEX | HROE | COMPD"
+    },
+    {
+        "ticker":"HEROMOTOCO",
+        "score":10,
+        "tags":"LCAP | N50 | N100 | AUTO | LEADER | DOMEST | RURALX | HROE | DIVX"
+    },
+    {
+        "ticker":"ULTRACEMCO",
+        "score":10,
+        "tags":"LCAP | N100 | INFRA | LEADER | DOMEST"
+    },
+    {
+        "ticker":"LTM",
+        "score":9,
+        "tags":"LCAP | N50 | N100 | TECH | LEADER | GLOBEX | EXPORT | USREV | GROWTH"
+    },
+    {
+        "ticker":"MARUTI",
+        "score":10,
+        "tags":"LCAP | N50 | N100 | AUTO | LEADER | DOMEST | HROE | COMPD"
+    },
+    {
+        "ticker":"EICHERMOT",
+        "score":10,
+        "tags":"LCAP | N50 | N100 | AUTO | LEADER | EXPORT | GLOBEX | HROE | COMPD | PREM"
+    },
+    {
+        "ticker":"IDFCFIRSTB",
+        "score":8,
+        "tags":"LCAP | BANKX | GROWTH | INDST | SCALEUP"
+    },
+    {
+        "ticker":"MUTHOOTFIN",
+        "score":10,
+        "tags":"LCAP | N100 | NBFC | RURALX | INDST | HROE"
+    },
+    {
+        "ticker":"ABBOTINDIA",
+        "score":10,
+        "tags":"LCAP | PHARMA | GLOBEX | NICHE | DOMEST | HROE"
+    },
+    {
+        "ticker":"SANOFI",
+        "score":8,
+        "tags":"MCAP | PHARMA | GLOBEX | NICHE"
+    },
+    {
+        "ticker":"LT",
+        "score":10,
+        "tags":"LCAP | N50 | N100 | INFRA | LEADER | CAPEX | GROWTH | GLOBEX | INDST"
+    },
+    {
+        "ticker":"ACC",
+        "score":9,
+        "tags":"LCAP | N100 | INFRA | LEADER | DOMEST"
+    },
+    {
+        "ticker":"PIIND",
+        "score":9,
+        "tags":"MCAP | CHEMX | EXPORT | NICHE | GROWTH"
+    },
+    {
+        "ticker":"ATUL",
+        "score":8,
+        "tags":"MCAP | CHEMX | EXPORT | GROWTH"
     }
 ]
