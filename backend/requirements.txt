@@ -1,8 +1,18 @@
-# Backend Dependencies
-# Frontend dependencies are in frontend/requirements.txt
+# Backend Dependencies - PostgreSQL Direct Connection
 
+# Core
+pandas>=2.0
 numpy
-pandas
-yfinance
+
+# Data fetching
+yfinance==0.2.25
 pytz
-pyarrow
+
+# Database - PostgreSQL Direct
+psycopg2-binary>=2.9.9
+
+# Environment
+python-dotenv==1.0.0
+
+# Utilities
+websockets==11.0
