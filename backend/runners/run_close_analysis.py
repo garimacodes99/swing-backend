@@ -1,3 +1,4 @@
+"""
 import logging
 import shutil
 import sys
@@ -214,3 +215,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+    """
