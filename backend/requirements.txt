@@ -1,0 +1,8 @@
+# Backend Dependencies
+# Frontend dependencies are in frontend/requirements.txt
+
+numpy
+pandas
+yfinance
+pytz
+pyarrow

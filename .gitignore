@@ -37,8 +37,7 @@ frontend/public/close/
 frontend/public/data/scores.json
 
 # Market/cache data
-backend/utils/data_store/
-*.parquet
+
 
 # =========================================================
 # LOGS
