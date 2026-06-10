@@ -128,25 +128,46 @@ def main() -> None:
     universe = load_universe()
     logger.info(f"Universe size: {len(universe)} tickers")
     
-    # ── Step 3: Sync companies to database ──────────────────────
-    logger.info("=" * 60)
-    logger.info("Syncing companies to database…")
-    
-    try:
-        companies_data = []
-        for ticker in universe:
-            companies_data.append({
-                "ticker": ticker,
-                "score": None,
-                "tags": None
-            })
-        
-        db.upsert_companies(companies_data)
-        logger.info(f"✅ Synced {len(companies_data)} companies")
-    except Exception as e:
-        logger.error(f"❌ Company sync failed: {e}")
-        return
+# ── Step 3: Sync companies to database ──────────────────────
+logger.info("=" * 60)
+logger.info("Syncing companies to database…")
 
+try:
+    # Load health scores
+    score_file = BACKEND_DIR / "universe" / "final_score list.csv"
+    tags_file  = BACKEND_DIR / "universe" / "tags.csv"
+
+    score_df = pd.read_csv(score_file)
+    tags_df  = pd.read_csv(tags_file)
+
+    # Normalize column names
+    score_df.columns = score_df.columns.str.strip()
+    tags_df.columns  = tags_df.columns.str.strip()
+
+    # Ticker ke basis pe merge karo
+    score_map = dict(zip(
+        score_df["Tickers"].str.strip(),
+        score_df["Score"]
+    ))
+    tags_map = dict(zip(
+        tags_df["ticker"].str.strip(),
+        tags_df["TAG"].str.strip()
+    ))
+
+    companies_data = []
+    for ticker in universe:
+        companies_data.append({
+            "ticker":       ticker,
+            "health_score": score_map.get(ticker),   # ✅ health_score key
+            "tags":         tags_map.get(ticker),    # ✅ TAG value
+        })
+
+    db.upsert_companies(companies_data)
+    logger.info(f"✅ Synced {len(companies_data)} companies")
+
+except Exception as e:
+    logger.error(f"❌ Company sync failed: {e}")
+    return
     # ── Step 4: Fetch OHLCV data ───────────────────────────────
     logger.info("=" * 60)
     logger.info("Fetching OHLCV data for universe…")
